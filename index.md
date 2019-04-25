@@ -15,7 +15,7 @@ The Programmer’s guide demonstrates how to implement accessibility into the st
 ## General outro
 To get a holistic understanding of all the guidelines, we definitely recommend using the entire Access Guide set (Content Creators, Designers, and Programmers). We also hope you’ll consider this as a starting point for understanding what accessibility entails and where you can improve. For more detail on how to meet and implement these guidelines, we recommend referring to the original Web Content Accessibility Guidelines 2.1 (WCAG).
 
-*****
+***
 
 # Types of disabilities
 Our goal is to help you create for a diversity of people. These are the main categories of disabilities to consider for accessibility.
@@ -30,7 +30,7 @@ Our goal is to help you create for a diversity of people. These are the main cat
 | Speech | Drawing of human head with speech bubble | Affects production of sounds (stutter, lisp) or being mute |
 | Language | Drawing of two overlapping speech bubbles | Difficulty understanding people and/or expressing one’s thoughts and emotions |
 
-*****
+***
 
 # WCAG conformance levels
 Each guideline is based on a matching guideline in Web Content Accessibility Guidelines 2.1 (WCAG). The number (such as 3.2.4) indicates the WCAG section to help you look it up. The letter (such as AA) indicates the conformance level to help you prioritize your work. Since AA is the standard legal requirement, we recommend focusing on A and AA.

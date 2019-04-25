@@ -26,6 +26,8 @@ As you read through the guide, please think about the following:
 
 **How relevant to my industry is the guide?** Is this using industry standard terminology? Could I discuss the guide in a meeting? Are there any words that feel odd or out of place?
 
+***
+
 ## Project description
 Today, the tech industry is increasingly more aware of the importance of accessibility. However, many find it difficult to achieve due to lack of time, resources, and subject matter knowledge. While industry standards like WCAG are available, they are dense, text-heavy, and difficult to understand.
 
