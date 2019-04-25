@@ -142,6 +142,46 @@ Given that people may find it easier to navigate in different ways, provide mult
 
 ## Error recovery
 
+### D14. Identify and describe errors
+> I make a lot of typos so I’m never sure exactly what the problem is when it’s showing me an error message.
+
+If an input error is automatically detected, identify the error and describe it as specifically as possible.
+
+**Disabilities**: intellectual, physical
+**WCAG number + conformance**: 3.3.1 A
+
+### D15. Suggest corrections to errors
+> Since I have a learning disability, it’s a lot easier for me to get suggestions rather than having to figure out how to fix errors.
+
+If possible, suggest corrections to input errors so that users can fix it.
+
+**Disabilities**: intellectual, physical
+**WCAG number + conformance**: 3.3.3 AA
+
+### D16. Provide contextual help
+> My memory isn’t so good as I’m getting older, so getting help while I’m filling out a form is really nice.
+
+Provide contextual help on the same page or next to the input error in a way that’s obvious and easy to find. Users shouldn’t have to navigate away to access this.
+
+**Disabilities**: intellectual, physical
+**WCAG number + conformance**: 3.3.5 AAA
+
 ***
 
 ## Timing
+
+### D17. Time limits are adjustable or not essential
+> I’m slow when it comes to using a mouse, so time limits do nothing but stress me out.
+
+If you need to give users a time limit to complete a task, also provide them with a way to adjust or turn off the time limit. To be very accessible, don’t require time limits at all.
+
+**Disabilities**: intellectual, physical, visual
+**WCAG number + conformance**: 2.2.1 A, 2.2.3 AAA
+
+### D18. Provide the option to turn off interruptions
+> I have ADD, so when I get pop-ups I get really distracted from what I’m doing.
+
+Provide the option to turn off or postpone interruptions, such as a switch in the user settings.
+
+**Disabilities**: intellectual, visual
+**WCAG number + conformance**: 2.2.4 AAA
