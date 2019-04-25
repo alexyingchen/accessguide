@@ -5,9 +5,6 @@
 * Error recovery
 * Timing
 
-**Disabilities**:
-**WCAG number + conformance**:
-
 ***
 
 ## Style guide
