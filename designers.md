@@ -12,7 +12,7 @@
 ### D1. Use high contrast
 > I can’t see very well, so I have trouble reading when the text is very low contrast.
 
-The contrast of text against background should be at least 4.5 to 1 (AA) or 7 to 1 (AAA). The contrast of UI components and diagrams against background should be at least 3 to 1 (AAa). Large text and logotypes are the exception to this rule.
+The contrast of text against background should be at least 4.5 to 1 (AA) or 7 to 1 (AAA). The contrast of UI components and diagrams against background should be at least 3 to 1 (AA). Large text and logotypes are the exception to this rule.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.3 AA, 1.4.6 AAA, 1.4.11 AA
