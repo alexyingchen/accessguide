@@ -1,31 +1,30 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Simple Gatsby starter linked to Contentful",
+  "name": "accessguide",
+  "description": "Access Guide is a simplified, illustrated version of WCAG 2.1 (web content accessibility guidelines).",
   "license": "MIT",
-  "author": "Connor Wilson <me@cwlsn.com> (https://cwlsn.com)",
-  "homepage": "https://gatsby-simple-contentful-starter.netlify.com",
-  "bugs": "https://github.com/cwlsn/gatsby-simple-contentful-starter/issues",
-  "repository": "github:cwlsn/gatsby-simple-contentful-starter",
+  "author": "@thetuttingtutor, @thatnewwen, @bernardwang",
+  "homepage": "https://github.com/thetuttingtutor/accessguide",
+  "bugs": "https://github.com/thetuttingtutor/accessguide/issues",
+  "repository": "github:thetuttingtutor/accessguide",
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/styles": "^4.0.2",
     "dotenv": "^8.0.0",
     "gatsby": "^2.7.1",
     "gatsby-plugin-google-fonts": "^1.0.0",
+    "gatsby-plugin-material-ui": "^2.0.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-contentful": "^2.0.63",
     "gatsby-transformer-remark": "^2.3.12",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "styled-components": "^4.2.0",
-    "styled-reset": "^2.0.13"
+    "react-helmet": "^5.2.1"
   }
 }
