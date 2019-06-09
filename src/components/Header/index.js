@@ -1,31 +1,42 @@
 import React from 'react';
 import PropTypes from "prop-types"
-import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { Link } from "gatsby"
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+import Link from '../Link'
 
-const Container = styled.header`
-  color: #fff;
-  background: linear-gradient(to right, #169d39 0%, #16799d 100%);
-  padding: 20px;
-  font-size: 24px;
-  font-weight: bold;
-`;
+const useStyles = makeStyles(theme => ({
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
 
-const Header = ({ siteTitle, menuLinks }) => (
-  <Container>
-    <h1> { siteTitle } </h1>
-    <nav>
-      <ul style={{ display: 'flex', flex: 1, listStyle: 'none' }}>
+}));
+
+function Header({ siteTitle, menuLinks }) {
+  const classes = useStyles();
+  return (
+    <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+        <Typography variant="h6" noWrap className={classes.title}>
+          { siteTitle }
+        </Typography>
         {menuLinks.map(link =>
-          <li key={link.link}>
-            <Link to={link.link}>{link.name}</Link>
-          </li>
+          <Link to={link.link}>
+            <Button variant="contained" color="primary" key={link.link}>
+              {link.name}
+            </Button>
+          </Link>
         )}
-      </ul>
-    </nav>
-  </Container>
-);
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 
 Header.propTypes = {

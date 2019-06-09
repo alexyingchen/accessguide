@@ -1,28 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from "prop-types"
+import { makeStyles } from '@material-ui/core/styles';
 
-const Container = styled.footer`
-  color: #aaa;
-  padding: 20px 20px 10px;
-  font-size: 14px;
-  text-align: center;
+const useStyles = makeStyles(theme => ({
+  root: {
+    color: `#aaa`,
+    padding: `20px 20px 10px`,
+    fontSize: `14px`,
+    textAlign: `center`,
+  },
+}));
 
-  & > p {
-    margin-bottom: 10px;
-  }
+function Footer({ children }) {
+  const classes = useStyles();
+  return (
+    <footer className={classes.root}>
+      {children}
+    </footer>
+  );
+};
 
-  & > p > a {
-    color: #169d39;
-
-    &:hover {
-      color: #16799d;
-    }
-  }
-`;
-
-
-const Footer = ({ children }) => (
-  <Container>{children}</Container>
-);
+Footer.propTypes = {}
 
 export default Footer;
