@@ -12,10 +12,10 @@
 
 ## Programmatically determined
 
-### P1. Make information, structure, and relationships programmatically determined
+### P1. Make info & relationships programmatically determined
 > Since I’m blind, I can’t tell what the titles and sections are in an article just by looking at them. My screen reader figures that out for me.
 
-Separate structure from style so that assistive tech can understand the information hierarchy. Use semantic elements to convey structure (such as headers h1, h2, h3, p, a, blockquote, strong, em). If semantic structure is not available, use text to convey the structure.
+Separate structure from style so that assistive tech can understand the information hierarchy. Use semantic elements to convey structure (such as headers h1, h2, h3, p, a, blockquote, strong, em).
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.1 A
@@ -121,7 +121,7 @@ Separate structure from style and write the content in a way that is logical and
 
 Ensure the default human language of each web page is programmatically determined. To be more advanced, ensure the language of each passage or phrase in the content is programmatically determined except for proper names, technical terms, vernacular language, or words of indeterminate language.
 
-**Disabilities**: language, physical, visual
+**Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 3.1.1 A, 3.1.2 AA
 
 #### English language
@@ -459,6 +459,18 @@ Prevent errors by providing at least one of these:
 
 **Disabilities**: intellectual, physical
 **WCAG number + conformance**: 3.3.4 AA, 3.3.6 AAA
+
+### D8. Prevent accidents with single pointer gestures
+> Damn it, I didn't mean to press that. How do I undo?
+
+Use at least one of these methods to prevent accidents:
+* Undo
+* The [down-event](glossary link) doesn’t trigger anything
+* The function completes on the [up-event](glossary link)
+* The up-event reverses the down-event
+
+**Disabilities**: intellectual, physical, visual
+**WCAG number + conformance**: 2.5.2 A
 
 ***
 
