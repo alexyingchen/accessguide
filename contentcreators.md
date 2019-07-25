@@ -5,7 +5,6 @@
 
 ## TO-DO LIST
 * Finalize illustrations (C1-C8)
-* Verify WCAG numbers (all)
 * Get industry expert feedback on descriptions (all)
 
 ***
@@ -13,7 +12,7 @@
 ## Multimedia
 
 ### C1. Provide text descriptions of imagery
-> What's this photo? It doesn't have alt text, so my [screen reader](link to glossary) can't read it.
+> What's this photo? It doesn't have alt text, so my [screen reader](glossary link) can't read it.
 
 Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired.
 
@@ -121,21 +120,7 @@ Provide a way to expand abbreviations, such as a glossary that the abbreviation 
 
 -
 
-### C11. Provide pronunciation for ambiguous words
-> My [screen reader](link to glossary) can't pronounce this word, now I'm confused.
-
-Provide a way to determine the specific pronunciation for ambiguous words, such as the phonetic spelling right after the word, the reading of the word by ruby element, or a link to a glossary.
-
-**Disabilities**: intellectual, visual
-**WCAG number + conformance**: 3.1.6 AAA
-
-`I am scared that they will _desert_ me. (di-ˈzərt)
-
-It gets surprisingly cold at night in the _desert_. (de-zərt)`
-
--
-
-### C12. Write content at an 8th grade reading level
+### C11. Write content at an 8th grade reading level
 > The reading is so dense and complicated, who could ever finish it?
 
 Write content clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level.
@@ -149,13 +134,33 @@ Good: This essay explores pros and cons of bumpers stickers on cars.`
 
 -
 
-### C13. Provide descriptive headings and labels
-> I have trouble reading, and labels really help me orient myself in the text.
+### C12. Provide pronunciation for ambiguous words
+> My [screen reader](link to glossary) can't pronounce this word, so not sure what it actually says.
 
-Provide headings and labels that describe the topic or purpose of the content, like section labels for a recipe.
+Provide a way to determine the specific pronunciation for ambiguous words, such as the phonetic spelling right after the word, the reading of the word by ruby element, or a link to a glossary.
 
 **Disabilities**: intellectual, visual
-**WCAG number + conformance**: 2.4.6 AA
+**WCAG number + conformance**: 3.1.6 AAA
+
+-
+
+### C13. Write descriptive page titles
+> I can't find the contact page, all the tabs say the same thing for this site.
+
+Write descriptive page titles to help people navigate content.
+
+**Disabilities**: intellectual, visual
+**WCAG number + conformance**: 2.4.2 A
+
+-
+
+### C14. Write descriptive headings and labels
+> When long articles don't have any section titles, it's impossible to find what I want.
+
+Use section headings to organize content and write headings and labels that describe the topic/purpose to help people navigate content.
+
+**Disabilities**: intellectual, visual
+**WCAG number + conformance**: 2.4.6 AA, 2.4.10 AAA
 
 `h1 Ingredients
 • Lemonade
@@ -168,3 +173,13 @@ h1 Steps
 
 h1 Notes
 • Enjoy with a jug of lemonade in the summer!`
+
+-
+
+### C15. Write descriptive link text
+> Links that say 'Learn more' don't actually mean anything! I have to hunt for context clues to figure them out.
+
+Write links that describe the purpose of the link in the text.
+
+**Disabilities**: intellectual, visual
+**WCAG number + conformance**: 2.4.9 AAA
