@@ -62,57 +62,59 @@ Separate structure from style and write the content in a way that is logical and
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.2 A
 
-#### Good markup example
+#### Good example
+#####Order of elements makes logical and hierarchical sense.
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
 <button>sort search results</button>
 <ul class=”search-results”>
-		<li>
-<a href=””>
-	<img src=”burrito.jpg” alt=”burrito”>
-	<h2>Burrito</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”nachos.jpg” alt=”nachos”>
-	<h2>Nachos</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”tacos.jpg” alt=”tacos”>
-	<h2>Tacos</h2>
-</a>
-</li>
-	</ul>
+	<li>
+		<a href=”burrito.html”>
+			<img src=”burrito.jpg” alt=”burrito”>
+			<h2>Burrito</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”nachos.html”>
+			<img src=”nachos.jpg” alt=”nachos”>
+			<h2>Nachos</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”tacos.html”>
+			<img src=”tacos.jpg” alt=”tacos”>
+			<h2>Tacos</h2>
+		</a>
+	</li>
+</ul>
 ```
 
-#### Bad markup example
+#### Bad example
+#####The filter button is placed last in the DOM. Screen readers will therefore find the filter button only after having gone through all of the search results. 
 ```html
 <button>sort search results</button>
 <h1>Search Results</h1>
 <ul class=”search-results”>
-		<li>
-<a href=””>
-	<img src=”burrito.jpg” alt=”burrito”>
-	<h2>Burrito</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”nachos.jpg” alt=”nachos”>
-	<h2>Nachos</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”tacos.jpg” alt=”tacos”>
-	<h2>Tacos</h2>
-</a>
-</li>
-	</ul>
+	<li>
+		<a href=”burrito.html”>
+			<img src=”burrito.jpg” alt=”burrito”>
+			<h2>Burrito</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”nachos.html”>
+			<img src=”nachos.jpg” alt=”nachos”>
+			<h2>Nachos</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”tacos.html”>
+			<img src=”tacos.jpg” alt=”tacos”>
+			<h2>Tacos</h2>
+		</a>
+	</li>
+</ul>
 <button>filter search results</button>
 ```
 
