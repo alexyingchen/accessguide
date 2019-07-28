@@ -25,9 +25,9 @@ Separate structure from style so that assistive tech can understand the informat
 	<nav class=”main-nav” aria-labelledby=”main-nav-label”>
 		<h2 class = “visually-hidden” id=””main-nav-label>Main Navigation</h2>
 		<ul>
-			<li><a href=”spiderman.html”>Spiderman</a></li>
-			<li><a href=”antman.html”>Antman</a></li>
-			<li><a href=”black-widow.html”>Black Widow</a></li>
+			<li><a href=”why-a11y.html”>Why Accessibility?</a></li>
+			<li><a href=”disability-advocacy.html”>Disability Advocacy</a></li>
+			<li><a href=”ada.html”>The ADA</a></li>
 		</ul>
 </nav>
 <nav class =”utility-nav” aria-labelledby=”utility-nav-label”>
@@ -42,16 +42,16 @@ Separate structure from style so that assistive tech can understand the informat
 
 <main>
 	<article>
-		<h1>Spiderman</h1>
+		<h1>Why Accessibility?</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam sapien, sollicitudin a mauris eget, ornare semper eros. Donec in velit sit amet est porta condimentum.</p>
-<p>Phasellus elit orci, feugiat eu pellentesque sit amet, dignissim id diam. Donec vitae lectus ipsum. Proin dui quam, pharetra quis vulputate sit amet, cursus id ante.</p>
-</article>
+		<p>Phasellus elit orci, feugiat eu pellentesque sit amet, dignissim id diam. Donec vitae lectus ipsum. Proin dui quam, pharetra quis vulputate sit amet, cursus id ante.</p>
+	</article>
 	<aside>
-<h2>Backstory</h2>
-<p>Aenean dignissim mauris nec enim cursus posuere. Sed porta ante nulla, et ornare tellus efficitur et. Proin molestie nisi massa. Nam maximus nec nisi non dictum.</p>
-</aside>
+		<h2>User Impact</h2>
+		<p>Aenean dignissim mauris nec enim cursus posuere. Sed porta ante nulla, et ornare tellus efficitur et. Proin molestie nisi massa. Nam maximus nec nisi non dictum.</p>
+	</aside>
 </main>
-<footer>© Insect Superhero Fansite 2019</footer>
+<footer>© Accessibility Is Awesome 2019</footer>
 ```
 
 ### P2. Make an intuitive sequence programmatically determined
