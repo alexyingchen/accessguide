@@ -126,14 +126,14 @@ Ensure the default human language of each web page is programmatically determine
 **Disabilities**: language, physical, visual
 **WCAG number + conformance**: 3.1.1 A, 3.1.2 AA
 
-#### English language
+#### English language applied to all markup
 ```html
 <html lang="en">
 …
 </html>
 ```
 
-#### Hungarian language
+#### Hungarian language applied to a single word
 ```html
 <p>Hungarians refer to themselves as <span lang="hu">magyarok</span>.</p>
 ```
