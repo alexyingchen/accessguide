@@ -25,9 +25,9 @@ Separate structure from style so that assistive tech can understand the informat
 	<nav class=”main-nav” aria-labelledby=”main-nav-label”>
 		<h2 class = “visually-hidden” id=””main-nav-label>Main Navigation</h2>
 		<ul>
-			<li><a href=”index.html”>Spiderman</a></li>
-			<li><a href=”index.html”>Antman</a></li>
-			<li><a href=”index.html”>Black Widow</a></li>
+			<li><a href=”spiderman.html”>Spiderman</a></li>
+			<li><a href=”antman.html”>Antman</a></li>
+			<li><a href=”black-widow.html”>Black Widow</a></li>
 		</ul>
 </nav>
 <nav class =”utility-nav” aria-labelledby=”utility-nav-label”>
