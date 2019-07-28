@@ -169,12 +169,12 @@ Ensure the purpose of links can be determined from the link text alone, or from 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.4 A, 2.4.9 AAA
 
-#### Example 1
+#### Example 1 with unambiguous link text
 ```html
 <p>To learn more about accessibility, visit <a href=”https://www.w3.org/WAI/”>The Web Accessibility Initiative (WAI) website</a>.</p>
 ```
 
-#### Example 2 using visually hidden text:
+#### Example 2 with visually hidden text
 ```html
 <h1>Taco Consumption up 1000% in Chicago</h1>
 <p>As tacos become increasingly popular, studies have shown that Chicagoans ate 1000% more tacos in 2019 than they did in 2018. <a href=”welovetacos.com”>Read more <span class=”visually-hidden”>about taco consumption in Chicago</span></a></p>
