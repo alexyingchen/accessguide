@@ -7,9 +7,7 @@
 
 ## TO-DO LIST
 * Create illustrations (all)
-* Verify WCAG numbers (all)
-* Finalize writing descriptions (all)
-
+* Get industry expert feedback (all)
 
 ***
 
@@ -48,7 +46,7 @@ Use these text spacing best practices for readability:
 * Tracking is at least 0.12
 * Word spacing is at least 0.16
 
-**Disabilities**: intellectual, learning, visual
+**Disabilities**: intellectual, visual
 **WCAG number + conformance**: 1.4.12 AA
 
 **illustration idea**: side by side comparison of good vs. bad example of text spacing
@@ -65,26 +63,14 @@ For UI components that have the same functionality, make sure they are visually 
 
 **illustration idea**: same button with different background and contexts (button needs to be clear, background can be abstract)
 
--
-
-### D5. Provide instructions that don’t rely on just one characteristic
-> These instructions are telling me to press the blue button to save. Which one's blue?
-
-If you are providing instructions for how to use something, use more than one characteristic to describe components (such as color, location, text, size, etc.) for people who are blind or visually impaired.
-
-**Disabilities**: visual
-**WCAG number + conformance**: 1.3.3 A
-
-(Alex will write this example)
-
 ***
 
 ## Interaction behavior
 
-### D6. Provide buttons with a large target size
+### D5. Provide buttons with a large target size
 > This button is way too tiny for me.
 
-Make sure the [target size](glossary link) for buttons is at least 44x44 CSS pixels so that people with visual or physically disabilities can easily access it.
+Make sure the [target size](glossary link) for buttons is at least 44x44 CSS pixels.
 
 The exceptions are:
 * If there’s an equivalent control that meets the size
@@ -99,7 +85,7 @@ The exceptions are:
 
 -
 
-### D7. Provide single-pointer alternatives to path-based gestures
+### D6. Provide single-pointer alternatives to path-based gestures
 > My prosthetic hand doesn't move like that, how am I supposed to zoom in on this map?
 
 If users need to make a [path-based gesture](glossary link) (like pinch to zoom, drag and drop), provide another way to complete the operation that only requires a [single-pointer gesture](glossary link) (like tap, double tap, and long press).
@@ -111,7 +97,7 @@ If users need to make a [path-based gesture](glossary link) (like pinch to zoom,
 
 -
 
-### D8. Provide alternatives to motion functions
+### D7. Provide conventional alternatives to motion functions
 > Don't make me shake my phone to undo, I'm literally shaking all the time.
 
 If a function is triggered by a [motion function](glossary link) (like shaking the device or waving at the camera), provide a more conventional alternative (like a button). Also, provide a way to turn off motion activation so that users don’t accidentally trigger it.
@@ -123,13 +109,13 @@ If a function is triggered by a [motion function](glossary link) (like shaking t
 
 -
 
-### D9. Change the context by user request only
+### D8. Only change the context by user request
 > Another newsletter pop-up! I hate it when that happens.
 
-Give users full control of the context and don’t change unless they request it. Changing the context includes automatically launching new windows, refreshing a content feed, and submitting forms.
+Don't change the context (such as automatically launching new windows or refreshing the content feed) unless it's by user request.
 
 **Disabilities**: intellectual, visual
-**WCAG number + conformance**: 3.2.5 AAA
+**WCAG number + conformance**: 3.2.2 A, 3.2.5 AAA
 
 **illustration idea**: newsletter pop-up on computer with person next to it looking distressed
 
@@ -137,10 +123,10 @@ Give users full control of the context and don’t change unless they request it
 
 ## Navigation
 
-### D10. Use consistent navigation
+### D9. Use consistent navigation
 > Is this a different site? Oh, it's the same site but with a different menu. Weird.
 
-Make sure that the navigation is presented the same way in the same location on all pages, and that all the items are presented in the same order.
+Make sure that the navigation is presented in the same way on all pages, and that all the items are presented in the same order.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.2.3 AA
@@ -149,8 +135,8 @@ Make sure that the navigation is presented the same way in the same location on 
 
 -
 
-### D11. Make sure that the user knows where they are
-> I get confused easily when I click on a bunch of links, I end up having no idea where I am.
+### D10. Make sure that the user knows where they are
+> I just clicked on a bunch of links, now I'm not sure how to get back to the homepage.
 
 Provide information about the user’s location within a set of pages, like a breadcrumbs trail or a site map.
 
@@ -161,36 +147,38 @@ Provide information about the user’s location within a set of pages, like a br
 
 -
 
-### D12. Provide more than one way to locate a page
+### D11. Provide more than one way to locate a page
 > Sometimes I like to browse, sometimes I know exactly what I'm looking for.
 
-Since everyone prefers finding content in different ways, provide multiple ways to locate a page: such as a site map, table of contents, search function, and links to related pages.
+Because people prefer finding content in different ways, provide multiple ways to locate a page, such as a site map, table of contents, search function, and links to related pages.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.5 AA
 
 **illustration idea**: sample table of contents, search bar, and related page links
 
+***
+
 ## Error recovery
 
-### D13. Identify and describe errors to users
+### D12. Identify and describe errors to users
 > This form is telling me something's wrong, but what is it?
 
 If the system detects an input error, identify the error and describe it to users as specifically as possible.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.3.1 A
 
 **illustration idea**: error message next to text field saying "password must be in the form of a haiku" (or something similarly ridiculous)
 
 -
 
-### D14. Suggest corrections to errors
+### D13. Suggest corrections to errors
 > I love it when it suggests the correct spelling to me; spelling is the bane of my existence.
 
 If the system detects an input error, suggest corrections so that users can easily fix it.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.3.3 AA
 
 **illustration idea**: search results that ay "We could not find anything for 'x' did you mean 'y'?"
@@ -198,12 +186,12 @@ If the system detects an input error, suggest corrections so that users can easi
 
 -
 
-### D15. Provide contextual help
+### D14. Provide contextual help
 > Damn it, the help link took me away from the page. Why can't I see both at the same time?
 
-Provide contextual help on the same page or next to the input error in a way that’s obvious and easy to find. Users should not have to navigate away from the current page to access this.
+Provide contextual help on the same page or next to content it's referencing in a way that’s obvious and easy to find. Users should not have to navigate away from the current page to access this.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.3.5 AAA
 
 **illustration idea**: [will think of later]
@@ -212,10 +200,10 @@ Provide contextual help on the same page or next to the input error in a way tha
 
 ## Timing
 
-### D16. Make time limits adjustable or not essential
+### D15. Make time limits adjustable or not essential
 > I only have 8 minutes to check out? This is so stressful.
 
-If you need to give users a time limit to complete a task, also provide them with a way to adjust or turn off the time limit. To be very accessible, don’t require time limits at all.
+If you give users a time limit to complete a task, provide them with a way to adjust or turn off the time limit. To be more accessible, don’t require time limits at all.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.2.1 A, 2.2.3 AAA
@@ -224,10 +212,10 @@ If you need to give users a time limit to complete a task, also provide them wit
 
 -
 
-### D17. Provide the option to turn off interruptions
+### D16. Provide the option to turn off interruptions
 > This article is great. Wait, what's that? Damn, where was I?
 
-Provide the option to turn off or postpone interruptions, such as an on/off switch in the user settings, except in the case of an emergency. To be very accessible, don't create interruptions at all.
+Provide the option to turn off or postpone interruptions (such as an on/off switch in the user settings) except in the case of an emergency. To be very accessible, don't create interruptions at all.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 2.2.4 AAA
