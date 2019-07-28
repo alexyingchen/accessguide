@@ -25,32 +25,33 @@ Separate structure from style so that assistive tech can understand the informat
 	<nav class=”main-nav” aria-labelledby=”main-nav-label”>
 		<h2 class = “visually-hidden” id=””main-nav-label>Main Navigation</h2>
 		<ul>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
+			<li><a href=”index.html”>Spiderman</a></li>
+			<li><a href=”index.html”>Antman</a></li>
+			<li><a href=”index.html”>Black Widow</a></li>
 		</ul>
 </nav>
 <nav class =”utility-nav” aria-labelledby=”utility-nav-label”>
 		<h2 class = “visually-hidden” id=”utility-nav-label”>Secondary Navigation</h2>
 		<ul>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
+			<li><a href=”about.html”>About</a></li>
+			<li><a href=”faq.html”>FAQ</a></li>
+			<li><a href=”contact.html”>Contact</a></li>
 		</ul>
 </nav>
 </header>
+
 <main>
 	<article>
-		<h1>Everything You Ever Wanted to Know about Dryer Lint</h1>
+		<h1>Spiderman</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam sapien, sollicitudin a mauris eget, ornare semper eros. Donec in velit sit amet est porta condimentum.</p>
 <p>Phasellus elit orci, feugiat eu pellentesque sit amet, dignissim id diam. Donec vitae lectus ipsum. Proin dui quam, pharetra quis vulputate sit amet, cursus id ante.</p>
 </article>
 	<aside>
-<h2>Fun Lint Facts</h2>
+<h2>Backstory</h2>
 <p>Aenean dignissim mauris nec enim cursus posuere. Sed porta ante nulla, et ornare tellus efficitur et. Proin molestie nisi massa. Nam maximus nec nisi non dictum.</p>
 </aside>
 </main>
-<footer>© Dryer Lint Fanclub 2019</footer>
+<footer>© Insect Superhero Fansite 2019</footer>
 ```
 
 ### P2. Make an intuitive sequence programmatically determined
