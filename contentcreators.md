@@ -5,7 +5,8 @@
 
 ## TO-DO LIST
 * Finalize illustrations (C1-C8)
-* Get industry expert feedback on descriptions (all)
+* Finish writing text examples (C9-16)
+* Get industry expert feedback (all)
 
 ***
 
@@ -41,7 +42,7 @@ Provide closed captions of video that’s pre-recorded (like movies) and live (l
 
 -
 
-### C4. Provide audio descriptions of videos
+### C4. Provide audio descriptions of video
 > Can you do me a favor and tell me what's happening in the movie?
 
 Provide [audio descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people blind or visually impaired.
@@ -51,7 +52,7 @@ Provide [audio descriptions](glossary link) of video that’s pre-recorded (like
 
 -
 
-### C5. Provide text descriptions of videos
+### C5. Provide text descriptions of video
 > I love appreciating cinema and documentaries with my assistant, who signs in my hand.
 
 Provide [text descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people who are blind and/or deaf. See also [media alternative](glossary link).
@@ -61,8 +62,8 @@ Provide [text descriptions](glossary link) of video that’s pre-recorded (like 
 
 -
 
-### C6. Provide sign language interpretation of videos
-> I wish they had an ASL interpreter, it would be a lot easier than reading captions.
+### C6. Provide sign language interpretation of video
+> I wish they had an ASL interpreter, reading lips doesn't always work.
 
 Provide sign language interpretation of the audio content in videos that's pre-recorded (like movies) by adding a person signing in the corner of the frame.
 
@@ -96,7 +97,7 @@ Edit the audio so there is little to no background noise in audio, or provide a 
 ## Writing
 
 ### C9. Provide a way to understand unusual words
-> 50% of this conversation is jargon. What does it all mean?!
+> Half of this conversation is jargon. What does it all mean?!
 
 Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to.
 
@@ -177,9 +178,32 @@ h1 Notes
 -
 
 ### C15. Write descriptive link text
-> Links that say 'Learn more' don't actually mean anything! I have to hunt for context clues to figure them out.
+> Links that say 'Learn more' don't actually mean anything!
 
-Write links that describe the purpose of the link in the text.
+Write links so that user's can understand the purpose of the link from the link text alone.
 
 **Disabilities**: intellectual, visual
-**WCAG number + conformance**: 2.4.9 AAA
+**WCAG number + conformance**: 2.4.4 A, 2.4.9 AAA
+
+(example from programming)
+
+#### Example 1
+```html
+<p>To learn more about accessibility, visit <a href=”https://www.w3.org/WAI/”>The Web Accessibility Initiative (WAI) website</a>.</p>
+```
+
+#### Example 2 using visually hidden text:
+```html
+<h1>Taco Consumption up 1000% in Chicago</h1>
+<p>As tacos become increasingly popular, studies have shown that Chicagoans ate 1000% more tacos in 2019 than they did in 2018. <a href=”welovetacos.com”>Read more <span class=”visually-hidden”>about taco consumption in Chicago</span></a></p>
+```
+
+-
+
+### C16. Write instructions that don’t rely on just one characteristic
+> These instructions are telling me to press the blue button to save. Which one's blue?
+
+If you are providing instructions for how to use something, use more than one characteristic to describe components (such as color, location, text, size, etc.) for people who are blind or visually impaired.
+
+**Disabilities**: visual
+**WCAG number + conformance**: 1.3.3 A
