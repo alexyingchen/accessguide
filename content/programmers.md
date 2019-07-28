@@ -149,14 +149,17 @@ Make the purpose of all UI components, icons, and regions programmatically deter
 ####Good example
 #####Text input has a label
 
+```html
 <label for=”dogsname”>What is your dog’s name?</label>
 <input type=”text” id=”dogsname” name=”dogsname”>
+```
 
 ####Bad example
 #####Text input has a placeholder attribute, but not a label
 
+```html
 <input type=”text” name=”dogsname” placeholder=”What is your dog’s name?”>
-
+```
 
 ### P5. Make the purpose of links programmatically determined
 > When my screen reader finds a link that only says "Learn more" that doesn't tell me where it's taking me.
