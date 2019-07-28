@@ -39,6 +39,8 @@ Separate structure from style so that assistive tech can understand the informat
 		</ul>
 </nav>
 
+
+
 </header>
 <main>
 	<article>
