@@ -38,9 +38,6 @@ Separate structure from style so that assistive tech can understand the informat
 			<li><a href=”index.html”>link</a></li>
 		</ul>
 </nav>
-
-
-
 </header>
 <main>
 	<article>
