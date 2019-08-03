@@ -279,7 +279,9 @@ makes status message programmatically focusable so that users can tab to it.
 ### P8. Make sure that assistive tech can parse content
 > Sometimes when there are syntax errors in the code, my screen reader can’t interpret it and it comes out like a jumbled mess.
 
-Ensure that, with content implemented using markup languages, elements have complete start and end tags, they are nested according to their specifications, they don’t contain duplicate attributes, and any IDs are unique.
+Ensure that, with markup languages, elements have complete start and end tags, they are nested according to their specifications, they don’t contain duplicate attributes, and any IDs are unique.
+
+Tips: Using a text editor with customizable settings to highlight markup makes it easy to write semantic code. Install an html linter to call out syntax issues. And don't forget to build in time for internal review and QA so you can catch errors before they impact users.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 4.1.1 A
