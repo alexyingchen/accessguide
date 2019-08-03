@@ -256,7 +256,13 @@ Source: [w3c](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accord
 ### P7. Make status messages programmatically determined
 > If my screen reader can’t read the status message, then I don’t know of the form I just submitted failed or succeeded.
 
-After the user submits information, provide text that has an error, warning, or success message that can be read by a screen reader.
+After the user submits information, provide text that has an error, warning, or success message that can be read by a screen reader. Using the attribute
+
+```html
+tabindex="-1"
+```
+
+makes status message programmatically focusable so that users can tab to it.
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 4.1.3 AA
