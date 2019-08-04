@@ -256,7 +256,13 @@ Source: [w3c](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accord
 ### P7. Make status messages programmatically determined
 > If my screen reader can’t read the status message, then I don’t know of the form I just submitted failed or succeeded.
 
-After the user submits information, provide text that has an error, warning, or success message that can be read by a screen reader.
+After the user submits information, provide text that has an error, warning, or success message that can be read by a screen reader. Using the attribute
+
+```html
+tabindex="-1"
+```
+
+makes status message programmatically focusable so that users can tab to it.
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 4.1.3 AA
@@ -273,7 +279,9 @@ After the user submits information, provide text that has an error, warning, or 
 ### P8. Make sure that assistive tech can parse content
 > Sometimes when there are syntax errors in the code, my screen reader can’t interpret it and it comes out like a jumbled mess.
 
-Ensure that, with content implemented using markup languages, elements have complete start and end tags, they are nested according to their specifications, they don’t contain duplicate attributes, and any IDs are unique.
+Ensure that, with markup languages, elements have complete start and end tags, they are nested according to their specifications, they don’t contain duplicate attributes, and any IDs are unique.
+
+Tips: Using a text editor with customizable settings to highlight markup makes it easy to write semantic code. Install an html linter to call out syntax issues. And don't forget to build in time for internal review and QA so you can catch errors before they impact users.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 4.1.1 A
