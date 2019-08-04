@@ -25,35 +25,33 @@ Separate structure from style so that assistive tech can understand the informat
 	<nav class=”main-nav” aria-labelledby=”main-nav-label”>
 		<h2 class = “visually-hidden” id=””main-nav-label>Main Navigation</h2>
 		<ul>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
+			<li><a href=”why-a11y.html”>Why Accessibility?</a></li>
+			<li><a href=”disability-advocacy.html”>Disability Advocacy</a></li>
+			<li><a href=”ada.html”>The ADA</a></li>
 		</ul>
 </nav>
 <nav class =”utility-nav” aria-labelledby=”utility-nav-label”>
 		<h2 class = “visually-hidden” id=”utility-nav-label”>Secondary Navigation</h2>
 		<ul>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
-			<li><a href=”index.html”>link</a></li>
+			<li><a href=”about.html”>About</a></li>
+			<li><a href=”faq.html”>FAQ</a></li>
+			<li><a href=”contact.html”>Contact</a></li>
 		</ul>
 </nav>
-
-
-
 </header>
+
 <main>
 	<article>
-		<h1>Everything You Ever Wanted to Know about Dryer Lint</h1>
+		<h1>Why Accessibility?</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam sapien, sollicitudin a mauris eget, ornare semper eros. Donec in velit sit amet est porta condimentum.</p>
-<p>Phasellus elit orci, feugiat eu pellentesque sit amet, dignissim id diam. Donec vitae lectus ipsum. Proin dui quam, pharetra quis vulputate sit amet, cursus id ante.</p>
-</article>
+		<p>Phasellus elit orci, feugiat eu pellentesque sit amet, dignissim id diam. Donec vitae lectus ipsum. Proin dui quam, pharetra quis vulputate sit amet, cursus id ante.</p>
+	</article>
 	<aside>
-<h2>Fun Lint Facts</h2>
-<p>Aenean dignissim mauris nec enim cursus posuere. Sed porta ante nulla, et ornare tellus efficitur et. Proin molestie nisi massa. Nam maximus nec nisi non dictum.</p>
-</aside>
+		<h2>User Impact</h2>
+		<p>Aenean dignissim mauris nec enim cursus posuere. Sed porta ante nulla, et ornare tellus efficitur et. Proin molestie nisi massa. Nam maximus nec nisi non dictum.</p>
+	</aside>
 </main>
-<footer>© Dryer Lint Fanclub 2019</footer>
+<footer>© Accessibility Is Awesome 2019</footer>
 ```
 
 ### P2. Make an intuitive sequence programmatically determined
@@ -64,57 +62,59 @@ Separate structure from style and write the content in a way that is logical and
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.2 A
 
-#### Good markup example
+#### Good example
+#####Order of elements makes logical and hierarchical sense.
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
 <button>sort search results</button>
 <ul class=”search-results”>
-		<li>
-<a href=””>
-	<img src=”burrito.jpg” alt=”burrito”>
-	<h2>Burrito</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”nachos.jpg” alt=”nachos”>
-	<h2>Nachos</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”tacos.jpg” alt=”tacos”>
-	<h2>Tacos</h2>
-</a>
-</li>
-	</ul>
+	<li>
+		<a href=”burrito.html”>
+			<img src=”burrito.jpg” alt=”burrito”>
+			<h2>Burrito</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”nachos.html”>
+			<img src=”nachos.jpg” alt=”nachos”>
+			<h2>Nachos</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”tacos.html”>
+			<img src=”tacos.jpg” alt=”tacos”>
+			<h2>Tacos</h2>
+		</a>
+	</li>
+</ul>
 ```
 
-#### Bad markup example
+#### Bad example
+#####The filter button is placed last in the DOM. Screen readers will therefore find the filter button only after having gone through all of the search results. 
 ```html
 <button>sort search results</button>
 <h1>Search Results</h1>
 <ul class=”search-results”>
-		<li>
-<a href=””>
-	<img src=”burrito.jpg” alt=”burrito”>
-	<h2>Burrito</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”nachos.jpg” alt=”nachos”>
-	<h2>Nachos</h2>
-</a>
-</li>
-<li>
-<a href=””>
-	<img src=”tacos.jpg” alt=”tacos”>
-	<h2>Tacos</h2>
-</a>
-</li>
-	</ul>
+	<li>
+		<a href=”burrito.html”>
+			<img src=”burrito.jpg” alt=”burrito”>
+			<h2>Burrito</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”nachos.html”>
+			<img src=”nachos.jpg” alt=”nachos”>
+			<h2>Nachos</h2>
+		</a>
+	</li>
+	<li>
+		<a href=”tacos.html”>
+			<img src=”tacos.jpg” alt=”tacos”>
+			<h2>Tacos</h2>
+		</a>
+	</li>
+</ul>
 <button>filter search results</button>
 ```
 
@@ -126,14 +126,14 @@ Ensure the default human language of each web page is programmatically determine
 **Disabilities**: language, physical, visual
 **WCAG number + conformance**: 3.1.1 A, 3.1.2 AA
 
-#### English language
+#### English language applied to all markup
 ```html
 <html lang="en">
 …
 </html>
 ```
 
-#### Hungarian language
+#### Hungarian language applied to a single word
 ```html
 <p>Hungarians refer to themselves as <span lang="hu">magyarok</span>.</p>
 ```
@@ -146,6 +146,21 @@ Make the purpose of all UI components, icons, and regions programmatically deter
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 1.3.5 A, 1.3.6 AAA
 
+####Good example
+#####Text input has a label
+
+```html
+<label for=”dogsname”>What is your dog’s name?</label>
+<input type=”text” id=”dogsname” name=”dogsname”>
+```
+
+####Bad example
+#####Text input has a placeholder attribute, but not a label
+
+```html
+<input type=”text” name=”dogsname” placeholder=”What is your dog’s name?”>
+```
+
 ### P5. Make the purpose of links programmatically determined
 > When my screen reader finds a link that only says "Learn more" that doesn't tell me where it's taking me.
 
@@ -154,12 +169,12 @@ Ensure the purpose of links can be determined from the link text alone, or from 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.4 A, 2.4.9 AAA
 
-#### Example 1
+#### Example 1 with unambiguous link text
 ```html
 <p>To learn more about accessibility, visit <a href=”https://www.w3.org/WAI/”>The Web Accessibility Initiative (WAI) website</a>.</p>
 ```
 
-#### Example 2 using visually hidden text:
+#### Example 2 with visually hidden text
 ```html
 <h1>Taco Consumption up 1000% in Chicago</h1>
 <p>As tacos become increasingly popular, studies have shown that Chicagoans ate 1000% more tacos in 2019 than they did in 2018. <a href=”welovetacos.com”>Read more <span class=”visually-hidden”>about taco consumption in Chicago</span></a></p>
@@ -168,7 +183,72 @@ Ensure the purpose of links can be determined from the link text alone, or from 
 ### P6. Make the name, role, and value of all UI components programmatically determined
 >  I need to use my screen reader to control my apps, so it needs to understand the state of all my settings so that I can change them if needed.
 
-Make the name, role, and value of all UI components - including form elements, links, and components generated by scripts - programmatically determined. Notify users of any changes made to these items.
+When creating custom interface components - including form elements, links, and components generated by scripts - that don't use standard markup, the name, role, and value must be programmatically determined. Notify users of any changes made to these items.
+
+```html
+<div id="accordionGroup" class="Accordion">
+  <h3>
+    <button aria-expanded="true"
+      class="Accordion-trigger"
+      aria-controls="sect1"
+      id="accordion1id">
+     	<span class="Accordion-title">
+      	Universal Design
+        <span class="Accordion-icon"></span>
+      </span>
+    </button>
+  </h3>
+  <div id="sect1"
+    role="region"
+    aria-labelledby="accordion1id"
+    class="Accordion-panel">
+	  <div>
+	    <p>Universal design is. . . </p>
+	  </div>
+ 	</div>
+  <h3>
+    <button aria-expanded="false"
+    	class="Accordion-trigger"
+    	aria-controls="sect2"
+      id="accordion2id">
+    	<span class="Accordion-title">
+      	Inclusive Design
+      	<span class="Accordion-icon"></span>
+    	</span>
+   	</button>
+  </h3>
+  <div id="sect2"
+    role="region"
+    aria-labelledby="accordion2id"
+    class="Accordion-panel"
+    hidden="">
+   <div>
+    <p>Inclusive design is. . .</p>
+   </div>
+  </div>
+  <h3>
+    <button aria-expanded="false"
+    	class="Accordion-trigger"
+      aria-controls="sect3"
+      id="accordion3id">
+      <span class="Accordion-title">
+        Accessibility
+       	<span class="Accordion-icon"></span>
+      </span>
+    </button>
+  </h3>
+  <div id="sect3"
+  	role="region"
+    aria-labelledby="accordion3id"
+    class="Accordion-panel"
+    hidden="">
+    <div>
+      <p>Accessibiliyt is. . .</p>
+    </div>
+  </div>
+</div>
+```
+Source: [w3c](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html)
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 4.1.2 A
