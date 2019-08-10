@@ -558,6 +558,19 @@ Provide a label or instructions for user input fields so that users know what ty
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.3.2 A
 
+##### HMTL
+```html
+<label for="hamilton">Please select your favorite song from the musical Hamilton.</label>
+<select id="hamilton" name="hamilton">
+  <option label="All Hamilton Songs" disabled selected>All Hamilton Songs</option>
+  <option label="Alexander Hamilton">Alexander Hamilton</option>
+  <option label="Aaron Burr, Sir">Aaron Burr, Sir</option>
+  <option label="My Shot">My Shot</option>
+  <option label="The Story of Tonight">The Story of Tonight</option>
+  <option label="The Schuyler Sisters">The Schuyler Sisters</option>
+</select>
+```
+
 ### P18. Include the label in the name
 > I use text-to-speech to control my apps, but sometimes it doesn’t understand me because the programmatic label is slightly different than what I’m seeing.
 
