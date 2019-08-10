@@ -69,7 +69,7 @@ Separate structure from style and write the content in a way that is logical and
 **WCAG number + conformance**: 1.3.2 A
 
 #### Good example
-##### Order of elements makes logical and hierarchical sense.
+Order of elements makes logical and hierarchical sense.
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
