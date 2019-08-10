@@ -5,32 +5,40 @@
 * Error recovery
 * Timing
 
+## TO-DO LIST
+* Create illustrations (all)
+* Get industry expert feedback (all)
+
 ***
 
 ## Style guide
 
 ### D1. Use high contrast
-> I can’t see very well, so I have trouble reading when the text is very low contrast.
+> This text is so light, I can barely see it.
 
-The contrast of text against background should be at least 4.5 to 1 (AA) or 7 to 1 (AAA). The contrast of UI components and diagrams against background should be at least 3 to 1 (AA). Large text and logotypes are the exception to this rule.
+Use high contrast so that users can easily read and see content. For text, the contrast should be at least 4.5:1 (AA) or 7:1 (AAA). For UI components like buttons, at least 3:1 (AA). Logotypes are the exception to this rule.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.3 AA, 1.4.6 AAA, 1.4.11 AA
 
+**illustration idea**: hand lettering design against background comparing different contrast ratios
+
 -
 
 ### D2. Don’t use color alone to convey information
-> I’m color blind so when I see things labeled only by color I have no idea what they mean.
+> Oh, these lines are different colors? I had no idea.
 
-Don’t use color alone to convey information to people, such as error messaging. Instead, combine color with text and/or imagery.
+Don’t use color alone to convey information (such as error alerts). Instead, combine color with text and/or imagery so that colorblind people can understand it.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.1 A
 
+**illustration idea**: data viz chart with only color to differentiate vs. same chart with color, patterns, and labels to differentiate
+
 -
 
 ### D3. Use text spacing best practices
-> I have a really strong eye prescription, and giant blocks of text sometimes just look like blobs to me.
+> I can barely read this, the letters are all over each other.
 
 Use these text spacing best practices for readability:
 * Line spacing is at least 1.5
@@ -38,173 +46,179 @@ Use these text spacing best practices for readability:
 * Tracking is at least 0.12
 * Word spacing is at least 0.16
 
-**Disabilities**: intellectual, learning, visual
+**Disabilities**: intellectual, visual
 **WCAG number + conformance**: 1.4.12 AA
+
+**illustration idea**: side by side comparison of good vs. bad example of text spacing
 
 -
 
 ### D4. Provide consistent UI components
-> It takes me a while to learn how to use new apps, so seeing the same kind of button really helps.
+> These buttons do the same thing, but they look completely different.
 
-For UI components that have the same functionality, such as a share button, make sure they are visually consistent and share the same text alternative.
+For UI components that have the same functionality, make sure they are visually consistent and are labeled the same way in code.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.2.4 AA
 
--
-
-### D5. Provide instructions that don’t rely on just one characteristic
-> If an app is telling me to click on the round button to continue, I can’t find it because my vision is bad.
-
-Make sure that people can access instructions that don’t rely on visual or auditory cues. Provide additional information other than shape or location to help them understand.
-
-**Disabilities**: visual
-**WCAG number + conformance**: 1.3.3 A
+**illustration idea**: same button with different background and contexts (button needs to be clear, background can be abstract)
 
 ***
 
 ## Interaction behavior
 
-### D6. Use the appropriate target size
-> I have a tremor in my hand that makes it hard to use my phone when the buttons are too small.
+### D5. Provide buttons with a large target size
+> This button is way too tiny for me.
 
-Make sure the target size is at least 44x44 CSS pixels.
+Make sure the [target size](glossary link) for buttons is at least 44x44 CSS pixels.
 
 The exceptions are:
 * If there’s an equivalent control that meets the size
-* The target is in a block of text
-* The user determined the size
-* A specific presentation that’s smaller is essential
+* If the target is in a block of text
+* If the user customized the size
+* If a smaller presentation is essential
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 2.5.5 AAA
 
+**illustration idea**: person holding phone with giant button on it, dimension showing that it's 44 px
+
 -
 
-### D7. Provide single-pointer alternatives to path-based gestures
-> I can’t move my fingers, so that makes it hard for me to do things like pinch to zoom into a map.
+### D6. Provide single-pointer alternatives to path-based gestures
+> My prosthetic hand doesn't move like that, how am I supposed to zoom in on this map?
 
-Wherever there is a path-based gesture (like pinch to zoom, drag and drop) provide another way to complete the operation that only requires a single pointer (like tap, double tap, and long press).
+If users need to make a [path-based gesture](glossary link) (like pinch to zoom, drag and drop), provide another way to complete the operation that only requires a [single-pointer gesture](glossary link) (like tap, double tap, and long press).
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 2.5.1 A
 
--
-
-### D8. Prevent accidents with single pointer gestures
-> I’ve got limited mobility and often touch the wrong thing on my phone, so I need a way to avoid accidents.
-
-Use at least one of these methods to prevent accidents:
-* Undo
-* The down-event doesn’t trigger anything
-* The function completes on the up-event
-* The up-event reverses the down-event
-
-**Disabilities**: intellectual, physical, visual
-**WCAG number + conformance**: 2.5.2 A
+**illustration idea**: hand making path-based gestures (pinch to zoom, drag and drop) vs hand making single tap
 
 -
 
-### D9. Provide UI alternatives to motion functions
-> My friend shakes her phone to undo typing but I have a tremor in my hands, so I’d rather just press the undo button.
+### D7. Provide conventional alternatives to motion functions
+> Don't make me shake my phone to undo, I'm literally shaking all the time.
 
-If a function is triggered by a device motion (like shaking or squeezing) or user motion (like waving to the camera), provide a more conventional alternative in the UI. Also, provide a way to turn off device or user motion activation so that they don’t accidentally trigger it.
+If a function is triggered by a [motion function](glossary link) (like shaking the device or waving at the camera), provide a more conventional alternative (like a button). Also, provide a way to turn off motion activation so that users don’t accidentally trigger it.
 
 **Disabilities**: physical
 **WCAG number + conformance**: 2.5.4 A
 
+**illustration idea**: hand shaking phone and accidentally undoing everything (this hand feels stressed out) vs. hand calmly pressing undo button
+
 -
 
-### D10. Only change the context by user request
-> I have low vision, and when a window randomly pops up without me doing anything I get very confused and not sure what I’m looking at.
+### D8. Only change the context by user request
+> Another newsletter pop-up! I hate it when that happens.
 
-Give users full control of the context and don’t change unless they request it. This includes automatically launching new windows, refreshing a content feed, and submitting forms.
+Don't change the context (such as automatically launching new windows or refreshing the content feed) unless it's by user request.
 
 **Disabilities**: intellectual, visual
-**WCAG number + conformance**: 3.2.5 AAA
+**WCAG number + conformance**: 3.2.2 A, 3.2.5 AAA
+
+**illustration idea**: newsletter pop-up on computer with person next to it looking distressed
 
 ***
 
 ## Navigation
 
-### D11. Create consistent navigation
-> I get really overwhelmed with new apps so it helps when I see the same menu in the same place.
+### D9. Use consistent navigation
+> Is this a different site? Oh, it's the same site but with a different menu. Weird.
 
-Make sure that the navigation is in the same location on all pages, and all the items in the navigation are always in the same order.
+Make sure that the navigation is presented in the same way on all pages, and that all the items are presented in the same order.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.2.3 AA
 
+**illustration idea**: same navigation with different pages, contexts, etc. (similar to consistent UI components)
+
 -
 
-### D12. Make sure that the user knows where they are
-> I get confused easily when I click on a bunch of links, I end up having no idea where I am.
+### D10. Make sure that the user knows where they are
+> I just clicked on a bunch of links, now I'm not sure how to get back to the homepage.
 
 Provide information about the user’s location within a set of pages, like a breadcrumbs trail or a site map.
 
 **Disabilities**: intellectual
 **WCAG number + conformance**: 2.4.8 AAA
 
+**illustration idea**: breadcrumbs trail of navigation showing where user is
+
 -
 
-### D13. Provide more than one way to locate a page
-> I have low vision so instead of browsing all the pages I like to just search for what I need.
+### D11. Provide more than one way to locate a page
+> Sometimes I like to browse, sometimes I know exactly what I'm looking for.
 
-Given that people may find it easier to navigate in different ways, provide multiple ways to locate a page such as a site map, table of contents, search function, and links to related pages.
+Because people prefer finding content in different ways, provide multiple ways to locate a page, such as a site map, table of contents, search function, and links to related pages.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.5 AA
+
+**illustration idea**: sample table of contents, search bar, and related page links
 
 ***
 
 ## Error recovery
 
-### D14. Identify and describe errors
-> I make a lot of typos so I’m never sure exactly what the problem is when it’s showing me an error message.
+### D12. Identify and describe errors to users
+> This form is telling me something's wrong, but what is it?
 
-If an input error is automatically detected, identify the error and describe it as specifically as possible.
+If the system detects an input error, identify the error and describe it to users as specifically as possible.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.3.1 A
 
+**illustration idea**: error message next to text field saying "password must be in the form of a haiku" (or something similarly ridiculous)
+
 -
 
-### D15. Suggest corrections to errors
-> Since I have a learning disability, it’s a lot easier for me to get suggestions rather than having to figure out how to fix errors.
+### D13. Suggest corrections to errors
+> I love it when it suggests the correct spelling to me; spelling is the bane of my existence.
 
-If possible, suggest corrections to input errors so that users can fix it.
+If the system detects an input error, suggest corrections so that users can easily fix it.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.3.3 AA
 
+**illustration idea**: search results that ay "We could not find anything for 'x' did you mean 'y'?"
+(maybe come up with clever joke for this)
+
 -
 
-### D16. Provide contextual help
-> My memory isn’t so good as I’m getting older, so getting help while I’m filling out a form is really nice.
+### D14. Provide contextual help
+> Damn it, the help link took me away from the page. Why can't I see both at the same time?
 
-Provide contextual help on the same page or next to the input error in a way that’s obvious and easy to find. Users shouldn’t have to navigate away to access this.
+Provide contextual help on the same page or next to content it's referencing in a way that’s obvious and easy to find. Users should not have to navigate away from the current page to access this.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.3.5 AAA
+
+**illustration idea**: [will think of later]
 
 ***
 
 ## Timing
 
-### D17. Time limits are adjustable or not essential
-> I’m slow when it comes to using a mouse, so time limits do nothing but stress me out.
+### D15. Make time limits adjustable or not essential
+> I only have 8 minutes to check out? This is so stressful.
 
-If you need to give users a time limit to complete a task, also provide them with a way to adjust or turn off the time limit. To be very accessible, don’t require time limits at all.
+If you give users a time limit to complete a task, provide them with a way to adjust or turn off the time limit. To be more accessible, don’t require time limits at all.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.2.1 A, 2.2.3 AAA
 
+**illustration idea**: (bad example) "You have 5 minutes to sign up for these concert tickets" with person looking stressed out (good example) no time limit, person can take their time
+
 -
 
-### D18. Provide the option to turn off interruptions
-> I have ADD, so when I get pop-ups I get really distracted from what I’m doing.
+### D16. Provide the option to turn off interruptions
+> This article is great. Wait, what's that? Damn, where was I?
 
-Provide the option to turn off or postpone interruptions, such as a switch in the user settings.
+Provide the option to turn off or postpone interruptions (such as an on/off switch in the user settings) except in the case of an emergency. To be very accessible, don't create interruptions at all.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 2.2.4 AAA
+
+**illustration idea**: (example of acceptable interruption) Pop up saying: Warning! Flood alert, seek shelter immediately
+(example of bad interruption) Pop up saying: Would you like to fill out a quick survey?
