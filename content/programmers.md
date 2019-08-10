@@ -68,12 +68,7 @@ Separate structure from style and write the content in a way that is logical and
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.2 A
 
-<<<<<<< HEAD
 #### Good example: Order of elements makes logical and hierarchical sense.
-=======
-#### Good example
-Order of elements makes logical and hierarchical sense.
->>>>>>> 34e35b093595775a520df806e567f893207a86fd
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
@@ -325,7 +320,38 @@ If the navigation sequence affects its meaning, ensure that users focus on compo
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.3 A
 
-Code snippet from P2 with focus order?
+#### The secondary rail content comes after the main body content in the DOM, but CSS grids is used to position the rail to the left of the body.  
+
+```html
+<main class="site-wrapper">
+  <article>
+    <h1>Accessibility is Awesome</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu fringilla urna. Suspendisse in maximus magna. Fusce tincidunt ligula nunc, sit amet dignissim ligula eleifend non. Curabitur sit amet leo vel nisl semper vestibulum. Donec ultrices sollicitudin massa id iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed consectetur tincidunt nibh a sodales. Cras quis ornare mauris. Duis neque neque, tincidunt et porttitor non, venenatis at elit. Proin in sem et nisl rutrum condimentum vel eget tellus.</p>
+  </article>
+  <aside>
+    <h2>Some Related Information</h2>
+    <p>Sed sit amet massa tellus. Vestibulum tincidunt urna lacinia ipsum pellentesque elementum.</p>
+  </aside>
+</main>
+```
+
+```css
+.site-wrapper {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "rail body";
+}
+
+article {
+  grid-area: body;
+}
+
+aside {
+  grid-area: rail;
+}
+```
 
 ### P12. Hover/focus behavior
 > I have low vision and I need to really focus when I read. When I move my mouse over the menu, it’s disorienting when stuff automatically pops up.
