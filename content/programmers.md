@@ -579,6 +579,19 @@ Ensure the programmatic label is also in the visual text label of an input field
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 2.5.3 A
 
+#### Search input uses visually hidden label that matches the placeholder text.
+
+##### HMTL
+```html
+<div role="search">
+  <label for="search" class="visually-hidden">Search</label>
+  <input type="search" name="search" id="search" placeholder="search" />
+  <button type="submit"><span class="visually-hidden">Perform Search</span><img src="magnifying-glass.svg" alt="#"/></button>
+</div>
+```
+
+Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-forms.html#kssref-forms-search)
+
 ***
 
 ## Presentation
