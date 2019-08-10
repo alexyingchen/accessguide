@@ -69,7 +69,7 @@ Separate structure from style and write the content in a way that is logical and
 **WCAG number + conformance**: 1.3.2 A
 
 #### Good example
-#####Order of elements makes logical and hierarchical sense.
+##### Order of elements makes logical and hierarchical sense.
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
@@ -97,7 +97,7 @@ Separate structure from style and write the content in a way that is logical and
 ```
 
 #### Bad example
-#####The filter button is placed last in the DOM. Screen readers will therefore find the filter button only after having gone through all of the search results. 
+##### The filter button is placed last in the DOM. Screen readers will therefore find the filter button only after having gone through all of the search results. 
 ```html
 <button>sort search results</button>
 <h1>Search Results</h1>
@@ -152,16 +152,16 @@ Make the purpose of all UI components, icons, and regions programmatically deter
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 1.3.5 A, 1.3.6 AAA
 
-####Good example
-#####Text input has a label
+#### Good example
+##### Text input has a label
 
 ```html
 <label for=”dogsname”>What is your dog’s name?</label>
 <input type=”text” id=”dogsname” name=”dogsname”>
 ```
 
-####Bad example
-#####Text input has a placeholder attribute, but not a label
+#### Bad example
+##### Text input has a placeholder attribute, but not a label
 
 ```html
 <input type=”text” name=”dogsname” placeholder=”What is your dog’s name?”>
