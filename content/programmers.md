@@ -68,7 +68,12 @@ Separate structure from style and write the content in a way that is logical and
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.2 A
 
+<<<<<<< HEAD
 #### Good example: Order of elements makes logical and hierarchical sense.
+=======
+#### Good example
+Order of elements makes logical and hierarchical sense.
+>>>>>>> 34e35b093595775a520df806e567f893207a86fd
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
