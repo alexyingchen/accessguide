@@ -463,13 +463,78 @@ Needs illustration
 > I have a tremor in my hands that causes me to accidentally click around, and I don’t want this to gravely affect my work.
 
 Make sure at least one of the following is true when operating a single pointer:
-* The down-event doesn’t execute the function
+* The down-event doesn’t execute the function\*
 * The up-event executes the function, and undo is available after completion
 * The up-event reverses any outcome of the preceding down-event
-* It’s essential that the down-event executes the function
+
+\*There may be cases in which there is no other option but for the down-event to execute the function. 
 
 **Disabilities**: intellectual, physical
 **WCAG number + conformance**: 2.5.2 A
+
+#### Good Example: Up event triggers deletion of photos, with option to recover
+
+##### HMTL
+```html
+<button onmouseup="mouseUp()">
+  Delete All Your Photos
+</button>
+
+<p class="up-event-delete-message">All your photos have been deleted! <button>Recover Photos</button></p>
+```
+
+##### CSS
+```css
+.up-event-delete-message {
+  display: none;
+}
+
+```
+
+##### Javascript
+```javascript
+function mouseUp() {
+  var x = document.getElementsByClassName("up-event-delete-message")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+```
+
+#### Bad Example: Down event triggers deletion of photos, with no option to recover
+
+##### HMTL
+```html
+<button onmousedown="mouseDown()">
+  Delete All Your Photos
+</button>
+
+<p class="down-event-delete-message">All your photos were deleted! Hope it wasn't an accident!</p>
+```
+
+##### CSS
+```css
+.down-event-delete-message {
+  display: none;
+}
+
+```
+
+##### Javascript
+```javascript
+function mouseDown() {
+  var x = document.getElementsByClassName("down-event-delete-message")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+```
+
+[pointer example on codepen](https://codepen.io/michellanneli/pen/xvyXGL)
 
 Needs code snippet
 
