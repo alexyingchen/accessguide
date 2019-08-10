@@ -320,17 +320,39 @@ If the navigation sequence affects its meaning, ensure that users focus on compo
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.3 A
 
-#### The secondary rail content comes after the main body content in the DOM, but CSS grids is used to position the rail to the left of the body.  
+#### Content appears in order of relevance in the DOM
+The article element contains the primary content, and the aside contains supplementary content. In the DOM, the article appears first, followed by the aside. This allows the user to tab through the content in a logical order. CSS is used to position the aside to the left of the article.
+
+[view on codepen](https://codepen.io/michellanneli/pen/WVaOVJ?editors=1100)
 
 ```html
 <main class="site-wrapper">
   <article>
-    <h1>Accessibility is Awesome</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu fringilla urna. Suspendisse in maximus magna. Fusce tincidunt ligula nunc, sit amet dignissim ligula eleifend non. Curabitur sit amet leo vel nisl semper vestibulum. Donec ultrices sollicitudin massa id iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed consectetur tincidunt nibh a sodales. Cras quis ornare mauris. Duis neque neque, tincidunt et porttitor non, venenatis at elit. Proin in sem et nisl rutrum condimentum vel eget tellus.</p>
+    <h1>What is accessibility?</h1>
+    <p>Accessibility is the practice of creating products, 
+experiences, and environments that meet the needs of individuals with disabilities. It encompasses:</p>
+    <h2>Phyiscal Disabilities</h2>
+    <ul>
+      <li>low vision</li>
+      <li>blindness</li>
+      <li>deafness</li>
+    </ul>
+    <h2>Cognitive Disabilities</h2>
+    <ul>
+      <li>short attention span</li>
+      <li>vertigo</li>
+      <li>dyslexia</li>
+    </ul>
+    <h2>Situational or Temporary Disabilities</h2>
+    <ul>
+      <li>having broken arm</li>
+      <li>being in a loud space</li>
+      <li>having a poor internet connection</li>
+    </ul>
   </article>
   <aside>
-    <h2>Some Related Information</h2>
-    <p>Sed sit amet massa tellus. Vestibulum tincidunt urna lacinia ipsum pellentesque elementum.</p>
+    <h2>Follow-up Questions</h2>
+    <p>Now that you've learned why accessibility is important, what are some ways you can start to put it to practice in your life?</p>
   </aside>
 </main>
 ```
