@@ -323,8 +323,6 @@ If the navigation sequence affects its meaning, ensure that users focus on compo
 #### Content appears in order of relevance in the DOM
 The article element contains the primary content, and the aside contains supplementary content. In the DOM, the article appears first, followed by the aside. This allows the user to tab through the content in a logical order. CSS is used to position the aside to the left of the article.
 
-[view on codepen](https://codepen.io/michellanneli/pen/WVaOVJ?editors=1100)
-
 ```html
 <main class="site-wrapper">
   <article>
@@ -374,6 +372,8 @@ aside {
   grid-area: rail;
 }
 ```
+
+[focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ?editors=1100)
 
 ### P12. Hover/focus behavior
 > I have low vision and I need to really focus when I read. When I move my mouse over the menu, it’s disorienting when stuff automatically pops up.
