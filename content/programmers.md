@@ -388,7 +388,7 @@ aside {
 }
 ```
 
-[focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ?editors=1100)
+[focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ)
 
 ### P12. Hover/focus behavior
 > I have low vision and I need to really focus when I read. When I move my mouse over the menu, it’s disorienting when stuff automatically pops up.
@@ -436,6 +436,8 @@ Avoid making content appear and disappear on focus or hover, since this is disor
  display: block;
 }
 ```
+
+[hover behavior example on codepen](https://codepen.io/michellanneli/pen/rXqzox)
 
 ### P13. Ensure that focus does not change context
 > I have unsteady hands that tend to make my mouse move around, and it’s annoying when this accidentally pops something up and I can’t figure out how to get rid of it.
