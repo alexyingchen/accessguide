@@ -538,8 +538,8 @@ Prevent errors by providing at least one of these:
 
 Use at least one of these methods to prevent accidents:
 * Undo
-* The [down-event](glossarylink) doesn’t trigger anything
-* The function completes on the [up-event](glossarylink)
+* The [down-event](glossary link) doesn’t trigger anything
+* The function completes on the [up-event](glossary link)
 * The up-event reverses the down-event
 
 **Disabilities**: intellectual, physical, visual
