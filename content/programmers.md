@@ -473,6 +473,7 @@ User agents must provide a mechanism for the user to resize text up to 200%. Exa
 ### P21. Use text presentation best practices
 > I have dyslexia, and when I’m reading I prefer that text looks a certain way so that I can understand it.
 
+For large blocks of text:
 * Provide a way to select foreground and background colors
 * Set maximum width to 80 characters
 * Align the text, don’t justify
@@ -485,6 +486,30 @@ User agents must provide a mechanism for the user to resize text up to 200%. Exa
 > I have trouble reading so I zoom in a lot to make the text bigger, but when this makes the content scroll in different directions it gets disorienting.
 
 Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
+
+#### CSS for a container that is constrained to the full width of the viewport
+```css
+.container {
+  max-width: 100%;
+}
+```
+```css
+.container {
+  max-width: 100vw;
+}
+```
+
+#### CSS for a container with decorative elements that will extend beyond the viewport
+```css
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+```
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.4.10 AA
