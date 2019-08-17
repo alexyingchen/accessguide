@@ -465,7 +465,7 @@ Source for svg application: [Deque](https://www.deque.com/blog/creating-accessib
 ### P20. Provide a way to resize text up to 200%
 >Because I’m very near-sighted, I have to zoom in the text a lot in order to read. Sometimes zooming in causes navigation and other elements that I need to disappear.
 
-(add description)
+User agents must provide a mechanism for the user to resize text up to 200%. Examples of this include: controls to zoom in and out and the ability to specify a preferred text size.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.4 AA
