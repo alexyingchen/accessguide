@@ -444,7 +444,23 @@ Convey information through text instead of images of text, except for when the u
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.5 AA, 1.4.9 AAA
 
-Needs code snippet of CSS styling
+
+#### Using the alt attribute for an image element
+```html
+<a href="index.html"><img src="logo.png" alt="Access Guide"></a>
+```
+
+#### Using aria role attribute and the the title attribute for an svg
+```html
+<a href="index.html">
+  <svg role="img" aria-labelledby="title">
+    <title id="title">Access Guide</title>
+    . . . 
+  </svg>
+</a>
+```
+
+Source for svg application: [Deque](https://www.deque.com/blog/creating-accessible-svgs/)
 
 ### P20. Provide a way to resize text up to 200%
 >Because I’m very near-sighted, I have to zoom in the text a lot in order to read. Sometimes zooming in causes navigation and other elements that I need to disappear.
