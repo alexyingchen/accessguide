@@ -539,6 +539,33 @@ If any audio plays automatically for more than 3 seconds, provide a way to pause
 
 Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
 
+#### HTML skip link
+```html
+<a href="#main" class="visible-on-focus">Skip to main</a>
+```
+
+#### CSS for skip link
+```css
+.visible-on-focus {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.visible-on-focus:active,
+.visible-on-focus:focus {
+  position: relative;
+  width: auto;
+  height: auto;
+  left: auto;
+}
+```
+
+Source: [WebAIM](https://webaim.org/techniques/css/invisiblecontent/)
+
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.1 A
 
