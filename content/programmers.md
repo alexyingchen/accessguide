@@ -26,6 +26,7 @@ Separate structure from style. Use semantic elements (h1, h2, p, a, blockquote) 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.1 A
 
+##### HMTL
 ```html
 <header>
 	<nav class=”main-nav” aria-labelledby=”main-nav-label”>
@@ -68,8 +69,10 @@ Separate structure from style and write the content in a way that is logical and
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.2 A
 
-#### Good example
-##### Order of elements makes logical and hierarchical sense.
+#### Good example: Order of elements makes logical and hierarchical sense.
+
+##### HMTL
+
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
@@ -96,8 +99,10 @@ Separate structure from style and write the content in a way that is logical and
 </ul>
 ```
 
-#### Bad example
-##### The filter button is placed last in the DOM. Screen readers will therefore find the filter button only after having gone through all of the search results. 
+#### Bad example: The filter button is placed last in the DOM. 
+Screen readers will find the filter button only after having gone through all of the search results. 
+
+##### HMTL
 ```html
 <button>sort search results</button>
 <h1>Search Results</h1>
@@ -133,6 +138,8 @@ Ensure the default human language of each web page is programmatically determine
 **WCAG number + conformance**: 3.1.1 A, 3.1.2 AA
 
 #### English language applied to all markup
+
+##### HMTL
 ```html
 <html lang="en">
 …
@@ -140,6 +147,8 @@ Ensure the default human language of each web page is programmatically determine
 ```
 
 #### Hungarian language applied to a single word
+
+##### HMTL
 ```html
 <p>Hungarians refer to themselves as <span lang="hu">magyarok</span>.</p>
 ```
@@ -152,17 +161,17 @@ Make the purpose of all UI components, icons, and regions programmatically deter
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 1.3.5 A, 1.3.6 AAA
 
-####Good example
-#####Text input has a label
+#### Good example: Text input has a label
 
+##### HMTL
 ```html
 <label for=”dogsname”>What is your dog’s name?</label>
 <input type=”text” id=”dogsname” name=”dogsname”>
 ```
 
-####Bad example
-#####Text input has a placeholder attribute, but not a label
+#### Bad example: Text input has a placeholder attribute, but not a label
 
+##### HMTL
 ```html
 <input type=”text” name=”dogsname” placeholder=”What is your dog’s name?”>
 ```
@@ -174,6 +183,8 @@ When creating custom interface components - including form elements, links, and 
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 4.1.2 A
+
+##### HMTL
 
 ```html
 <div id="accordionGroup" class="Accordion">
@@ -254,6 +265,7 @@ makes status message programmatically focusable so that users can tab to it.
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 4.1.3 AA
 
+##### HMTL
 ```html
 <div class=”error” tabindex=”-1” aria-labelledby=”error-title”>
 	<h1 id=”error-title”>Something went wrong!</h1>
@@ -321,7 +333,62 @@ If the navigation sequence affects its meaning, ensure that users focus on compo
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.3 A
 
-Code snippet from P2 with focus order?
+#### Content appears in order of relevance in the DOM
+The article element contains the primary content, and the aside contains supplementary content. In the DOM, the article appears first, followed by the aside. This allows the user to tab through the content in a logical order. CSS is used to position the aside to the left of the article.
+
+##### HMTL
+```html
+<main class="site-wrapper">
+  <article>
+    <h1>What is accessibility?</h1>
+    <p>Accessibility is the practice of creating products, 
+experiences, and environments that meet the needs of individuals with disabilities. It encompasses:</p>
+    <h2>Phyiscal Disabilities</h2>
+    <ul>
+      <li>low vision</li>
+      <li>blindness</li>
+      <li>deafness</li>
+    </ul>
+    <h2>Cognitive Disabilities</h2>
+    <ul>
+      <li>short attention span</li>
+      <li>vertigo</li>
+      <li>dyslexia</li>
+    </ul>
+    <h2>Situational or Temporary Disabilities</h2>
+    <ul>
+      <li>having broken arm</li>
+      <li>being in a loud space</li>
+      <li>having a poor internet connection</li>
+    </ul>
+  </article>
+  <aside>
+    <h2>Follow-up Questions</h2>
+    <p>Now that you've learned why accessibility is important, what are some ways you can start to put it to practice in your life?</p>
+  </aside>
+</main>
+```
+
+##### CSS
+```css
+.site-wrapper {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "rail body";
+}
+
+article {
+  grid-area: body;
+}
+
+aside {
+  grid-area: rail;
+}
+```
+
+[focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ)
 
 ### P12. Hover/focus behavior
 > [write user quote]
@@ -334,7 +401,9 @@ Avoid making content appear and disappear on focus or hover, since this is disor
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.4.13 AA
 
-#### HMTL
+#### When the user hovers over the button, content appears below, and the user can mouse over the content.
+
+##### HMTL
 ```html
 <div class="dropdown">
   <button class="dropdown__button">Dropdown</button>
@@ -346,27 +415,29 @@ Avoid making content appear and disappear on focus or hover, since this is disor
 </div>
 ```
 
-#### CSS
+##### CSS
 ```css
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-content {
+.dropdown__content {
   display: none;
   position: absolute;
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown__content a {
    display: block;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown__content {
  display: block;
 }
 ```
+
+[hover behavior example on codepen](https://codepen.io/michellanneli/pen/rXqzox)
 
 ### P13. Ensure that focus does not change context
 > I'm just trying to figure out the navigation, suddenly all the colors and pages are changing on me.
@@ -392,13 +463,78 @@ Needs illustration
 > [write user quote]
 
 Make sure at least one of the following is true when operating a single pointer:
-* The down-event doesn’t execute the function
+* The down-event doesn’t execute the function\*
 * The up-event executes the function, and undo is available after completion
 * The up-event reverses any outcome of the preceding down-event
-* It’s essential that the down-event executes the function
+
+\*There may be cases in which there is no other option but for the down-event to execute the function. 
 
 **Disabilities**: intellectual, physical
 **WCAG number + conformance**: 2.5.2 A
+
+#### Good Example: Up event triggers deletion of photos, with option to recover
+
+##### HMTL
+```html
+<button onmouseup="mouseUp()">
+  Delete All Your Photos
+</button>
+
+<p class="up-event-delete-message">All your photos have been deleted! <button>Recover Photos</button></p>
+```
+
+##### CSS
+```css
+.up-event-delete-message {
+  display: none;
+}
+
+```
+
+##### Javascript
+```javascript
+function mouseUp() {
+  var x = document.getElementsByClassName("up-event-delete-message")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+```
+
+#### Bad Example: Down event triggers deletion of photos, with no option to recover
+
+##### HMTL
+```html
+<button onmousedown="mouseDown()">
+  Delete All Your Photos
+</button>
+
+<p class="down-event-delete-message">All your photos were deleted! Hope it wasn't an accident!</p>
+```
+
+##### CSS
+```css
+.down-event-delete-message {
+  display: none;
+}
+
+```
+
+##### Javascript
+```javascript
+function mouseDown() {
+  var x = document.getElementsByClassName("down-event-delete-message")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+```
+
+[pointer example on codepen](https://codepen.io/michellanneli/pen/xvyXGL)
 
 Needs code snippet
 
@@ -422,6 +558,19 @@ Provide a label or instructions for user input fields so that users know what ty
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.3.2 A
 
+##### HMTL
+```html
+<label for="hamilton">Please select your favorite song from the musical Hamilton.</label>
+<select id="hamilton" name="hamilton">
+  <option label="All Hamilton Songs" disabled selected>All Hamilton Songs</option>
+  <option label="Alexander Hamilton">Alexander Hamilton</option>
+  <option label="Aaron Burr, Sir">Aaron Burr, Sir</option>
+  <option label="My Shot">My Shot</option>
+  <option label="The Story of Tonight">The Story of Tonight</option>
+  <option label="The Schuyler Sisters">The Schuyler Sisters</option>
+</select>
+```
+
 ### P18. Include the label in the name
 > [write user quote]
 
@@ -429,6 +578,19 @@ Ensure the programmatic label is also in the visual text label of an input field
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 2.5.3 A
+
+#### Search input uses visually hidden label that matches the placeholder text.
+
+##### HMTL
+```html
+<div role="search">
+  <label for="search" class="visually-hidden">Search</label>
+  <input type="search" name="search" id="search" placeholder="search" />
+  <button type="submit"><span class="visually-hidden">Perform Search</span><img src="magnifying-glass.svg" alt="#"/></button>
+</div>
+```
+
+Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-forms.html#kssref-forms-search)
 
 ***
 
