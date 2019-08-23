@@ -1,5 +1,5 @@
 # Programmer's Guide
-* Programmatically determined
+* Defined in markup
 * Keyboard functionality
 * Focus behavior
 * Labels
@@ -16,16 +16,17 @@
 
 ***
 
-## Programmatically determined
+## Defined in markup
 
-### P1. Make info, structure, & relationships programmatically determined
-> Since I’m blind, I can’t tell what the titles and sections are in an article just by looking at them. My screen reader figures that out for me.
+### P1. Make info, structure, & relationships defined in markup
+> Where are all the titles? You're telling me that my screen reader has to read through all this?
 
 Separate structure from style. Use semantic elements (h1, h2, p, a, blockquote) to convey structure instead of relying only on visual style so that assistive tech can understand hierarchy.
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.1 A
 
+##### HMTL
 ```html
 <header>
 	<nav class=”main-nav” aria-labelledby=”main-nav-label”>
@@ -60,16 +61,18 @@ Separate structure from style. Use semantic elements (h1, h2, p, a, blockquote) 
 <footer>© Accessibility Is Awesome 2019</footer>
 ```
 
-### P2. Make an intuitive sequence programmatically determined
-> I use my screen reader for everything, so when things are ordered in an illogical way I have trouble completing tasks.
+### P2. Make an intuitive sequence defined in markup
+> My screen reader went from the primary navigation straight to the footer and then the secondary navigation. Makes no sense at all.
 
 Separate structure from style and write the content in a way that is logical and intuitive. Make sure that the visual order matches the DOM order (document object model).
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.3.2 A
 
-#### Good example
-#####Order of elements makes logical and hierarchical sense.
+#### Good example: Order of elements makes logical and hierarchical sense.
+
+##### HMTL
+
 ```html
 <h1>Search Results</h1>
 <button>filter search results</button>
@@ -96,8 +99,10 @@ Separate structure from style and write the content in a way that is logical and
 </ul>
 ```
 
-#### Bad example
-#####The filter button is placed last in the DOM. Screen readers will therefore find the filter button only after having gone through all of the search results. 
+#### Bad example: The filter button is placed last in the DOM. 
+Screen readers will find the filter button only after having gone through all of the search results. 
+
+##### HMTL
 ```html
 <button>sort search results</button>
 <h1>Search Results</h1>
@@ -124,8 +129,8 @@ Separate structure from style and write the content in a way that is logical and
 <button>filter search results</button>
 ```
 
-### P3. Make the human language programmatically determined
-> If my screen reader doesn’t know what language the website is written in, it has a hard time pronouncing everything.
+### P3. Make the human language defined in markup.
+> I like to read articles in both English and Portuguese, but if the language isn't defined then my screen reader can't do anything.
 
 Ensure the default human language of each web page is programmatically determined. To be more advanced, ensure the language of each passage or phrase in the content is programmatically determined except for proper names, technical terms, vernacular language, or words of indeterminate language.
 
@@ -133,6 +138,8 @@ Ensure the default human language of each web page is programmatically determine
 **WCAG number + conformance**: 3.1.1 A, 3.1.2 AA
 
 #### English language applied to all markup
+
+##### HMTL
 ```html
 <html lang="en">
 …
@@ -140,37 +147,44 @@ Ensure the default human language of each web page is programmatically determine
 ```
 
 #### Hungarian language applied to a single word
+
+##### HMTL
 ```html
 <p>Hungarians refer to themselves as <span lang="hu">magyarok</span>.</p>
 ```
 
-### P4. Make the purpose of UI components programmatically determined
-> When my screen reader can’t detect the purpose of an input field, I don’t know what information to enter.
+### P4. Make the purpose of UI components defined in markup
+> I can't sign up for soccer because this form won't tell me what it wants from me.
 
 Make the purpose of all UI components, icons, and regions programmatically determined. Provide each input field with a label (text inputs, radio buttons, checkboxes, and selection menus). The exceptions are buttons (since they are self-labeling) and hidden inputs (since they are unavailable).
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 1.3.5 A, 1.3.6 AAA
 
-####Good example
-#####Text input has a label
+#### Good example: Text input has a label
 
+##### HMTL
 ```html
 <label for=”dogsname”>What is your dog’s name?</label>
 <input type=”text” id=”dogsname” name=”dogsname”>
 ```
 
-####Bad example
-#####Text input has a placeholder attribute, but not a label
+#### Bad example: Text input has a placeholder attribute, but not a label
 
+##### HMTL
 ```html
 <input type=”text” name=”dogsname” placeholder=”What is your dog’s name?”>
 ```
 
-### P5. Make the name, role, and value of all UI components programmatically determined
+### P5. Make the name, role, and value of all UI components defined in markup
 >  I need to use my screen reader to control my apps, so it needs to understand the state of all my settings so that I can change them if needed.
 
 When creating custom interface components - including form elements, links, and components generated by scripts - that don't use standard markup, the name, role, and value must be programmatically determined. Notify users of any changes made to these items.
+
+**Disabilities**: physical, visual
+**WCAG number + conformance**: 4.1.2 A
+
+##### HMTL
 
 ```html
 <div id="accordionGroup" class="Accordion">
@@ -237,13 +251,8 @@ When creating custom interface components - including form elements, links, and 
 ```
 Source: [w3c](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html)
 
-**Disabilities**: physical, visual
-**WCAG number + conformance**: 4.1.2 A
-
-Needs code snippet
-
-### P6. Make status messages programmatically determined
-> If my screen reader can’t read the status message, then I don’t know of the form I just submitted failed or succeeded.
+### P6. Make status messages defined in markup
+> Did I just get a notification? My screen reader didn't get it.
 
 After the user submits information, provide text that has an error, warning, or success message that can be read by a screen reader. Using the attribute
 
@@ -256,17 +265,18 @@ makes status message programmatically focusable so that users can tab to it.
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 4.1.3 AA
 
+##### HMTL
 ```html
 <div class=”error” tabindex=”-1” aria-labelledby=”error-title”>
 	<h1 id=”error-title”>Something went wrong!</h1>
 	<ul>
-		<li><a href=”#password”>Your password must contain an uppercase letter, a number, a haiku, a gang sign, a hieroglyph, and the blood of a virgin.</a></li>
+		<li><a href=”#password”>Your password must contain an uppercase letter, a number, a haiku, a hieroglyph, and the blood of a virgin.</a></li>
 	</ul>
 </div>
 ```
 
 ### P7. Make sure that assistive tech can parse content
-> Sometimes when there are syntax errors in the code, my screen reader can’t interpret it and it comes out like a jumbled mess.
+> Yep, this code is messy.
 
 Ensure that, with markup languages, elements have complete start and end tags, they are nested according to their specifications, they don’t contain duplicate attributes, and any IDs are unique.
 
@@ -282,7 +292,7 @@ Needs illustration
 ## Keyboard functionality
 
 ### P8. Make all functionality available through the keyboard
-> My hand tremor makes it difficult to use a mouse, so I prefer using the keyboard instead.
+> I love using my keyboard; computer mice were not made for these hands.
 
 Ensure all the functionality is operable through a keyboard interface without requiring specific timing for keystrokes (except where input is defined by the user’s movement and not just the endpoints). To be more advanced, there are no exceptions.
 
@@ -292,7 +302,7 @@ Ensure all the functionality is operable through a keyboard interface without re
 Needs illustration
 
 ### P9. Make sure there are no keyboard traps
-> Since I’m blind, I rely on my keyboard and screen reader to use the web. Sometimes I fall into a keyboard trap and I can’t get out because I don’t use a mouse.
+> Help, I'm trapped inside this date picker and I can't get out.
 
 If the user can focus on a component using a keyboard interface, ensure they can move the focus away by only using a keyboard interface. If this requires nonstandard exit methods, advise the user how to do so.
 
@@ -302,7 +312,7 @@ If the user can focus on a component using a keyboard interface, ensure they can
 Needs illustration
 
 ### P10. Provide a way to turn off character key shortcuts
-> Sometimes I accidentally hit keys, and then I end up triggering things that I never meant to through shortcuts.
+> I was trying to type, and then I started triggering all these keyboard shortcuts.
 
 If a keyboard shortcut uses only letter, punctuation, number, or symbol characters, then ensure that it is possible to turn it off, remap the shortcut to use a non-printable character (like ctrl or alt), or make the shortcut active only when focus is on a specific component.
 
@@ -316,17 +326,72 @@ Needs illustration
 ## Focus behavior
 
 ### P11. Preserve focus order
-> I use my keyboard to navigate, and when the focus moves all out of order it’s very unexpected and throws me off.
+> [write user quote]
 
 If the navigation sequence affects its meaning, ensure that users focus on components in an order that preserves that meaning.
 
 **Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.4.3 A
 
-Code snippet from P2 with focus order?
+#### Content appears in order of relevance in the DOM
+The article element contains the primary content, and the aside contains supplementary content. In the DOM, the article appears first, followed by the aside. This allows the user to tab through the content in a logical order. CSS is used to position the aside to the left of the article.
+
+##### HMTL
+```html
+<main class="site-wrapper">
+  <article>
+    <h1>What is accessibility?</h1>
+    <p>Accessibility is the practice of creating products, 
+experiences, and environments that meet the needs of individuals with disabilities. It encompasses:</p>
+    <h2>Phyiscal Disabilities</h2>
+    <ul>
+      <li>low vision</li>
+      <li>blindness</li>
+      <li>deafness</li>
+    </ul>
+    <h2>Cognitive Disabilities</h2>
+    <ul>
+      <li>short attention span</li>
+      <li>vertigo</li>
+      <li>dyslexia</li>
+    </ul>
+    <h2>Situational or Temporary Disabilities</h2>
+    <ul>
+      <li>having broken arm</li>
+      <li>being in a loud space</li>
+      <li>having a poor internet connection</li>
+    </ul>
+  </article>
+  <aside>
+    <h2>Follow-up Questions</h2>
+    <p>Now that you've learned why accessibility is important, what are some ways you can start to put it to practice in your life?</p>
+  </aside>
+</main>
+```
+
+##### CSS
+```css
+.site-wrapper {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "rail body";
+}
+
+article {
+  grid-area: body;
+}
+
+aside {
+  grid-area: rail;
+}
+```
+
+[focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ)
 
 ### P12. Hover/focus behavior
-> I have low vision and I need to really focus when I read. When I move my mouse over the menu, it’s disorienting when stuff automatically pops up.
+> [write user quote]
 
 Avoid making content appear and disappear on focus or hover, since this is disorienting. If hover or focus does make additional content visible and then hidden, the following are true:
 * Dismissible: provide a way to dismiss the additional content without moving hover or focus
@@ -336,7 +401,9 @@ Avoid making content appear and disappear on focus or hover, since this is disor
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.4.13 AA
 
-#### HMTL
+#### When the user hovers over the button, content appears below, and the user can mouse over the content.
+
+##### HMTL
 ```html
 <div class="dropdown">
   <button class="dropdown__button">Dropdown</button>
@@ -348,30 +415,32 @@ Avoid making content appear and disappear on focus or hover, since this is disor
 </div>
 ```
 
-#### CSS
+##### CSS
 ```css
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-content {
+.dropdown__content {
   display: none;
   position: absolute;
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown__content a {
    display: block;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown__content {
  display: block;
 }
 ```
 
+[hover behavior example on codepen](https://codepen.io/michellanneli/pen/rXqzox)
+
 ### P13. Ensure that focus does not change context
-> I have unsteady hands that tend to make my mouse move around, and it’s annoying when this accidentally pops something up and I can’t figure out how to get rid of it.
+> I'm just trying to figure out the navigation, suddenly all the colors and pages are changing on me.
 
 Ensure that focus on a component does not trigger a change of context, such as launching a new window or changing focus to another component.
 
@@ -381,7 +450,7 @@ Ensure that focus on a component does not trigger a change of context, such as l
 Needs illustration
 
 ### P14. Ensure that focus indicator is visible
-> Since I have short term memory loss, I often forget what I’m looking at. It’s helpful to see a visual reminder of what page I’m on when I forget.
+> The focus indicator just disappeared. So where am I exactly?
 
 Ensure that the keyboard focus indicator is visible so that users can visually see what component they are focusing on.
 
@@ -391,21 +460,86 @@ Ensure that the keyboard focus indicator is visible so that users can visually s
 Needs illustration
 
 ### P15. Prevent accidental pointer input
-> I have a tremor in my hands that causes me to accidentally click around, and I don’t want this to gravely affect my work.
+> [write user quote]
 
 Make sure at least one of the following is true when operating a single pointer:
-* The down-event doesn’t execute the function
+* The down-event doesn’t execute the function\*
 * The up-event executes the function, and undo is available after completion
 * The up-event reverses any outcome of the preceding down-event
-* It’s essential that the down-event executes the function
+
+\*There may be cases in which there is no other option but for the down-event to execute the function. 
 
 **Disabilities**: intellectual, physical
 **WCAG number + conformance**: 2.5.2 A
 
+#### Good Example: Up event triggers deletion of photos, with option to recover
+
+##### HMTL
+```html
+<button onmouseup="mouseUp()">
+  Delete All Your Photos
+</button>
+
+<p class="up-event-delete-message">All your photos have been deleted! <button>Recover Photos</button></p>
+```
+
+##### CSS
+```css
+.up-event-delete-message {
+  display: none;
+}
+
+```
+
+##### Javascript
+```javascript
+function mouseUp() {
+  var x = document.getElementsByClassName("up-event-delete-message")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+```
+
+#### Bad Example: Down event triggers deletion of photos, with no option to recover
+
+##### HMTL
+```html
+<button onmousedown="mouseDown()">
+  Delete All Your Photos
+</button>
+
+<p class="down-event-delete-message">All your photos were deleted! Hope it wasn't an accident!</p>
+```
+
+##### CSS
+```css
+.down-event-delete-message {
+  display: none;
+}
+
+```
+
+##### Javascript
+```javascript
+function mouseDown() {
+  var x = document.getElementsByClassName("down-event-delete-message")[0];
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+```
+
+[pointer example on codepen](https://codepen.io/michellanneli/pen/xvyXGL)
+
 Needs code snippet
 
 ### P16. Make multiple types of input available
-> I usually prefer using speech input to navigate because it’s easier for me to talk than use a mouse, but when company is around I turn it off and use the mouse.
+> [write user quote]
 
 Ensure that people can use multiple different types of input mechanisms, such as keyboard or keyboard-like interfaces, speech input, and pointer devices like a computer mouse, stylus, or touch screen.
 
@@ -417,27 +551,53 @@ Ensure that people can use multiple different types of input mechanisms, such as
 ## Labels
 
 ### P17. Label user input fields
-> I’ve always made mistakes filling out forms since I have a learning disability. A clearly labeled input field helps me understand exactly what I need to do.
+> [write user quote]
 
 Provide a label or instructions for user input fields so that users know what type of data to input.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.3.2 A
 
+##### HMTL
+```html
+<label for="hamilton">Please select your favorite song from the musical Hamilton.</label>
+<select id="hamilton" name="hamilton">
+  <option label="All Hamilton Songs" disabled selected>All Hamilton Songs</option>
+  <option label="Alexander Hamilton">Alexander Hamilton</option>
+  <option label="Aaron Burr, Sir">Aaron Burr, Sir</option>
+  <option label="My Shot">My Shot</option>
+  <option label="The Story of Tonight">The Story of Tonight</option>
+  <option label="The Schuyler Sisters">The Schuyler Sisters</option>
+</select>
+```
+
 ### P18. Include the label in the name
-> I use text-to-speech to control my apps, but sometimes it doesn’t understand me because the programmatic label is slightly different than what I’m seeing.
+> [write user quote]
 
 Ensure the programmatic label is also in the visual text label of an input field. Users have a better experience if the two match, especially if they use both sight and speech input to navigate the app.
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 2.5.3 A
 
+#### Search input uses visually hidden label that matches the placeholder text.
+
+##### HMTL
+```html
+<div role="search">
+  <label for="search" class="visually-hidden">Search</label>
+  <input type="search" name="search" id="search" placeholder="search" />
+  <button type="submit"><span class="visually-hidden">Perform Search</span><img src="magnifying-glass.svg" alt="#"/></button>
+</div>
+```
+
+Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-forms.html#kssref-forms-search)
+
 ***
 
 ## Presentation
 
 ### P19. Use text instead of images of text
-> I use a screen reader to interact with websites, so when there’s text that’s presented as an image I don’t know what it says.
+> Where was the title? Oh, it's this image with no alt text, awesome.
 
 Convey information through text instead of images of text, except for when the user can visually customize the image or when a particular presentation is essential, like a logotype.
 
@@ -463,7 +623,7 @@ Convey information through text instead of images of text, except for when the u
 Source for svg application: [Deque](https://www.deque.com/blog/creating-accessible-svgs/)
 
 ### P20. Provide a way to resize text up to 200%
->Because I’m very near-sighted, I have to zoom in the text a lot in order to read. Sometimes zooming in causes navigation and other elements that I need to disappear.
+> Why is this text so tiny? I have to zoom in a ton just to read anything.
 
 User agents must provide a mechanism for the user to resize text up to 200%. Examples of this include: controls to zoom in and out and the ability to specify a preferred text size.
 
@@ -483,7 +643,7 @@ For large blocks of text:
 **WCAG number + conformance**: 1.4.8 AAA
 
 ### P22. Make sure there’s no double scrolling
-> I have trouble reading so I zoom in a lot to make the text bigger, but when this makes the content scroll in different directions it gets disorienting.
+> I don't think this website was built for my phone, every time I try to scroll it just moves around.
 
 Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
 
@@ -515,7 +675,7 @@ Ensure the content is responsive and fits within the viewport. If the user resiz
 **WCAG number + conformance**: 1.4.10 AA
 
 ### P23. Don’t restrict content to portrait or landscape
-> My phone is mounted to the arm of my wheelchair so I can’t just rotate my phone. When there’s a view that’s landscape-only that makes it really hard for me to use.
+> I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess up my setup.
 
 Don’t restrict content to a single display orientation, like portrait or landscape, unless a specific display orientation is essential.
 
@@ -535,7 +695,7 @@ If any audio plays automatically for more than 3 seconds, provide a way to pause
 ## Bypass content
 
 ### P25. Provide a way to bypass repeating content
-> I’m a screen reader user, and I hate having to go through the same dozen links on every page before I get to the main content.
+> My screen reader doesn't need to go through the same content every time, I just want to skip to the good stuff.
 
 Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
 
@@ -570,7 +730,7 @@ Source: [WebAIM](https://webaim.org/techniques/css/invisiblecontent/)
 **WCAG number + conformance**: 2.4.1 A
 
 ### P26. Provide a way to disable animation triggered by interaction
-> A lot of animations I see make me dizzy because I have vertigo, so I have to go lie down.
+> Every time I click "next" the slides bounce around everywhere and it's making me dizzy.
 
 Provide a way to disable motion animation triggered by interaction, like parallax scrolling or page-flipping animations, unless the animation is essential to the functionality or information.
 
@@ -578,7 +738,7 @@ Provide a way to disable motion animation triggered by interaction, like paralla
 **WCAG number + conformance**: 2.3.3 AAA
 
 ### P27. Provide a way to hide moving content
-> I have ADHD and I get distracted really easily, so when I see moving or blinking content I always forget what I was doing.
+> I can't focus, the animation in the background keeps distracting me.
 
 For moving, blinking, or scrolling content that starts automatically, lasts more than 5 seconds, and is presented with other content, provide a way for people to pause, stop, or hide it (unless this movement is essential to an activity). For auto-updating information, provide a way for people to pause, stop, or hide it or control the frequency of updating.
 
@@ -590,7 +750,7 @@ For moving, blinking, or scrolling content that starts automatically, lasts more
 ## Error recovery
 
 ### P28. Prevent errors when handling legal and financial data
-> (add user quote)
+> If I make mistakes on my direct deposit form, I won't be able to get my paycheck.
 
 Prevent errors by providing at least one of these:
 * Submissions are reversible
@@ -602,7 +762,7 @@ Prevent errors by providing at least one of these:
 **WCAG number + conformance**: 3.3.4 AA, 3.3.6 AAA
 
 ### P29. Prevent accidents with single pointer gestures
-> Damn it, I didn't mean to press that. How do I undo?
+> I accidentally deleted everything. Where's the undo button?!
 
 Use at least one of these methods to prevent accidents:
 * Undo
@@ -618,7 +778,7 @@ Use at least one of these methods to prevent accidents:
 ## Timing
 
 ### P30. Warn users about timeouts
-> I have short term memory loss and sometimes forget that I’m in the middle of something.
+> Wait, no one told me there was a 10 minute timeout. I was on the phone!
 
 If inactivity in the user session leads to a timeout and causes data loss, warn users about this through a notification.
 
@@ -626,7 +786,7 @@ If inactivity in the user session leads to a timeout and causes data loss, warn 
 **WCAG number + conformance**: 2.2.6 AAA
 
 ### P31. Allow users to re-authenticate without losing data
-> I have ADHD, so sometimes I start shopping online and then get distracted by something else. I don’t want to have to start all over again when I go back to shopping.
+> Damn, I got distracted and now I have to log in again. I hope my shopping cart still has all my stuff.
 
 When an authenticated session expires, allow users to re-authenticate by providing a login and restoring the same information and user’s stage in the process.
 

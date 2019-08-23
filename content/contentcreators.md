@@ -13,9 +13,9 @@
 ## Multimedia
 
 ### C1. Provide text descriptions of imagery
-> What's this photo? It doesn't have alt text, so my [screen reader](glossary link) can't read it.
+> What's in this photo? It doesn't have alt text, so my [screen reader](glossary link) can't read it.
 
-Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired.
+Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired. Descriptions also help people with intellectual disabilities understand imagery.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 1.1.1 A
@@ -45,7 +45,7 @@ Provide closed captions of video that’s pre-recorded (like movies) and live (l
 ### C4. Provide audio descriptions of video
 > Can you do me a favor and tell me what's happening in the movie?
 
-Provide [audio descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people blind or visually impaired.
+Provide [audio descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people blind or visually impaired. Embed the audio description between character dialogue. If necessary, pause the visuals to allow enough time.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.5 AA, 1.2.7 AAA
@@ -55,7 +55,7 @@ Provide [audio descriptions](glossary link) of video that’s pre-recorded (like
 ### C5. Provide text descriptions of video
 > I love appreciating cinema and documentaries with my assistant, who signs in my hand.
 
-Provide [text descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people who are blind and/or deaf. See also [media alternative](glossary link).
+Provide [text descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people who are blind and/or deaf. This reads like a screenplay. See also [media alternative](glossary link).
 
 **Disabilities**: hearing, visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.8 AAA
@@ -65,7 +65,7 @@ Provide [text descriptions](glossary link) of video that’s pre-recorded (like 
 ### C6. Provide sign language interpretation of video
 > I wish they had an ASL interpreter, reading lips doesn't always work.
 
-Provide sign language interpretation of the audio content in videos that's pre-recorded (like movies) by adding a person signing in the corner of the frame.
+Provide sign language interpretation of the audio content in videos that's pre-recorded (like movies) for deaf and hard of hearing people. You can use a split screen or add a smaller frame in the corner so that people can see both the content and interpreter.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.6 AAA
@@ -87,7 +87,7 @@ Don’t use more than 3 flashes per second in your visuals to avoid triggering a
 ### C8. Get rid of background noise in audio
 > The traffic sounds makes it impossible to hear what the people are saying.
 
-Edit the audio so there is little to no background noise in audio, or provide a way to turn off the background noise.
+Edit the audio so there is little to no background noise in audio, or provide a way to turn off the background noise so that hard of hearing people can hear the important audio content.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.4.7 AAA
@@ -99,7 +99,7 @@ Edit the audio so there is little to no background noise in audio, or provide a 
 ### C9. Provide a way to understand unusual words
 > Half of this conversation is jargon. What does it all mean?!
 
-Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to.
+Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to. Otherwise, people may find these words difficult to read and understand.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.1.3 AAA
@@ -112,7 +112,7 @@ Provide a way to understand unusual words like idioms and jargon, such as a glos
 ### C10. Provide a way to expand abbreviations
 > This just looks like a bunch of letters to me.
 
-Provide a way to expand abbreviations, such as a glossary that the abbreviation links to or an explanation in the text.
+Provide a way to expand abbreviations, such as a glossary that the abbreviation links to or an explanation in the text. Otherwise, poeple may not know or remember what they stand for.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 3.1.4 AAA
@@ -124,7 +124,7 @@ Provide a way to expand abbreviations, such as a glossary that the abbreviation 
 ### C11. Write content at an 8th grade reading level
 > The reading is so dense and complicated, who could ever finish it?
 
-Write content clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level.
+Write clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level. This also makes it accessible to people with different educational, class, and cultural backgrounds.
 
 **Disabilities**: intellectual
 **WCAG number + conformance**: 3.1.5 AAA
