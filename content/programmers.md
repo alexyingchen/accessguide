@@ -62,7 +62,7 @@ Separate structure from style. Use semantic elements (h1, h2, p, a, blockquote) 
 ```
 
 ### P2. Make an intuitive sequence defined in markup
-> My screen reader went from the primary navigation straight to the footer and then the secondary navigation. Makes no sense at all.
+> My screen reader went from the primary nav straight to the footer and then the secondary nav. Makes no sense at all.
 
 Separate structure from style and write the content in a way that is logical and intuitive. Make sure that the visual order matches the DOM order (document object model).
 
@@ -130,7 +130,7 @@ Screen readers will find the filter button only after having gone through all of
 ```
 
 ### P3. Make the human language defined in markup.
-> I like to read articles in both English and Portuguese, but if the language isn't defined then my screen reader can't do anything.
+> If the language isn't defined, my screen reader can't understand it.
 
 Ensure the default human language of each web page is programmatically determined. To be more advanced, ensure the language of each passage or phrase in the content is programmatically determined except for proper names, technical terms, vernacular language, or words of indeterminate language.
 
@@ -276,7 +276,7 @@ makes status message programmatically focusable so that users can tab to it.
 ```
 
 ### P7. Make sure that assistive tech can parse content
-> Yep, this code is messy.
+> This code is messy. My screen reader can barely get through it.
 
 Ensure that, with markup languages, elements have complete start and end tags, they are nested according to their specifications, they don’t contain duplicate attributes, and any IDs are unique.
 
@@ -391,7 +391,7 @@ aside {
 [focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ)
 
 ### P12. Hover/focus behavior
-> [write user quote]
+> Whenever I move my mouse over the menu it disappears. This is unusable!
 
 Avoid making content appear and disappear on focus or hover, since this is disorienting. If hover or focus does make additional content visible and then hidden, the following are true:
 * Dismissible: provide a way to dismiss the additional content without moving hover or focus
@@ -460,7 +460,7 @@ Ensure that the keyboard focus indicator is visible so that users can visually s
 Needs illustration
 
 ### P15. Prevent accidental pointer input
-> [write user quote]
+> Noo! I did not mean to hit the like button.
 
 Make sure at least one of the following is true when operating a single pointer:
 * The down-event doesn’t execute the function\*
@@ -539,7 +539,7 @@ function mouseDown() {
 Needs code snippet
 
 ### P16. Make multiple types of input available
-> [write user quote]
+> Depending on how my hands are feeling, sometimes I prefer talking and sometimes I prefer using the keyboard.
 
 Ensure that people can use multiple different types of input mechanisms, such as keyboard or keyboard-like interfaces, speech input, and pointer devices like a computer mouse, stylus, or touch screen.
 
@@ -597,7 +597,7 @@ Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-form
 ## Presentation
 
 ### P19. Use text instead of images of text
-> Where was the title? Oh, it's this image with no alt text, awesome.
+> Where was the title? Oh, it's actually an image, that's annoying.
 
 Convey information through text instead of images of text, except for when the user can visually customize the image or when a particular presentation is essential, like a logotype.
 
@@ -615,7 +615,7 @@ Provide a way to resize text up to 200% without losing any functionality, such a
 **WCAG number + conformance**: 1.4.4 AA
 
 ### P21. Use text presentation best practices
-> I have dyslexia, and when I’m reading I prefer that text looks a certain way so that I can understand it.
+> I need really large, white on black text in order to read it.
 
 * Provide a way to select foreground and background colors
 * Set maximum width to 80 characters
@@ -626,7 +626,7 @@ Provide a way to resize text up to 200% without losing any functionality, such a
 **WCAG number + conformance**: 1.4.8 AAA
 
 ### P22. Make sure there’s no double scrolling
-> I don't think this website was built for my phone, every time I try to scroll it just moves around.
+> I don't think this website was built for phones, every time I try to scroll it just moves around.
 
 Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
 
@@ -634,7 +634,7 @@ Ensure the content is responsive and fits within the viewport. If the user resiz
 **WCAG number + conformance**: 1.4.10 AA
 
 ### P23. Don’t restrict content to portrait or landscape
-> I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess up my setup.
+> I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess with my setup.
 
 Don’t restrict content to a single display orientation, like portrait or landscape, unless a specific display orientation is essential.
 
@@ -654,7 +654,7 @@ If any audio plays automatically for more than 3 seconds, provide a way to pause
 ## Bypass content
 
 ### P25. Provide a way to bypass repeating content
-> My screen reader doesn't need to go through the same content every time, I just want to skip to the good stuff.
+> I just want to skip to the good stuff, my screen reader doesn't need to go through the nav every time.
 
 Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
 
@@ -669,7 +669,7 @@ Provide a way to disable motion animation triggered by interaction, like paralla
 **Disabilities**: physical
 **WCAG number + conformance**: 2.3.3 AAA
 
-### P27. Provide a way to hide moving content
+### P27. Provide a way to get rid of moving content
 > I can't focus, the animation in the background keeps distracting me.
 
 For moving, blinking, or scrolling content that starts automatically, lasts more than 5 seconds, and is presented with other content, provide a way for people to pause, stop, or hide it (unless this movement is essential to an activity). For auto-updating information, provide a way for people to pause, stop, or hide it or control the frequency of updating.
