@@ -46,7 +46,7 @@ Use these text spacing best practices for readability:
 * Tracking is at least 0.12
 * Word spacing is at least 0.16
 
-**Disabilities**: intellectual, visual
+**Disabilities**: visual
 **WCAG number + conformance**: 1.4.12 AA
 
 **illustration idea**: side by side comparison of good vs. bad example of text spacing
@@ -112,7 +112,7 @@ If a function is triggered by a [motion function](glossary link) (like shaking t
 
 Don't change the context (such as automatically launching new windows or refreshing the content feed) unless it's by user request.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 3.2.2 A, 3.2.5 AAA
 
 **illustration idea**: newsletter pop-up on computer with person next to it looking distressed
@@ -227,7 +227,7 @@ If you give users a time limit to complete a task, provide them with a way to ad
 
 Provide the option to turn off or postpone interruptions (such as an on/off switch in the user settings) except in the case of an emergency. To be very accessible, don't create interruptions at all.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: intellectual, physical, visual
 **WCAG number + conformance**: 2.2.4 AAA
 
 **illustration idea**: (example of acceptable interruption) Pop up saying: Warning! Flood alert, seek shelter immediately
