@@ -17,7 +17,7 @@
 
 Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired. Descriptions also help people with intellectual disabilities understand imagery.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: visual
 **WCAG number + conformance**: 1.1.1 A
 
 -
@@ -45,7 +45,7 @@ Provide closed captions of video that’s pre-recorded (like movies) and live (l
 ### C4. Provide audio descriptions of video
 > Can you do me a favor and tell me what's happening in the movie?
 
-Provide [audio descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people blind or visually impaired. Embed the audio description between character dialogue. If necessary, pause the visuals to allow enough time.
+Provide [audio descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people blind or visually impaired. Embed the audio description between character dialogue.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.5 AA, 1.2.7 AAA
@@ -65,7 +65,7 @@ Provide [text descriptions](glossary link) of video that’s pre-recorded (like 
 ### C6. Provide sign language interpretation of video
 > I wish they had an ASL interpreter, reading lips doesn't always work.
 
-Provide sign language interpretation of the audio content in videos that's pre-recorded (like movies) for deaf and hard of hearing people. You can use a split screen or add a smaller frame in the corner so that people can see both the content and interpreter.
+Provide sign language interpretation of the audio content in videos that's pre-recorded (like movies) for deaf and hard of hearing people. You can use a split screen or add a smaller frame in the corner.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.6 AAA
@@ -101,7 +101,7 @@ Edit the audio so there is little to no background noise in audio, or provide a 
 
 Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to. Otherwise, people may find these words difficult to read and understand.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.1.3 AAA
 
 `The birthday party wasn’t a surprise because my sister _spilled the beans_.
@@ -114,7 +114,7 @@ Provide a way to understand unusual words like idioms and jargon, such as a glos
 
 Provide a way to expand abbreviations, such as a glossary that the abbreviation links to or an explanation in the text. Otherwise, poeple may not know or remember what they stand for.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.1.4 AAA
 
 `Our next guests for our AMA (Ask Me Anything) are the amazing Frida Kahlo and Georgia O'Keeffe!`
@@ -124,7 +124,7 @@ Provide a way to expand abbreviations, such as a glossary that the abbreviation 
 ### C11. Write content at an 8th grade reading level
 > The reading is so dense and complicated, who could ever finish it?
 
-Write clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level. This also makes it accessible to people with different educational, class, and cultural backgrounds.
+Write clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level.
 
 **Disabilities**: intellectual
 **WCAG number + conformance**: 3.1.5 AAA
@@ -140,22 +140,12 @@ Good: This essay explores pros and cons of bumpers stickers on cars.`
 
 Provide a way to determine the specific pronunciation for ambiguous words, such as the phonetic spelling right after the word, the reading of the word by ruby element, or a link to a glossary.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: intellectual
 **WCAG number + conformance**: 3.1.6 AAA
 
 -
 
-### C13. Write descriptive page titles
-> I can't find the contact page, all the tabs say the same thing for this site.
-
-Write descriptive page titles to help people navigate content.
-
-**Disabilities**: intellectual, visual
-**WCAG number + conformance**: 2.4.2 A
-
--
-
-### C14. Write descriptive headings and labels
+### C13. Write descriptive headings and labels
 > When long articles don't have any section titles, it's impossible to find what I want.
 
 Use section headings to organize content and write headings and labels that describe the topic/purpose to help people navigate content.
@@ -177,15 +167,13 @@ h1 Notes
 
 -
 
-### C15. Write descriptive link text
+### C14. Write descriptive link text
 > Links that say 'Learn more' don't actually mean anything!
 
-Write links so that user's can understand the purpose of the link from the link text alone.
+Write links so that users can understand the purpose of the link from the link text alone.
 
 **Disabilities**: intellectual, visual
 **WCAG number + conformance**: 2.4.4 A, 2.4.9 AAA
-
-(example from programming)
 
 #### Example 1
 ```html
@@ -200,7 +188,7 @@ Write links so that user's can understand the purpose of the link from the link 
 
 -
 
-### C16. Write instructions that don’t rely on just one characteristic
+### C15. Write instructions that don’t rely on just one characteristic
 > These instructions are telling me to press the blue button to save. Which one's blue?
 
 If you are providing instructions for how to use something, use more than one characteristic to describe components (such as color, location, text, size, etc.) for people who are blind or visually impaired.
