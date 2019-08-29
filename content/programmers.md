@@ -691,12 +691,12 @@ Prevent errors by providing at least one of these:
 
 ## Timing
 
-### P39. Warn users about timeouts
+### P29. Warn users about timeouts
 > Wait, no one told me there was a 10 minute timeout. I was on the phone!
 
 If inactivity in the user session leads to a timeout and causes data loss, warn users about this through a notification.
 
-**Disabilities**: intellectual
+**Disabilities**: hearing, intellectual, physical, visual
 **WCAG number + conformance**: 2.2.6 AAA
 
 ### P30. Allow users to re-authenticate without losing data
@@ -704,5 +704,5 @@ If inactivity in the user session leads to a timeout and causes data loss, warn 
 
 When an authenticated session expires, allow users to re-authenticate by providing a login and restoring the same information and user’s stage in the process.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: hearing, intellectual, physical, visual
 **WCAG number + conformance**: 2.2.5 AAA
