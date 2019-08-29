@@ -321,11 +321,19 @@ If a keyboard shortcut uses only letter, punctuation, number, or symbol characte
 
 Needs illustration
 
+### P11. Make multiple types of input available
+> Depending on how my hands are feeling, sometimes I prefer talking and sometimes I prefer using the keyboard.
+
+Ensure that people can use multiple different types of input mechanisms, such as keyboard or keyboard-like interfaces, speech input, and pointer devices like a computer mouse, stylus, or touch screen.
+
+**Disabilities**: intellectual, physical, visual
+**WCAG number + conformance**: 2.5.6 AAA
+
 ***
 
 ## Focus behavior
 
-### P11. Preserve focus order
+### P12. Preserve focus order
 > [write user quote]
 
 If the navigation sequence affects its meaning, ensure that users focus on components in an order that preserves that meaning.
@@ -390,7 +398,7 @@ aside {
 
 [focus order example on codepen](https://codepen.io/michellanneli/pen/WVaOVJ)
 
-### P12. Hover/focus behavior
+### P13. Implement hover and focus best practices
 > Whenever I move my mouse over the menu it disappears. This is unusable!
 
 Avoid making content appear and disappear on focus or hover, since this is disorienting. If hover or focus does make additional content visible and then hidden, the following are true:
@@ -439,7 +447,7 @@ Avoid making content appear and disappear on focus or hover, since this is disor
 
 [hover behavior example on codepen](https://codepen.io/michellanneli/pen/rXqzox)
 
-### P13. Ensure that focus does not change context
+### P14. Ensure that focus does not change context
 > I'm just trying to figure out the navigation, suddenly all the colors and pages are changing on me.
 
 Ensure that focus on a component does not trigger a change of context, such as launching a new window or changing focus to another component.
@@ -449,7 +457,7 @@ Ensure that focus on a component does not trigger a change of context, such as l
 
 Needs illustration
 
-### P14. Ensure that focus indicator is visible
+### P15. Ensure that focus indicator is visible
 > The focus indicator just disappeared. So where am I exactly?
 
 Ensure that the keyboard focus indicator is visible so that users can visually see what component they are focusing on.
@@ -459,7 +467,138 @@ Ensure that the keyboard focus indicator is visible so that users can visually s
 
 Needs illustration
 
-### P15. Prevent accidental pointer input
+***
+
+## Presentation
+
+### P16. Label user input fields
+> [write user quote]
+
+Provide a label or instructions for user input fields so that users know what type of data to input.
+
+**Disabilities**: intellectual, visual
+**WCAG number + conformance**: 3.3.2 A
+
+##### HMTL
+```html
+<label for="hamilton">Please select your favorite song from the musical Hamilton.</label>
+<select id="hamilton" name="hamilton">
+  <option label="All Hamilton Songs" disabled selected>All Hamilton Songs</option>
+  <option label="Alexander Hamilton">Alexander Hamilton</option>
+  <option label="Aaron Burr, Sir">Aaron Burr, Sir</option>
+  <option label="My Shot">My Shot</option>
+  <option label="The Story of Tonight">The Story of Tonight</option>
+  <option label="The Schuyler Sisters">The Schuyler Sisters</option>
+</select>
+```
+
+### P17. Include the label in the name
+> [write user quote]
+
+Ensure the programmatic label is also in the visual text label of an input field. Users have a better experience if the two match, especially if they use both sight and speech input to navigate the app.
+
+**Disabilities**: physical, visual
+**WCAG number + conformance**: 2.5.3 A
+
+#### Search input uses visually hidden label that matches the placeholder text.
+
+##### HMTL
+```html
+<div role="search">
+  <label for="search" class="visually-hidden">Search</label>
+  <input type="search" name="search" id="search" placeholder="search" />
+  <button type="submit"><span class="visually-hidden">Perform Search</span><img src="magnifying-glass.svg" alt="#"/></button>
+</div>
+```
+
+Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-forms.html#kssref-forms-search)
+
+### P18. Use text instead of images of text
+> Where was the title? Oh, it's actually an image, that's annoying.
+
+Convey information through text instead of images of text, except for when the user can visually customize the image or when a particular presentation is essential, like a logotype.
+
+**Disabilities**: visual
+**WCAG number + conformance**: 1.4.5 AA, 1.4.9 AAA
+
+Needs code snippet of CSS styling
+
+### P19. Provide a way to resize text up to 200%
+> Why is this text so tiny? I have to zoom in a ton just to read anything.
+
+Provide a way to resize text up to 200% without losing any functionality, such as navigation.
+
+**Disabilities**: visual
+**WCAG number + conformance**: 1.4.4 AA
+
+### P20. Use text presentation best practices
+> I need really large, white on black text in order to read it.
+
+* Provide a way to select foreground and background colors
+* Set maximum width to 80 characters
+* Align the text, don’t justify
+* Provide a way to resize text up to 200% without assistive tech that doesn’t require horizontal scrolling
+
+**Disabilities**: visual
+**WCAG number + conformance**: 1.4.8 AAA
+
+### P21. Make sure there’s no double scrolling
+> I don't think this website was built for phones, every time I try to scroll it just moves around.
+
+Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
+
+**Disabilities**: physical, visual
+**WCAG number + conformance**: 1.4.10 AA
+
+### P22. Don’t restrict content to portrait or landscape
+> I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess with my setup.
+
+Don’t restrict content to a single display orientation, like portrait or landscape, unless a specific display orientation is essential.
+
+**Disabilities**: physical, visual
+**WCAG number + conformance**: 1.3.4 AA
+
+***
+
+## Bypass content
+
+### P23. Provide a way to pause audio that plays automatically
+> Whenever I hear an ad playing, I can’t hear my screen reader at all and I’m not sure how to turn it off.
+
+If any audio plays automatically for more than 3 seconds, provide a way to pause or stop the audio, or a way to control that audio volume independent from the overall system volume.
+
+**Disabilities**: visual
+**WCAG number + conformance**: 1.4.2 A
+
+### P24. Provide a way to bypass repeating content
+> I just want to skip to the good stuff, my screen reader doesn't need to go through the nav every time.
+
+Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
+
+**Disabilities**: intellectual, physical, visual
+**WCAG number + conformance**: 2.4.1 A
+
+### P25. Provide a way to disable animation triggered by interaction
+> Every time I click "next" the slides bounce around everywhere and it's making me dizzy.
+
+Provide a way to disable motion animation triggered by interaction, like parallax scrolling or page-flipping animations, unless the animation is essential to the functionality or information.
+
+**Disabilities**: physical
+**WCAG number + conformance**: 2.3.3 AAA
+
+### P26. Provide a way to get rid of moving content
+> I can't focus, the animation in the background keeps distracting me.
+
+For moving, blinking, or scrolling content that starts automatically, lasts more than 5 seconds, and is presented with other content, provide a way for people to pause, stop, or hide it (unless this movement is essential to an activity). For auto-updating information, provide a way for people to pause, stop, or hide it or control the frequency of updating.
+
+**Disabilities**: intellectual, visual
+**WCAG number + conformance**: 2.2.2 A
+
+***
+
+## Error recovery
+
+### P27. Prevent accidental pointer input
 > Noo! I did not mean to hit the like button.
 
 Make sure at least one of the following is true when operating a single pointer:
@@ -535,151 +674,6 @@ function mouseDown() {
 ```
 
 [pointer example on codepen](https://codepen.io/michellanneli/pen/xvyXGL)
-
-Needs code snippet
-
-### P16. Make multiple types of input available
-> Depending on how my hands are feeling, sometimes I prefer talking and sometimes I prefer using the keyboard.
-
-Ensure that people can use multiple different types of input mechanisms, such as keyboard or keyboard-like interfaces, speech input, and pointer devices like a computer mouse, stylus, or touch screen.
-
-**Disabilities**: intellectual, physical, visual
-**WCAG number + conformance**: 2.5.6 AAA
-
-***
-
-## Labels
-
-### P17. Label user input fields
-> [write user quote]
-
-Provide a label or instructions for user input fields so that users know what type of data to input.
-
-**Disabilities**: intellectual, visual
-**WCAG number + conformance**: 3.3.2 A
-
-##### HMTL
-```html
-<label for="hamilton">Please select your favorite song from the musical Hamilton.</label>
-<select id="hamilton" name="hamilton">
-  <option label="All Hamilton Songs" disabled selected>All Hamilton Songs</option>
-  <option label="Alexander Hamilton">Alexander Hamilton</option>
-  <option label="Aaron Burr, Sir">Aaron Burr, Sir</option>
-  <option label="My Shot">My Shot</option>
-  <option label="The Story of Tonight">The Story of Tonight</option>
-  <option label="The Schuyler Sisters">The Schuyler Sisters</option>
-</select>
-```
-
-### P18. Include the label in the name
-> [write user quote]
-
-Ensure the programmatic label is also in the visual text label of an input field. Users have a better experience if the two match, especially if they use both sight and speech input to navigate the app.
-
-**Disabilities**: physical, visual
-**WCAG number + conformance**: 2.5.3 A
-
-#### Search input uses visually hidden label that matches the placeholder text.
-
-##### HMTL
-```html
-<div role="search">
-  <label for="search" class="visually-hidden">Search</label>
-  <input type="search" name="search" id="search" placeholder="search" />
-  <button type="submit"><span class="visually-hidden">Perform Search</span><img src="magnifying-glass.svg" alt="#"/></button>
-</div>
-```
-
-Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-forms.html#kssref-forms-search)
-
-***
-
-## Presentation
-
-### P19. Use text instead of images of text
-> Where was the title? Oh, it's actually an image, that's annoying.
-
-Convey information through text instead of images of text, except for when the user can visually customize the image or when a particular presentation is essential, like a logotype.
-
-**Disabilities**: visual
-**WCAG number + conformance**: 1.4.5 AA, 1.4.9 AAA
-
-Needs code snippet of CSS styling
-
-### P20. Provide a way to resize text up to 200%
-> Why is this text so tiny? I have to zoom in a ton just to read anything.
-
-Provide a way to resize text up to 200% without losing any functionality, such as navigation.
-
-**Disabilities**: visual
-**WCAG number + conformance**: 1.4.4 AA
-
-### P21. Use text presentation best practices
-> I need really large, white on black text in order to read it.
-
-* Provide a way to select foreground and background colors
-* Set maximum width to 80 characters
-* Align the text, don’t justify
-* Provide a way to resize text up to 200% without assistive tech that doesn’t require horizontal scrolling
-
-**Disabilities**: visual
-**WCAG number + conformance**: 1.4.8 AAA
-
-### P22. Make sure there’s no double scrolling
-> I don't think this website was built for phones, every time I try to scroll it just moves around.
-
-Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
-
-**Disabilities**: physical, visual
-**WCAG number + conformance**: 1.4.10 AA
-
-### P23. Don’t restrict content to portrait or landscape
-> I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess with my setup.
-
-Don’t restrict content to a single display orientation, like portrait or landscape, unless a specific display orientation is essential.
-
-**Disabilities**: physical, visual
-**WCAG number + conformance**: 1.3.4 AA
-
-### P24. Provide a way to pause audio that plays automatically
-> Whenever I hear an ad playing, I can’t hear my screen reader at all and I’m not sure how to turn it off.
-
-If any audio plays automatically for more than 3 seconds, provide a way to pause or stop the audio, or a way to control that audio volume independent from the overall system volume.
-
-**Disabilities**: visual
-**WCAG number + conformance**: 1.4.2 A
-
-***
-
-## Bypass content
-
-### P25. Provide a way to bypass repeating content
-> I just want to skip to the good stuff, my screen reader doesn't need to go through the nav every time.
-
-Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
-
-**Disabilities**: intellectual, physical, visual
-**WCAG number + conformance**: 2.4.1 A
-
-### P26. Provide a way to disable animation triggered by interaction
-> Every time I click "next" the slides bounce around everywhere and it's making me dizzy.
-
-Provide a way to disable motion animation triggered by interaction, like parallax scrolling or page-flipping animations, unless the animation is essential to the functionality or information.
-
-**Disabilities**: physical
-**WCAG number + conformance**: 2.3.3 AAA
-
-### P27. Provide a way to get rid of moving content
-> I can't focus, the animation in the background keeps distracting me.
-
-For moving, blinking, or scrolling content that starts automatically, lasts more than 5 seconds, and is presented with other content, provide a way for people to pause, stop, or hide it (unless this movement is essential to an activity). For auto-updating information, provide a way for people to pause, stop, or hide it or control the frequency of updating.
-
-**Disabilities**: intellectual, visual
-**WCAG number + conformance**: 2.2.2 A
-
-***
-
-## Error recovery
 
 ### P28. Prevent errors when handling legal and financial data
 > If I make mistakes on my direct deposit form, I won't be able to get my paycheck.
