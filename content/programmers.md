@@ -544,6 +544,8 @@ h1 {
 }
 ```
 
+[text example on codepen](https://codepen.io/michellanneli/pen/rNBzKoE)
+
 ####Markup for Logos
 ##### Using the alt attribute for an image element
 ```html
