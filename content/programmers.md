@@ -521,13 +521,36 @@ Convey information through text instead of images of text, except for when the u
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.5 AA, 1.4.9 AAA
 
+####Bad example: image of text
+```html
+  <img src="hello-world.png">
+```
 
-#### Using the alt attribute for an image element
+####Good example: text
+```html
+  <h1>Hello world!</h1>
+```
+
+```css
+@import url('https://fonts.googleapis.com/css?family=Lemon&display=swap');
+
+h1 {
+  font-family: 'Lemon', cursive;
+  font-size: 5em;
+  color: #ecb7d3;
+  text-shadow: 6px 4px #f25717;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #f25717;
+}
+```
+
+####Markup for Logos
+##### Using the alt attribute for an image element
 ```html
 <a href="index.html"><img src="logo.png" alt="Access Guide"></a>
 ```
 
-#### Using aria role attribute and the the title attribute for an svg
+##### Using aria role attribute and the the title attribute for an svg
 ```html
 <a href="index.html">
   <svg role="img" aria-labelledby="title">
