@@ -2,8 +2,10 @@
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
+
 import theme from '../../theme';
 
 const metaDataQuery = graphql`

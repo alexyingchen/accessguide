@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  toolbar: theme.mixins.toolbar,
 }));
 
 function Drawer({ children }) {
@@ -25,9 +26,7 @@ function Drawer({ children }) {
     <MuiDrawer
       className={classes.drawer}
       variant="permanent"
-      classes={{
-        paper: classes.drawerPaper,
-      }}
+      classes={{ paper: classes.drawerPaper }}
     >
       <div className={classes.toolbar} />
       <List>
