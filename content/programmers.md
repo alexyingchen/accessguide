@@ -2,7 +2,6 @@
 * Defined in markup
 * Keyboard functionality
 * Focus behavior
-* Labels
 * Presentation
 * Bypass content
 * Error recovery
