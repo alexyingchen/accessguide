@@ -520,12 +520,53 @@ Convey information through text instead of images of text, except for when the u
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.5 AA, 1.4.9 AAA
 
-Needs code snippet of CSS styling
+####Bad example: image of text
+```html
+  <img src="hello-world.png">
+```
+
+####Good example: text
+```html
+  <h1>Hello world!</h1>
+```
+
+```css
+@import url('https://fonts.googleapis.com/css?family=Lemon&display=swap');
+
+h1 {
+  font-family: 'Lemon', cursive;
+  font-size: 5em;
+  color: #ecb7d3;
+  text-shadow: 6px 4px #f25717;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #f25717;
+}
+```
+
+[text example on codepen](https://codepen.io/michellanneli/pen/rNBzKoE)
+
+####Markup for Logos
+##### Using the alt attribute for an image element
+```html
+<a href="index.html"><img src="logo.png" alt="Access Guide"></a>
+```
+
+##### Using aria role attribute and the the title attribute for an svg
+```html
+<a href="index.html">
+  <svg role="img" aria-labelledby="title">
+    <title id="title">Access Guide</title>
+    . . . 
+  </svg>
+</a>
+```
+
+Source for svg application: [Deque](https://www.deque.com/blog/creating-accessible-svgs/)
 
 ### P19. Provide a way to resize text up to 200%
 > Why is this text so tiny? I have to zoom in a ton just to read anything.
 
-Provide a way to resize text up to 200% without losing any functionality, such as navigation.
+User agents must provide a mechanism for the user to resize text up to 200%. Examples of this include: controls to zoom in and out and the ability to specify a preferred text size.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.4 AA
@@ -533,6 +574,7 @@ Provide a way to resize text up to 200% without losing any functionality, such a
 ### P20. Use text presentation best practices
 > I need really large, white on black text in order to read it.
 
+For large blocks of text:
 * Provide a way to select foreground and background colors
 * Set maximum width to 80 characters
 * Align the text, don’t justify
@@ -545,6 +587,30 @@ Provide a way to resize text up to 200% without losing any functionality, such a
 > I don't think this website was built for phones, every time I try to scroll it just moves around.
 
 Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
+
+#### CSS for a container that is constrained to the full width of the viewport
+```css
+.container {
+  max-width: 100%;
+}
+```
+```css
+.container {
+  max-width: 100vw;
+}
+```
+
+#### CSS for a container with decorative elements that will extend beyond the viewport
+```css
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+```
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.4.10 AA
@@ -573,6 +639,33 @@ If any audio plays automatically for more than 3 seconds, provide a way to pause
 > I just want to skip to the good stuff, my screen reader doesn't need to go through the nav every time.
 
 Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
+
+#### HTML skip link
+```html
+<a href="#main" class="visible-on-focus">Skip to main</a>
+```
+
+#### CSS for skip link
+```css
+.visible-on-focus {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.visible-on-focus:active,
+.visible-on-focus:focus {
+  position: relative;
+  width: auto;
+  height: auto;
+  left: auto;
+}
+```
+
+Source: [WebAIM](https://webaim.org/techniques/css/invisiblecontent/)
 
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 2.4.1 A
