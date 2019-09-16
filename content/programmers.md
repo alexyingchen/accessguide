@@ -61,7 +61,7 @@ Separate structure from style. Use semantic elements (h1, h2, p, a, blockquote) 
 ```
 
 ### P2. Make an intuitive sequence defined in markup
-> My screen reader went from the header straight to the footer and skipped everything else. Makes no sense at all.
+> [write user quote]
 
 Order focusable elements in a logical and intuitive way for screen reader and keyboard interface users. Make sure that the visual order matches the DOM order (document object model).
 
@@ -293,7 +293,7 @@ Needs illustration
 ### P8. Make all functionality available through the keyboard
 > I love using my keyboard; computer mice were not made for these hands.
 
-Ensure all the functionality is operable through a keyboard interface without requiring specific timing for keystrokes (except where input is defined by the user’s movement and not just the endpoints). To be more advanced, there are no exceptions.
+Ensure that users can complete all tasks using a keyboard interface without requiring specific timing for keystrokes.
 
 **Disabilities**: physical
 **WCAG number + conformance**: 2.1.1 A, 2.1.3 AAA
@@ -303,7 +303,7 @@ Needs illustration
 ### P9. Make sure there are no keyboard traps
 > Help, I'm trapped inside this date picker and I can't get out.
 
-If the user can focus on a component using a keyboard interface, ensure they can move the focus away by only using a keyboard interface. If this requires nonstandard exit methods, advise the user how to do so.
+If the user can focus on a component using a keyboard interface, ensure they can move the focus away by only using a keyboard interface. Provide help if needed.
 
 **Disabilities**: physical
 **WCAG number + conformance**: 2.1.2 A
@@ -311,9 +311,9 @@ If the user can focus on a component using a keyboard interface, ensure they can
 Needs illustration
 
 ### P10. Provide a way to turn off character key shortcuts
-> I was trying to type, and then I started triggering all these keyboard shortcuts.
+> I was trying to type, then I set of all these keyboard shortcuts without realizing.
 
-If a keyboard shortcut uses only letter, punctuation, number, or symbol characters, then ensure that it is possible to turn it off, remap the shortcut to use a non-printable character (like ctrl or alt), or make the shortcut active only when focus is on a specific component.
+If a keyboard shortcut uses only letter, punctuation, number, or symbol characters, then ensure that it is possible to turn it off, remap it, or only sometimes active (depending on focus).
 
 **Disabilities**: physical
 **WCAG number + conformance**: 2.1.4 A
@@ -323,9 +323,9 @@ Needs illustration
 ### P11. Make multiple types of input available
 > Depending on how my hands are feeling, sometimes I prefer talking and sometimes I prefer using the keyboard.
 
-Ensure that people can use multiple different types of input mechanisms, such as keyboard or keyboard-like interfaces, speech input, and pointer devices like a computer mouse, stylus, or touch screen.
+Ensure that people can use multiple different types of input mechanisms, such as keyboard interfaces, speech input, and pointer devices like a computer mouse, stylus, or touch screen.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.5.6 AAA
 
 ***
@@ -333,11 +333,11 @@ Ensure that people can use multiple different types of input mechanisms, such as
 ## Focus behavior
 
 ### P12. Preserve focus order
-> [write user quote]
+> I tabbed from the header straight to the footer and skipped everything else. Makes no sense at all.
 
 If the navigation sequence affects its meaning, ensure that users focus on components in an order that preserves that meaning.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.4.3 A
 
 #### Content appears in order of relevance in the DOM
@@ -400,12 +400,9 @@ aside {
 ### P13. Use hover and focus best practices
 > Whenever I move my mouse over the menu it disappears. This is unusable!
 
-Avoid making content appear and disappear on focus or hover, since this is disorienting. If hover or focus does make additional content visible and then hidden, the following are true:
-* Dismissible: provide a way to dismiss the additional content without moving hover or focus
-* Hoverable: if hover triggers additional content, then users can move the pointer over the additional content without it disappearing
-* Persistent: the additional content remains visible until the user removes hover/focus, the user dismiss it, or the information is no longer valid
+Avoid making content appear and disappear on focus/hover, since this is disorienting. If hover/focus does hide or show content, ensure that it's dismissible, hoverable, and persistent.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 1.4.13 AA
 
 #### When the user hovers over the button, content appears below, and the user can mouse over the content.
@@ -447,11 +444,11 @@ Avoid making content appear and disappear on focus or hover, since this is disor
 [hover behavior example on codepen](https://codepen.io/michellanneli/pen/rXqzox)
 
 ### P14. Ensure that focus does not change context
-> I'm just trying to figure out the navigation, suddenly all the colors and pages are changing on me.
+> I'm just trying to figure out the navigation, suddenly new pages are popping up.
 
-Ensure that focus on a component does not trigger a change of context, such as launching a new window or changing focus to another component.
+Ensure that focus on a component does not trigger unexpected changes, such as launching a new window or changing focus to another component.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 3.2.1 A
 
 Needs illustration
@@ -461,7 +458,7 @@ Needs illustration
 
 Ensure that the keyboard focus indicator is visible so that users can visually see what component they are focusing on.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: cognitive, physical
 **WCAG number + conformance**: 2.4.7 AA
 
 Needs illustration
@@ -471,11 +468,11 @@ Needs illustration
 ## Presentation
 
 ### P16. Label user input fields
-> [write user quote]
+> I can't fill out your survey, my screen reader is just showing me a bunch of text fields.
 
 Provide a label or instructions for user input fields so that users know what type of data to input.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 3.3.2 A
 
 ##### HMTL
@@ -492,11 +489,11 @@ Provide a label or instructions for user input fields so that users know what ty
 ```
 
 ### P17. Include the label in the name
-> [write user quote]
+> My screen reader's asking me for my twitter but this field says "general social media," so which is it?
 
-Ensure the programmatic label is also in the visual text label of an input field. Users have a better experience if the two match, especially if they use both sight and speech input to navigate the app.
+Ensure the programmatic label matches visual text label of an input field. Users have a better experience if the two match, especially if they use both sight and screen readers to navigate the app.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: visual
 **WCAG number + conformance**: 2.5.3 A
 
 #### Search input uses visually hidden label that matches the placeholder text.
@@ -513,9 +510,9 @@ Ensure the programmatic label is also in the visual text label of an input field
 Source: [a11y Style Guide](https://a11y-style-guide.com/style-guide/section-forms.html#kssref-forms-search)
 
 ### P18. Use text instead of images of text
-> Where was the title? Oh, it's actually an image, that's annoying.
+> There was a 50% off banner? Oh it's an image, my screen reader can't read that.
 
-Convey information through text instead of images of text, except for when the user can visually customize the image or when a particular presentation is essential, like a logotype.
+Convey information through text in markup instead of images of text so that screen reader users can access it.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.5 AA, 1.4.9 AAA
@@ -564,9 +561,9 @@ h1 {
 Source for svg application: [Deque](https://www.deque.com/blog/creating-accessible-svgs/)
 
 ### P19. Provide a way to resize text up to 200%
-> Why is this text so tiny? I have to zoom in a ton just to read anything.
+> Why is this text so tiny? I can barely read it.
 
-User agents must provide a mechanism for the user to resize text up to 200%. Examples of this include: controls to zoom in and out and the ability to specify a preferred text size.
+Provide a mechanism for users to resize text up to 200%. Examples: zoom in/out controls, buttons that specify a preferred text size.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.4 AA
@@ -576,14 +573,14 @@ User agents must provide a mechanism for the user to resize text up to 200%. Exa
 
 For large blocks of text:
 * Provide a way to select foreground and background colors
-* Set maximum width to 80 characters
+* Set max width to 80 characters
 * Align the text, don’t justify
-* Provide a way to resize text up to 200% without assistive tech that doesn’t require horizontal scrolling
+* Provide a way to resize text up to 200% without assistive tech
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.8 AAA
 
-### P21. Make sure there’s no double scrolling
+### P21. Use responsive layouts
 > I don't think this website was built for phones, every time I try to scroll it just moves around.
 
 Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
@@ -615,7 +612,7 @@ Ensure the content is responsive and fits within the viewport. If the user resiz
 **Disabilities**: physical, visual
 **WCAG number + conformance**: 1.4.10 AA
 
-### P22. Don’t restrict content to portrait or landscape
+### P22. Don’t restrict the layout to portrait or landscape
 > I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess with my setup.
 
 Don’t restrict content to a single display orientation, like portrait or landscape, unless a specific display orientation is essential.
@@ -628,7 +625,7 @@ Don’t restrict content to a single display orientation, like portrait or lands
 ## Bypass content
 
 ### P23. Provide a way to pause audio that plays automatically
-> Whenever I hear an ad playing, I can’t hear my screen reader at all and I’m not sure how to turn it off.
+> Whenever I hear an ad playing, I can’t hear my screen reader at all.
 
 If any audio plays automatically for more than 3 seconds, provide a way to pause or stop the audio, or a way to control that audio volume independent from the overall system volume.
 
@@ -639,6 +636,9 @@ If any audio plays automatically for more than 3 seconds, provide a way to pause
 > I just want to skip to the good stuff, my screen reader doesn't need to go through the nav every time.
 
 Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
+
+**Disabilities**: physical, visual
+**WCAG number + conformance**: 2.4.1 A
 
 #### HTML skip link
 ```html
@@ -667,23 +667,20 @@ Provide a way to bypass blocks of content that are repeated on multiple web page
 
 Source: [WebAIM](https://webaim.org/techniques/css/invisiblecontent/)
 
-**Disabilities**: physical, visual
-**WCAG number + conformance**: 2.4.1 A
-
 ### P25. Provide a way to disable animation triggered by interaction
 > Every time I click "next" the slides bounce around everywhere and it's making me dizzy.
 
 Provide a way to disable motion animation triggered by interaction, like parallax scrolling or page-flipping animations, unless the animation is essential to the functionality or information.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.3.3 AAA
 
 ### P26. Provide a way to get rid of moving content
 > I can't focus, the animation in the background keeps distracting me.
 
-For moving, blinking, or scrolling content that starts automatically, lasts more than 5 seconds, and is presented with other content, provide a way for people to pause, stop, or hide it (unless this movement is essential to an activity). For auto-updating information, provide a way for people to pause, stop, or hide it or control the frequency of updating.
+For moving, blinking, or scrolling content that starts automatically, lasts more than 5 seconds, and is presented with other content, provide a way for people to pause, stop, or hide it (unless it's essential).
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 2.2.2 A
 
 ***
