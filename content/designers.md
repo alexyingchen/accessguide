@@ -16,7 +16,7 @@
 ### D1. Use high contrast
 > This text is so light, I can barely see it.
 
-Use high contrast so that users can easily read and see content. For text, the contrast should be at least 4.5:1 (AA) or 7:1 (AAA). For UI components like buttons, at least 3:1 (AA). Logotypes are the exception.
+Use high contrast so that users can easily read and see content. For text, the contrast should be at least 4.5:1 (AA) or 7:1 (AAA). For UI components like buttons, at least 3:1 (AA).
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.3 AA, 1.4.6 AAA, 1.4.11 AA
@@ -58,7 +58,7 @@ Use these text spacing best practices for readability:
 
 For UI components that have the same functionality, make sure they are visually consistent and are labeled the same way in code.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 3.2.4 AA
 
 **illustration idea**: same button with different background and contexts (button needs to be clear, background can be abstract)
@@ -112,7 +112,7 @@ If a function is triggered by a [motion function](glossary link) (like shaking t
 
 Don't change the context (such as automatically launching new windows or refreshing the content feed) unless it's by user request.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 3.2.2 A, 3.2.5 AAA
 
 **illustration idea**: newsletter pop-up on computer with person next to it looking distressed
@@ -126,7 +126,7 @@ Don't change the context (such as automatically launching new windows or refresh
 
 Make sure that the navigation is presented in the same way on all pages, and that all the items are presented in the same order.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 3.2.3 AA
 
 **illustration idea**: same navigation with different pages, contexts, etc. (similar to consistent UI components)
@@ -138,7 +138,7 @@ Make sure that the navigation is presented in the same way on all pages, and tha
 
 Provide information about the user’s location within a set of pages, like a breadcrumbs trail or a site map.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 2.4.8 AAA
 
 **illustration idea**: breadcrumbs trail of navigation showing where user is
@@ -150,7 +150,7 @@ Provide information about the user’s location within a set of pages, like a br
 
 Because people prefer finding content in different ways, provide multiple ways to locate a page, such as a site map, table of contents, search function, and links to related pages.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.4.5 AA
 
 **illustration idea**: sample table of contents, search bar, and related page links
@@ -162,7 +162,7 @@ Because people prefer finding content in different ways, provide multiple ways t
 
 Write descriptive page titles to help people navigate content.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 2.4.2 A
 
 **illustration idea**: bad example with vague titles, good example with specific titles
@@ -176,7 +176,7 @@ Write descriptive page titles to help people navigate content.
 
 If the system detects an input error, identify the error and describe it to users as specifically as possible.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.3.1 A
 
 **illustration idea**: error message next to text field saying "password must be in the form of a haiku" (or something similarly ridiculous)
@@ -188,7 +188,7 @@ If the system detects an input error, identify the error and describe it to user
 
 If the system detects an input error, suggest corrections so that users can easily fix it.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.3.3 AA
 
 **illustration idea**: search results that ay "We could not find anything for 'x' did you mean 'y'?"
@@ -201,7 +201,7 @@ If the system detects an input error, suggest corrections so that users can easi
 
 Provide contextual help on the same page or next to content it's referencing in a way that’s obvious and easy to find. Users should not have to navigate away from the current page to access this.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.3.5 AAA
 
 **illustration idea**: [will think of later]
@@ -215,7 +215,7 @@ Provide contextual help on the same page or next to content it's referencing in 
 
 If you give users a time limit to complete a task, provide them with a way to adjust or turn off the time limit. To be more accessible, don’t require time limits at all.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.2.1 A, 2.2.3 AAA
 
 **illustration idea**: (bad example) "You have 5 minutes to sign up for these concert tickets" with person looking stressed out (good example) no time limit, person can take their time
@@ -227,7 +227,7 @@ If you give users a time limit to complete a task, provide them with a way to ad
 
 Provide the option to turn off or postpone interruptions (such as an on/off switch in the user settings) except in the case of an emergency. To be very accessible, don't create interruptions at all.
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.2.4 AAA
 
 **illustration idea**: (example of acceptable interruption) Pop up saying: Warning! Flood alert, seek shelter immediately
