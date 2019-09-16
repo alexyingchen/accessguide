@@ -15,7 +15,7 @@
 ### C1. Provide text descriptions of imagery
 > What's in this photo? It doesn't have alt text, so my [screen reader](glossary link) can't read it.
 
-Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired. Descriptions also help people with intellectual disabilities understand imagery.
+Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired. 
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.1.1 A
@@ -101,7 +101,7 @@ Edit the audio so there is little to no background noise in audio, or provide a 
 
 Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to. Otherwise, people may find these words difficult to read and understand.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.3 AAA
 
 `The birthday party wasn’t a surprise because my sister _spilled the beans_.
@@ -114,7 +114,7 @@ Provide a way to understand unusual words like idioms and jargon, such as a glos
 
 Provide a way to expand abbreviations, such as a glossary that the abbreviation links to or an explanation in the text. Otherwise, poeple may not know or remember what they stand for.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.4 AAA
 
 `Our next guests for our AMA (Ask Me Anything) are the amazing Frida Kahlo and Georgia O'Keeffe!`
@@ -126,7 +126,7 @@ Provide a way to expand abbreviations, such as a glossary that the abbreviation 
 
 Write clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.5 AAA
 
 `Bad: The juxtaposition of positive and negative perspectives will be explored in this essay on the topic of visibly branding one's identity onto transportation vehicles in paradigms of public space.
@@ -140,7 +140,7 @@ Good: This essay explores pros and cons of bumpers stickers on cars.`
 
 Provide a way to determine the specific pronunciation for ambiguous words, such as the phonetic spelling right after the word, the reading of the word by ruby element, or a link to a glossary.
 
-**Disabilities**: intellectual
+**Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.6 AAA
 
 -
@@ -150,7 +150,7 @@ Provide a way to determine the specific pronunciation for ambiguous words, such 
 
 Use section headings to organize content and write headings and labels that describe the topic/purpose to help people navigate content.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 2.4.6 AA, 2.4.10 AAA
 
 `h1 Ingredients
@@ -172,7 +172,7 @@ h1 Notes
 
 Write links so that users can understand the purpose of the link from the link text alone.
 
-**Disabilities**: intellectual, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 2.4.4 A, 2.4.9 AAA
 
 #### Example 1
