@@ -458,7 +458,7 @@ Needs illustration
 
 Ensure that the keyboard focus indicator is visible so that users can visually see what component they are focusing on.
 
-**Disabilities**: cognitive, physical
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.4.7 AA
 
 Needs illustration
@@ -585,6 +585,9 @@ For large blocks of text:
 
 Ensure the content is responsive and fits within the viewport. If the user resizes the viewport, make sure that this doesn’t hide content or cause scrolling in two directions.
 
+**Disabilities**: physical, visual
+**WCAG number + conformance**: 1.4.10 AA
+
 #### CSS for a container that is constrained to the full width of the viewport
 ```css
 .container {
@@ -608,9 +611,6 @@ Ensure the content is responsive and fits within the viewport. If the user resiz
   overflow: hidden;
 }
 ```
-
-**Disabilities**: physical, visual
-**WCAG number + conformance**: 1.4.10 AA
 
 ### P22. Don’t restrict the layout to portrait or landscape
 > I mounted my phone to my wheelchair in portrait to make it easier to use. Landscape-only pages mess with my setup.
@@ -637,7 +637,7 @@ If any audio plays automatically for more than 3 seconds, provide a way to pause
 
 Provide a way to bypass blocks of content that are repeated on multiple web pages. For example, a link at the top of the page that jumps to the main story.
 
-**Disabilities**: physical, visual
+**Disabilities**: visual
 **WCAG number + conformance**: 2.4.1 A
 
 #### HTML skip link
@@ -672,7 +672,7 @@ Source: [WebAIM](https://webaim.org/techniques/css/invisiblecontent/)
 
 Provide a way to disable motion animation triggered by interaction, like parallax scrolling or page-flipping animations, unless the animation is essential to the functionality or information.
 
-**Disabilities**: cognitive, physical, visual
+**Disabilities**: cognitive, visual
 **WCAG number + conformance**: 2.3.3 AAA
 
 ### P26. Provide a way to get rid of moving content
@@ -697,7 +697,7 @@ Make sure at least one of the following is true when operating a single pointer:
 
 \*There may be cases in which there is no other option but for the down-event to execute the function. 
 
-**Disabilities**: intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.5.2 A
 
 #### Good Example: Up event triggers deletion of photos, with option to recover
@@ -773,7 +773,7 @@ Prevent errors by providing at least one of these:
 * Provide a way to review and confirm information before submitting
 * This is required when handling legal or financial information.
 
-**Disabilities**: intellectual, physical
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 3.3.4 AA, 3.3.6 AAA
 
 ***
@@ -785,7 +785,7 @@ Prevent errors by providing at least one of these:
 
 If inactivity in the user session leads to a timeout and causes data loss, warn users about this through a notification.
 
-**Disabilities**: hearing, intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.2.6 AAA
 
 ### P30. Allow users to re-authenticate without losing data
@@ -793,5 +793,5 @@ If inactivity in the user session leads to a timeout and causes data loss, warn 
 
 When an authenticated session expires, allow users to re-authenticate by providing a login and restoring the same information and user’s stage in the process.
 
-**Disabilities**: hearing, intellectual, physical, visual
+**Disabilities**: cognitive, physical, visual
 **WCAG number + conformance**: 2.2.5 AAA
