@@ -25,7 +25,7 @@ Provide [text descriptions](glossary link) of imagery (like photos and diagrams)
 ### C2. Provide transcripts of audio
 > There's a cool new podcast that I want to read, but it doesn't have a transcript.
 
-Provide transcripts of audio content that’s pre-recorded (like podcasts) and live (like speeches) for people who are deaf or hard of hearing.
+Provide transcripts of pre-recorded audio (like podcasts) and live audio (like speeches) for people who are deaf or hard of hearing.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.1 A, 1.2.9 AAA
@@ -35,7 +35,7 @@ Provide transcripts of audio content that’s pre-recorded (like podcasts) and l
 ### C3. Provide closed captions of video
 > What are these people saying? I wish this movie had captions.
 
-Provide closed captions of video that’s pre-recorded (like movies) and live (like newscasts) for people who are deaf or hard of hearing.
+Provide closed captions of pre-recorded video (like movies) and live video (like newscasts) for people who are deaf or hard of hearing.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.2 A, 1.2.4 AA
@@ -45,7 +45,7 @@ Provide closed captions of video that’s pre-recorded (like movies) and live (l
 ### C4. Provide audio descriptions of video
 > Can you do me a favor and tell me what's happening in the movie?
 
-Provide [audio descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people blind or visually impaired. Embed the audio description between character dialogue.
+Provide [audio descriptions](glossary link) of pre-recorded video (like movies) that describe visuals and actions to people blind or visually impaired. Embed the audio description between character dialogue.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.5 AA, 1.2.7 AAA
@@ -55,7 +55,7 @@ Provide [audio descriptions](glossary link) of video that’s pre-recorded (like
 ### C5. Provide text descriptions of video
 > I love appreciating cinema and documentaries with my assistant, who signs in my hand.
 
-Provide [text descriptions](glossary link) of video that’s pre-recorded (like movies) that fully describe visuals and actions to people who are blind and/or deaf. This reads like a screenplay. See also [media alternative](glossary link).
+Provide [text descriptions](glossary link) of pre-recorded video (like movies) that describe visuals and actions to people who are blind and/or deaf. This reads like a screenplay. See also [media alternative](glossary link).
 
 **Disabilities**: hearing, visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.8 AAA
@@ -65,7 +65,7 @@ Provide [text descriptions](glossary link) of video that’s pre-recorded (like 
 ### C6. Provide sign language interpretation of video
 > I wish they had an ASL interpreter, reading lips doesn't always work.
 
-Provide sign language interpretation of the audio content in videos that's pre-recorded (like movies) for deaf and hard of hearing people. You can use a split screen or add a smaller frame in the corner.
+Provide sign language interpretation of the audio content in pre-recorded video (like movies) for deaf and hard of hearing people. You can use a split screen or add a smaller frame in the corner.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.6 AAA
