@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {
     color: `#aaa`,
     padding: `20px 20px 10px`,
     fontSize: `14px`,
     textAlign: `center`,
   },
-}));
+});
 
-function Footer({ children }) {
-  const classes = useStyles();
+function Footer(props) {
+  const { classes, children } = props;
   return (
     <footer className={classes.root}>
       {children}
@@ -22,4 +21,4 @@ function Footer({ children }) {
 
 Footer.propTypes = {}
 
-export default Footer;
+export default withStyles(styles)(Footer);

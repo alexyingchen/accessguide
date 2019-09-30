@@ -5,7 +5,6 @@ import Page from '../components/Page';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
 import Footer from '../components/Footer'
-import Drawer from '../components/Drawer';
 
 const AboutPageQuery = graphql`
   query {

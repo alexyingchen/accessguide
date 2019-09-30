@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -45,15 +45,15 @@ const metaDataQuery = graphql`
   }  
 `;
 
-const useStyles = makeStyles(() => ({
+const styles = theme => ({
   root: {
     marginTop: '2em',
   },
-}));
+});
 
-function CardContainer({ children }) {
+function CardContainer(props) {
+  const { classes } = props;
   const { allContentfulCard } = useStaticQuery(metaDataQuery);
-  const classes = useStyles();
 
   return (
     <Container className={classes.root}>
@@ -68,4 +68,4 @@ function CardContainer({ children }) {
   );
 }
 
-export default CardContainer;
+export default withStyles(styles)(CardContainer);

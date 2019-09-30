@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { get } from 'lodash';
 
 import Container from '@material-ui/core/Container';
@@ -11,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Chip from '@material-ui/core/Chip';
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {},
   flexbox: {
     display: 'flex',
@@ -29,11 +29,10 @@ const useStyles = makeStyles(theme => ({
   chip: {
     marginRight: '1rem',
   }
-}));
+});
 
 function Card(props) {
-  const { card, ...other } = props;
-  const classes = useStyles();
+  const { classes, card, ...other } = props;
   return (
     <MuiCard className={classes.root} {...other}>
       <CardContent>
@@ -72,7 +71,7 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default withStyles(styles)(Card);
 
 Card.propTypes = {
   card: PropTypes.object,

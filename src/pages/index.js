@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Page from '../components/Page';
@@ -23,12 +23,12 @@ const homePageQuery = graphql`
   }
 `;
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   toolbarSpacer: theme.mixins.toolbar,
-}));
+});
 
-function HomePage() {
-  const classes = useStyles();
+function HomePage(props) {
+  const { classes } = props;
   const { site } = useStaticQuery(homePageQuery);
   return (
     <Page>
@@ -49,4 +49,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default withStyles(styles)(HomePage);

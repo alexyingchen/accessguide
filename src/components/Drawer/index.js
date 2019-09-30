@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import MuiDrawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -9,7 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -18,10 +18,10 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
   },
   toolbarSpacer: theme.mixins.toolbar,
-}));
+});
 
-function Drawer({ children }) {
-  const classes = useStyles();
+function Drawer(props) {
+  const { classes } = props;
   return (
     <MuiDrawer
       className={classes.drawer}
@@ -50,4 +50,4 @@ function Drawer({ children }) {
 
 Drawer.propTypes = {}
 
-export default Drawer;
+export default withStyles(styles)(Drawer);

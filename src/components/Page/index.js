@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby"
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
@@ -22,15 +22,15 @@ const metaDataQuery = graphql`
   }
 `;
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {
     display: `flex`,
   },
-}));
+});
 
-function Page({ children }) {
+function Page(props) {
+  const { classes, children } = props;
   const { site } = useStaticQuery(metaDataQuery);
-  const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
@@ -41,4 +41,4 @@ function Page({ children }) {
   );
 };
 
-export default Page;
+export default withStyles(styles)(Page);
