@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   drawerPaper: {
     width: drawerWidth,
   },
-  toolbar: theme.mixins.toolbar,
+  toolbarSpacer: theme.mixins.toolbar,
 }));
 
 function Drawer({ children }) {
@@ -28,7 +28,7 @@ function Drawer({ children }) {
       variant="permanent"
       classes={{ paper: classes.drawerPaper }}
     >
-      <div className={classes.toolbar} />
+      <div className={classes.toolbarSpacer} />
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
