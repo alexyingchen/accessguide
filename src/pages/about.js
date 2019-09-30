@@ -9,14 +9,6 @@ import Drawer from '../components/Drawer';
 
 const AboutPageQuery = graphql`
   query {
-    contentfulHomePage {
-      title
-      content {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
     site {
       siteMetadata {
         menuLinks {
@@ -29,13 +21,12 @@ const AboutPageQuery = graphql`
 `
 
 function AboutPage() {
-  const { contentfulHomePage, site } = useStaticQuery(AboutPageQuery);
+  const { site } = useStaticQuery(AboutPageQuery);
   return (
     <Page>
       <Seo title='About'/>
-      <Header menuLinks={site.siteMetadata.menuLinks} siteTitle={contentfulHomePage.title}/>
+      <Header menuLinks={site.siteMetadata.menuLinks} siteTitle={"About"}/>
       <main>
-        <h1>{contentfulHomePage.title}</h1>
       </main>
       <Footer/>
     </Page>

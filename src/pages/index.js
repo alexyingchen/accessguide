@@ -1,22 +1,17 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { makeStyles } from '@material-ui/core/styles';
 
+import Container from '@material-ui/core/Container';
 import Page from '../components/Page';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 import Drawer from '../components/Drawer';
+import CardContainer from '../components/CardContainer';
 
 const homePageQuery = graphql`
   query {
-    contentfulHomePage {
-      title
-      content {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
     site {
       siteMetadata {
         menuLinks {
@@ -26,23 +21,32 @@ const homePageQuery = graphql`
       }
     }
   }
-`
+`;
+
+const useStyles = makeStyles(theme => ({
+  toolbarSpacer: theme.mixins.toolbar,
+}));
 
 function HomePage() {
-  const { contentfulHomePage, site } = useStaticQuery(homePageQuery);
-  console.log(site.siteMetadata.menuLinks)
+  const classes = useStyles();
+  const { site } = useStaticQuery(homePageQuery);
   return (
     <Page>
-      <Seo title='Home'/>
-      <Header menuLinks={site.siteMetadata.menuLinks} siteTitle={contentfulHomePage.title}/>
-      <Drawer/>
-      <main>
-        <h1>{contentfulHomePage.title}</h1>
-        <article dangerouslySetInnerHTML={{ __html: contentfulHomePage.content.childMarkdownRemark.html }} />
-      </main>
-      <Footer/>
+      <Seo title="Home" />
+      <Header
+        menuLinks={site.siteMetadata.menuLinks}
+        siteTitle={"Access Guide"}
+      />
+      <Drawer />
+      <Container>
+        <div className={classes.toolbarSpacer} />
+        <main>
+          <CardContainer />
+        </main>
+      </Container>
+      <Footer />
     </Page>
   );
-};
+}
 
 export default HomePage;
