@@ -8,7 +8,7 @@ import Card from '../Card';
 
 const cardQuery = graphql`
   query {
-    allContentfulCard {
+    allContentfulCard(sort: {fields: title, order: ASC}) {
       nodes {
         title
         media {

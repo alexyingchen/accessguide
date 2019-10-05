@@ -6,14 +6,13 @@ import MuiDrawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
 
 const drawerWidth = 240;
 
 const navQuery = graphql`
   query {
-    allContentfulCategory {
-      nodes {
+    allContentfulCategory(sort: {fields: createdAt, order: ASC}) {
+      nodes{
         id
         name
         subcategories {
@@ -22,7 +21,7 @@ const navQuery = graphql`
         }
       }
     }
-  }
+  }  
 `;
 
 const styles = theme => ({
