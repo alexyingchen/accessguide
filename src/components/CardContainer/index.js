@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '../Card';
 
-const metaDataQuery = graphql`
+const cardQuery = graphql`
   query {
     allContentfulCard {
       nodes {
@@ -53,7 +53,7 @@ const styles = theme => ({
 
 function CardContainer(props) {
   const { classes } = props;
-  const { allContentfulCard } = useStaticQuery(metaDataQuery);
+  const { allContentfulCard } = useStaticQuery(cardQuery);
 
   return (
     <Container className={classes.root}>

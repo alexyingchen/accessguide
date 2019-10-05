@@ -6,7 +6,7 @@ import Seo from '../components/Seo';
 import Header from '../components/Header';
 import Footer from '../components/Footer'
 
-const AboutPageQuery = graphql`
+const aboutPageQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -20,7 +20,7 @@ const AboutPageQuery = graphql`
 `
 
 function AboutPage() {
-  const { site } = useStaticQuery(AboutPageQuery);
+  const { site } = useStaticQuery(aboutPageQuery);
   return (
     <Page>
       <Seo title='About'/>

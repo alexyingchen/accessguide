@@ -12,7 +12,7 @@ const styles = theme => ({
 });
 
 function CustomButton(props) {
-  const { children, className, classes, ...other } = props;
+  const { classes, children, className, ...other } = props;
   return (
     <Button className={clsx(classes.root, className)} {...other}>
       {children}
