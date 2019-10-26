@@ -1,49 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from "gatsby"
 import { withStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '../Card';
-
-const cardQuery = graphql`
-  query {
-    allContentfulCard(sort: {fields: title, order: ASC}) {
-      nodes {
-        title
-        media {
-          file {
-            url
-            fileName
-            contentType
-          }
-          description
-        }
-        quote {
-          quote
-        }
-        body {
-          body
-        }
-        wcagNumbers {
-          name
-          level {
-            name
-          }
-        }
-        category {
-          name
-        }
-        subcategories {
-          name
-        }
-        disabilities {
-          name
-        }
-      }
-    }
-  }  
-`;
 
 const styles = theme => ({
   root: {
@@ -51,21 +12,102 @@ const styles = theme => ({
   },
 });
 
-function CardContainer(props) {
-  const { classes } = props;
-  const { allContentfulCard } = useStaticQuery(cardQuery);
+const cardQuery = graphql`
+    query {
+      allContentfulCard(
+        sort: {
+          fields: title
+          order: ASC
+        }
+        filter: {
+        }
+      ) {
+        nodes {
+          title
+          media {
+            file {
+              url
+              fileName
+              contentType
+            }
+            description
+          }
+          quote {
+            quote
+          }
+          body {
+            body
+          }
+          wcagNumbers {
+            id
+            name
+            level {
+              name
+            }
+          }
+          category {
+            id
+            name
+          }
+          subcategories {
+            id
+            name
+          }
+          disabilities {
+            id
+            name
+          }
+        }
+      }
+    }  
+  `;
 
-  return (
-    <Container className={classes.root}>
-      <Grid container spacing={3}>
-        {allContentfulCard.nodes.map((card, i) => (
-          <Grid item xs={12} key={`card-${i}`}>
-            <Card card={card}/>
+class CardContainer extends React.Component {
+  state = {
+    categoryFilter: '',
+    subcategoryFilter: ["ace71a5b-3178-53b5-be90-84b73ee62f50"],
+    disabilityFilter: [],
+    wcagNumberFilter: ['4d16dcab-ca6a-57f0-8827-77a93abf87e8'],
+  }
+
+  getFilterQuery = (filterName) => {
+    const filters = this.state[`${filterName}Filter`];
+    if (filters.length === 0) {
+      return '';
+    }
+    if (Array.isArray(filters)) {
+      return `${filterName}: {
+        elemMatch: {
+          id: {
+            in: ${filters}
+          }
+        }
+      }`
+    } else {
+      return `${filterName}: {
+        id: {
+          eq: ${filters}
+        }
+      }` 
+    }
+  }
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <StaticQuery query={cardQuery} render={({ allContentfulCard }) => (
+        <Container className={classes.root}>
+          <Grid container spacing={3}>
+            {allContentfulCard.nodes.map((card, i) => (
+              <Grid item xs={12} key={`card-${i}`}>
+                <Card card={card}/>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-    </Container>
-  );
+        </Container>
+      )}/>
+    );
+  }
 }
 
 export default withStyles(styles)(CardContainer);

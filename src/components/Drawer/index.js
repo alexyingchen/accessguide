@@ -51,8 +51,8 @@ function Drawer(props) {
       <div className={classes.toolbarSpacer} />
       <List>
         {allContentfulCategory.nodes.map((category, i) => (
-          <Fragment>
-            <ListItem button key={`category-${i}`}>
+          <Fragment key={`category-${i}`}>
+            <ListItem button>
               <ListItemText primary={category.name} />
             </ListItem>
             <List component="div" disablePadding>
