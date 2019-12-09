@@ -12,10 +12,10 @@
 
 ## Multimedia
 
-### C1. Provide text descriptions of imagery
-> What's in this photo? It doesn't have alt text, so my [screen reader](glossary link) can't read it.
+### C1. Provide image descriptions
+> What’s this photo? It doesn’t have alt text, so it just shows up on my screen reader as nothing.
 
-Provide [text descriptions](glossary link) of imagery (like photos and diagrams) to describe it to people who are blind or visually impaired. 
+Provide image descriptions that describe the essential elements and actions of images so that Blind people can access them.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.1.1 A
@@ -25,7 +25,7 @@ Provide [text descriptions](glossary link) of imagery (like photos and diagrams)
 ### C2. Provide transcripts of audio
 > There's a cool new podcast that I want to read, but it doesn't have a transcript.
 
-Provide transcripts of pre-recorded audio (like podcasts) and live audio (like speeches) for people who are deaf or hard of hearing.
+Provide transcripts of pre-recorded audio (like podcasts) and live audio (like speeches) so that Deaf and hard of hearing people can access them.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.1 A, 1.2.9 AAA
@@ -35,7 +35,7 @@ Provide transcripts of pre-recorded audio (like podcasts) and live audio (like s
 ### C3. Provide closed captions of video
 > What are these people saying? I wish this movie had captions.
 
-Provide closed captions of pre-recorded video (like movies) and live video (like newscasts) for people who are deaf or hard of hearing.
+Provide closed captions of pre-recorded video (like movies) and live video (like newscasts) so that Deaf and hard of hearing people can access them.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.2 A, 1.2.4 AA
@@ -45,7 +45,7 @@ Provide closed captions of pre-recorded video (like movies) and live video (like
 ### C4. Provide audio descriptions of video
 > Can you do me a favor and tell me what's happening in the movie?
 
-Provide [audio descriptions](glossary link) of pre-recorded video (like movies) that describe visuals and actions to people blind or visually impaired. Embed the audio description between character dialogue.
+Provide audio descriptions of pre-recorded video (like movies) that fully describe visuals and actions to Blind people. Embed the description between character dialogue.
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.5 AA, 1.2.7 AAA
@@ -53,19 +53,19 @@ Provide [audio descriptions](glossary link) of pre-recorded video (like movies) 
 -
 
 ### C5. Provide text descriptions of video
-> I love appreciating cinema and documentaries with my assistant, who signs in my hand.
+> I hear battle cries, are they fighting in the mountains or in the fields right now?
 
-Provide [text descriptions](glossary link) of pre-recorded video (like movies) that describe visuals and actions to people who are blind and/or deaf. This reads like a screenplay. See also [media alternative](glossary link).
+Provide text descriptions of pre-recorded video (like movies) that describe visuals and actions to Blind people. This reads like a screenplay.
 
 **Disabilities**: hearing, visual
 **WCAG number + conformance**: 1.2.3 A, 1.2.8 AAA
 
 -
 
-### C6. Provide sign language interpretation of video
+### C6. Provide ASL interpretation of video
 > I wish they had an ASL interpreter, reading lips doesn't always work.
 
-Provide sign language interpretation of the audio content in pre-recorded video (like movies) for deaf and hard of hearing people. You can use a split screen or add a smaller frame in the corner.
+Provide sign language interpretation in pre-recorded video (like movies) for Deaf people. You can use a split screen or add a smaller frame in the corner.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.2.6 AAA
@@ -74,7 +74,7 @@ Provide sign language interpretation of the audio content in pre-recorded video 
 
 ## Media editing
 
-### C7. Don’t use more than 3 flashes per second
+### C7. Don’t use flashing lights
 > I can't go to the concert with you, the strobe lights might give me a seizure.
 
 Don’t use more than 3 flashes per second in your visuals to avoid triggering a seizure. Especially avoid bright flashes and the color red.
@@ -87,7 +87,7 @@ Don’t use more than 3 flashes per second in your visuals to avoid triggering a
 ### C8. Get rid of background noise in audio
 > The traffic sounds makes it impossible to hear what the people are saying.
 
-Edit the audio so there is little to no background noise in audio, or provide a way to turn off the background noise so that hard of hearing people can hear the important audio content.
+Edit the audio so there is little to no background noise in audio, or provide a way to turn off the background noise.
 
 **Disabilities**: hearing
 **WCAG number + conformance**: 1.4.7 AAA
@@ -99,7 +99,7 @@ Edit the audio so there is little to no background noise in audio, or provide a 
 ### C9. Provide a way to understand unusual words
 > Half of this conversation is jargon. What does it all mean?!
 
-Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to. Otherwise, people may find these words difficult to read and understand.
+Provide a way to understand unusual words like idioms and jargon, such as a glossary that the unusual word links to.
 
 **Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.3 AAA
@@ -112,7 +112,7 @@ Provide a way to understand unusual words like idioms and jargon, such as a glos
 ### C10. Provide a way to expand abbreviations
 > This just looks like a bunch of letters to me.
 
-Provide a way to expand abbreviations, such as a glossary that the abbreviation links to or an explanation in the text. Otherwise, poeple may not know or remember what they stand for.
+Provide a way to understand abbreviations, such as a glossary that the abbreviation links to or an explanation in the text.
 
 **Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.4 AAA
@@ -124,7 +124,7 @@ Provide a way to expand abbreviations, such as a glossary that the abbreviation 
 ### C11. Write content at an 8th grade reading level
 > The reading is so dense and complicated, who could ever finish it?
 
-Write clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary at an 8th grade level.
+Write clearly and simply so that it reads at an 8th grade reading level. If the main content is too complex to simplify (like a scientific article), then provide a simple summary.
 
 **Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.5 AAA
@@ -136,19 +136,19 @@ Good: This essay explores pros and cons of bumpers stickers on cars.`
 -
 
 ### C12. Provide pronunciation for ambiguous words
-> My [screen reader](link to glossary) can't pronounce this word, so not sure what it actually says.
+> My screen reader can't pronounce this word, so not sure what it actually says.
 
-Provide a way to determine the specific pronunciation for ambiguous words, such as the phonetic spelling right after the word, the reading of the word by ruby element, or a link to a glossary.
+Provide a way to determine the specific pronunciation for ambiguous words, such as a phonetic spelling, a reading by ruby element, or a link to a glossary.
 
 **Disabilities**: cognitive
 **WCAG number + conformance**: 3.1.6 AAA
 
 -
 
-### C13. Write descriptive headings and labels
+### C13. Write descriptive headings
 > When long articles don't have any section titles, it's impossible to find what I want.
 
-Use section headings to organize content and write headings and labels that describe the topic/purpose to help people navigate content.
+Use section headings to organize content. These headings should describe the topic/purpose to help people navigate.
 
 **Disabilities**: cognitive, visual
 **WCAG number + conformance**: 2.4.6 AA, 2.4.10 AAA
