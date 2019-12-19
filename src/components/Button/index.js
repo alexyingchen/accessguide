@@ -7,6 +7,10 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
+    borderRadius: '0',
+    border: '2px solid black',
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.common.black,
     textTransform: 'none',
   },
 });

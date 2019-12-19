@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { get } from 'lodash';
 
+import Filter from '../Filter';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import MuiCard from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Chip from '@material-ui/core/Chip';
 
 const styles = theme => ({
   root: {},
@@ -26,7 +26,7 @@ const styles = theme => ({
     fontStyle: 'italic',
     marginBottom: '1rem',
   },
-  chip: {
+  filter: {
     marginRight: '1rem',
   }
 });
@@ -58,12 +58,12 @@ function Card(props) {
           </Container>
         </Box>
         <Box className={classes.flexbox}>
-          <Chip label={card.category.name} className={classes.chip} />
+          <Filter type={card.category.name} className={classes.filter}>{card.category.name}</Filter>
           {card.disabilities.map((disability, i) => (
-            <Chip key={`disability-${i}`} label={disability.name} className={classes.chip} />
+            <Filter key={`disability-${i}`} type={disability.name} className={classes.filter}>{disability.name}</Filter>
           ))}
           {card.wcagNumbers.map((wcag, i) => (
-            <Chip key={`wcag-${i}`} label={`${wcag.level.name} ${wcag.name}`} className={classes.chip} />
+            <Filter key={`wcag-${i}`} type={wcag.level.name} className={classes.filter}>{wcag.name}</Filter>
           ))}
         </Box>
       </CardContent>
