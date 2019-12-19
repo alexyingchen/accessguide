@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from "gatsby"
 import { withStyles } from '@material-ui/core/styles';
 
+import CardFilter from '../CardFilter';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '../Card';
@@ -97,6 +98,7 @@ class CardContainer extends React.Component {
     return (
       <StaticQuery query={cardQuery} render={({ allContentfulCard }) => (
         <Container className={classes.root}>
+          <CardFilter {...this.state}/>
           <Grid container spacing={3}>
             {allContentfulCard.nodes.map((card, i) => (
               <Grid item xs={12} key={`card-${i}`}>

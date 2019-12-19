@@ -28,7 +28,7 @@ function Header(props) {
         </Typography>
         {menuLinks.map((link, index) =>
           <Link key={index} to={link.link}>
-            <Button variant="contained" color="primary" key={link.link}>
+            <Button color="primary" key={link.link}>
               {link.name}
             </Button>
           </Link>

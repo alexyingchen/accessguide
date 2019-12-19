@@ -14,7 +14,7 @@ const styles = theme => ({
 function CustomButton(props) {
   const { classes, children, className, ...other } = props;
   return (
-    <Button className={clsx(classes.root, className)} {...other}>
+    <Button variant="contained" className={clsx(classes.root, className)} {...other}>
       {children}
     </Button>
   );
