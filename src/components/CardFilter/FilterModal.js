@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Modal from '@material-ui/core/Modal';
-import Checkbox from '@material-ui/core/Checkbox';
+//import Checkbox from '@material-ui/core/Checkbox';
 //import Badge from '@material-ui/core/Badge';
 
 const styles = theme => ({
@@ -22,7 +22,7 @@ const styles = theme => ({
 });
 
 function CardFilter(props) {
-  const { classes, open, handleClose, ...other } = props;
+  const { classes, open, handleClose, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter, ...other } = props;
   return (
     <Modal
       aria-labelledby="filter-modal-title"
@@ -42,4 +42,8 @@ export default withStyles(styles)(CardFilter);
 
 CardFilter.propTypes = {
   handleClose: PropTypes.func,
+  categoryFilter: PropTypes.arrayOf(PropTypes.string),
+  subcategoryFilter: PropTypes.arrayOf(PropTypes.string),
+  disabilityFilter: PropTypes.arrayOf(PropTypes.string),
+  wcagNumberFilter: PropTypes.arrayOf(PropTypes.string),
 };

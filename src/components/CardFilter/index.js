@@ -43,17 +43,17 @@ const styles = theme => ({
 });
 
 function CardFilter(props) {
-  const [modalOpen, setModalOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
-  const handleModalOpen = () => {
-    setModalOpen(true);
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   const handleClose = () => {
-    setModalOpen(false);
+    setOpen(false);
   };
 
-  const { classes, ...other } = props;
+  const { classes, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter, ...other } = props;
 
   return (
     <Box className={classes.root} {...other}>
@@ -70,8 +70,8 @@ function CardFilter(props) {
           inputProps={{ 'aria-label': 'search' }}
         />
       </div>
-      <Button onClick={handleModalOpen}>Tags</Button>
-      <FilterModal handleClose={handleClose} open={modalOpen}/>
+      <Button onClick={handleOpen}>Tags</Button>
+      <FilterModal {...{ open, handleClose, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter}}/>
     </Box>
   );
 }

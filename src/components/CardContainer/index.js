@@ -65,7 +65,7 @@ const cardQuery = graphql`
 
 class CardContainer extends React.Component {
   state = {
-    categoryFilter: '',
+    categoryFilter: [],
     subcategoryFilter: ["ace71a5b-3178-53b5-be90-84b73ee62f50"],
     disabilityFilter: [],
     wcagNumberFilter: ['4d16dcab-ca6a-57f0-8827-77a93abf87e8'],
