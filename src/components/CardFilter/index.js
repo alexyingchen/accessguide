@@ -16,11 +16,13 @@ const styles = theme => ({
   },
   search: {
     width: '100%',
+    marginRight: theme.spacing(2),
     position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.primary.main, 0.15),
+    borderRadius: '0',
+    outline: '2px solid black',
+    backgroundColor: theme.palette.background.paper,
     '&:hover': {
-      backgroundColor: fade(theme.palette.primary.main, 0.25),
+      backgroundColor: fade(theme.palette.background.paper, 0.15),
     },
   },
   searchIcon: {

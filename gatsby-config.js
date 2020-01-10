@@ -13,8 +13,12 @@ module.exports = {
     author: `@thetuttingtutor, @thatnewwen, @bernardwang`,
     menuLinks:[
       {
-         name:'home',
-         link:'/'
+         name:'purchase',
+         link:'/purchase'
+      },
+      {
+         name:'glossary',
+         link:'/glossary'
       },
       {
          name:'about',

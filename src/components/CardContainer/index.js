@@ -9,7 +9,10 @@ import Card from '../Card';
 
 const styles = theme => ({
   root: {
-    marginTop: '2em',
+    width: '70vw',
+    margin: '0',
+    padding: '0',
+    marginLeft: theme.spacing(4),
   },
 });
 
@@ -99,9 +102,9 @@ class CardContainer extends React.Component {
       <StaticQuery query={cardQuery} render={({ allContentfulCard }) => (
         <Container className={classes.root}>
           <CardFilter {...this.state}/>
-          <Grid container spacing={3}>
+          <Grid container justify="center" spacing={3}>
             {allContentfulCard.nodes.map((card, i) => (
-              <Grid item xs={12} key={`card-${i}`}>
+              <Grid item xs={9} key={`card-${i}`}>
                 <Card card={card}/>
               </Grid>
             ))}

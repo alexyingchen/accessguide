@@ -2,7 +2,6 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 
-import Container from '@material-ui/core/Container';
 import Page from '../components/Page';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
@@ -24,7 +23,15 @@ const homePageQuery = graphql`
 `;
 
 const styles = theme => ({
-  toolbarSpacer: theme.mixins.toolbar,
+  main: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
+  toolbarSpacer: { ...theme.mixins.toolbar, ...{
+    width: '100vw',
+    marginBottom: '2px',
+  }} ,
 });
 
 function HomePage(props) {
@@ -37,13 +44,11 @@ function HomePage(props) {
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={"Access Guide"}
       />
-      <Drawer />
-      <Container>
+      <main className={classes.main}>
         <div className={classes.toolbarSpacer} />
-        <main>
-          <CardContainer />
-        </main>
-      </Container>
+        <Drawer />
+        <CardContainer />
+      </main>
       <Footer />
     </Page>
   );

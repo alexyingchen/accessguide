@@ -9,14 +9,16 @@ const styles = theme => ({
   root: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 2, 0, 0),
+    padding: theme.spacing(0, 1, 0, 0),
+    fontWeight: theme.typography.fontWeightBold,
+    fontSize: '0.8rem',
   },
   highlight: {
     display: 'flex',
     alignItems: 'center',
-    marginRight: theme.spacing(2),
-    padding: theme.spacing(0, 2, 0, 2),
-    height: theme.spacing(6),
+    marginRight: theme.spacing(1),
+    padding: theme.spacing(0, 1, 0, 1),
+    height: theme.spacing(5),
   }
 });
 
@@ -37,10 +39,10 @@ const highlightContentMap = {
   'Content': '',
   'Design': '', 
   'Programming': '',
-  'Cognitive': 'TEST',
-  'Hearing': 'TEST',
-  'Physical': 'TEST',
-  'Visual': 'TEST',
+  'Cognitive': 'ABC',
+  'Hearing': 'ABC',
+  'Physical': 'ABC',
+  'Visual': 'ABC',
   'A': 'A',
   'AA': 'AAA',
   'AAA': 'AAA',

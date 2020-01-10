@@ -2,12 +2,11 @@ import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 
-import MuiDrawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-const drawerWidth = 240;
+const drawerWidth = '20vw';
 
 const navQuery = graphql`
   query {
@@ -27,12 +26,14 @@ const navQuery = graphql`
 const styles = theme => ({
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    height: '80vh',
+    outline: '2px solid black',
+    backgroundColor: theme.palette.background.paper,
+    overflowY: 'scroll',
   },
-  drawerPaper: {
-    width: drawerWidth,
+  list: {
+    padding: theme.spacing(1),
   },
-  toolbarSpacer: theme.mixins.toolbar,
   nested: {
     paddingLeft: theme.spacing(4),
   },
@@ -43,19 +44,16 @@ function Drawer(props) {
   const { allContentfulCategory } = useStaticQuery(navQuery);
 
   return (
-    <MuiDrawer
+    <nav
       className={classes.drawer}
-      variant="permanent"
-      classes={{ paper: classes.drawerPaper }}
     >
-      <div className={classes.toolbarSpacer} />
-      <List>
+      <List dense className={classes.list}>
         {allContentfulCategory.nodes.map((category, i) => (
           <Fragment key={`category-${i}`}>
             <ListItem button>
               <ListItemText primary={category.name} />
             </ListItem>
-            <List component="div" disablePadding>
+            <List dense disablePadding>
               {category.subcategories.map((subcategory, j) => (
                 <ListItem button key={`subcategory-${i}-${j}`} className={classes.nested}>
                   <ListItemText primary={subcategory.name} />
@@ -65,7 +63,7 @@ function Drawer(props) {
           </Fragment>
         ))}
       </List>
-    </MuiDrawer>
+    </nav>
   );
 };
 
