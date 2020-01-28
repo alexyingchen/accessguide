@@ -1,12 +1,15 @@
-# Content Creator's Guide
-* Multimedia
-* Media writing
-* Writing
+# Content
 
-## TO-DO LIST
-* Finalize illustrations (C1-C8)
-* Finish writing text examples (C9-16)
-* Get industry expert feedback (all)
+## Introduction
+Content is the media that we create. Usually, this media is meaningful to us in some way - like photos that document our travels, articles about our favorite recipes, or podcasts that investigate a unique perspective.
+
+When we make content accessible, we are inviting everyone to be a part of the story. However, most content is widely inaccessible. This isolates and removes disabled people from the conversation. Here are guiding principles to make these accessible, with action items based on WCAG.
+
+Don't assume people can see. Blind and visually impaired people use assistive tech, namely screen readers and screen magnifiers, to interact with the web. This means visual content such as photos and videos should include written descriptions that they listen to or read with Braille.
+
+Don't assume people can hear. Audio content should be transcribed and made available through closed captions and transcripts. Many Deaf and hard of hearing people also know sign language. Keep in mind that you should always pay interpreters, and there are different languages and regional dialects fo sign language.
+
+Don't assume people understand the world in a neurotypical way. When writing about or explaining something, avoid unneeded complexity and use simple language instead.
 
 ***
 
@@ -17,8 +20,35 @@
 
 Provide image descriptions that describe the essential elements and actions of images so that Blind people can access them.
 
-**Disabilities**: visual
-**WCAG number + conformance**: 1.1.1 A
+#### Disabilities
+visual
+
+#### WCAG number + conformance
+1.1.1 A
+
+#### Best practices
+* Be brief, concise, and objective
+* Define foreground (or object of focus), action, and background
+* Add detail as necessary depending on context
+* Define terms that might be unfamiliar to people (e.g. Jiu Jitsu)
+* Do not unnecessarily racialize or gender people
+* Transcribe all text, as screen readers cannot detect text in images
+
+Keep in mind that image descriptions should communicate enough information to allow screen reader users to quickly browse through a page. Use your intuition to determine what level of detail is necessary.
+
+A helpful template is object-action-background. For example, "photo of bunnies jumping in a field" or "cartoon drawing of Beyonce singing in a stadium." This describes the essential elements in a simple and direct way.
+
+Descriptions are also highly context dependent. If you have a page full of images of different animals, it may suffice to describe photos as "dogs," "cats," and "pigeons." If all the photos are of dogs, it's worth adding detail on how they look, what type of breed, and what they're doing.
+
+It's worth adding a brief description of technical or uncommon terms, such as "Jiu Jitsu, a Brazilian grappling martial art" or "Baybayin, a Filipino writing script."
+
+In terms of describing race and gender, use your intuition for whether that's essential to understanding the image. Do not misgender people, misidentify their race, or only identify people of color by race. It's perfectly acceptable to describe an image as, "a large group of people smiling with a beautiful mountain range behind them" without mentionining identity.
+
+Since screen readers cannot detect text, make sure to transcribe all text. There are tools out there to help detect and extract text from images to speed up this process.
+
+If the process of writing descriptions is inaccessible to you, consider joining a group to crowd-source them, such as "People's Image Descriptions" on Facebook.
+
+Special thanks to Bex Leon for their consultation on this subject.
 
 -
 
@@ -27,8 +57,16 @@ Provide image descriptions that describe the essential elements and actions of i
 
 Provide transcripts of pre-recorded audio (like podcasts) and live audio (like speeches) so that Deaf and hard of hearing people can access them.
 
-**Disabilities**: hearing
-**WCAG number + conformance**: 1.2.1 A, 1.2.9 AAA
+#### Disabilities
+hearing
+
+#### WCAG number + conformance**
+1.2.1 A, 1.2.9 AAA
+
+#### Best practices
+A helpful workflow to speed up this process is to use a speech recognition tool to create the first pass of the transcript. From there, enlist the help of people to listen and correct any typos, mispellings, and formatting issues.
+
+Ensure the transcript is easily accessible and noticeable. Excellent examples of this include the Disability Visibility podcast, which uses Google docs, and the 99% Invisible podcast, which presents the transcript like a blog post.
 
 -
 
@@ -37,8 +75,19 @@ Provide transcripts of pre-recorded audio (like podcasts) and live audio (like s
 
 Provide closed captions of pre-recorded video (like movies) and live video (like newscasts) so that Deaf and hard of hearing people can access them.
 
-**Disabilities**: hearing
-**WCAG number + conformance**: 1.2.2 A, 1.2.4 AA
+#### Disabilities
+hearing
+
+#### WCAG number + conformance**
+1.2.2 A, 1.2.4 AA
+
+#### Best practices
+Some video streaming services include automatic closed captions, which use speech recognition. While this is sometimes effective, these captions are often inaccurate and experience difficulty accurately transcribing non-native English speakers and people with speech disabilities. Therefore, it's more accessible to provide your own.
+
+Ensure the closed captions are:
+* Easy to see against the video
+* Presented in small phrases rather than large paragraphs
+* Timed correctly with the video
 
 -
 
@@ -47,8 +96,14 @@ Provide closed captions of pre-recorded video (like movies) and live video (like
 
 Provide audio descriptions of pre-recorded video (like movies) that fully describe visuals and actions to Blind people. Embed the description between character dialogue.
 
-**Disabilities**: visual
-**WCAG number + conformance**: 1.2.3 A, 1.2.5 AA, 1.2.7 AAA
+#### Disabilities
+visual
+
+#### WCAG number + conformance
+1.2.3 A, 1.2.5 AA, 1.2.7 AAA
+
+#### Best practices
+To experience an example of audio descriptions, go to the entertainment streaming service of your choice and turn them on.
 
 -
 
