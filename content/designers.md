@@ -1,13 +1,8 @@
-# Designer's Guide
-* Style guide
-* Interaction behavior
-* Navigation
-* Error recovery
-* Timing
+# Design
 
-## TO-DO LIST
-* Create illustrations (all)
-* Get industry expert feedback (all)
+## Introduction
+
+In this context, design refers to the visuals, interactions, and experience of digital interfaces.
 
 ***
 
@@ -18,8 +13,11 @@
 
 Use high contrast so that users can easily read and see content. For text, the contrast should be at least 4.5:1 (AA) or 7:1 (AAA). For UI components like buttons, at least 3:1 (AA).
 
-**Disabilities**: visual
-**WCAG number + conformance**: 1.4.3 AA, 1.4.6 AAA, 1.4.11 AA
+#### Disabilities
+visual
+
+#### WCAG number + conformance
+1.4.3 AA, 1.4.6 AAA, 1.4.11 AA
 
 **illustration idea**: hand lettering design against background comparing different contrast ratios
 
@@ -41,10 +39,10 @@ Don’t use color alone to convey information (such as error alerts). Instead, c
 > I can barely read this, the letters are all over each other.
 
 Use these text spacing best practices for readability:
-* Line spacing is at least 1.5
-* Paragraph spacing is at least 2
-* Tracking is at least 0.12
-* Word spacing is at least 0.16
+* Line height is 1.5
+* Paragraph spacing is 2.0
+* Tracking is 0.12
+* Word spacing is 0.16
 
 **Disabilities**: visual
 **WCAG number + conformance**: 1.4.12 AA
