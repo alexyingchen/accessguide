@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { fade, withStyles } from '@material-ui/core/styles';
 
-import FilterModal from './FilterModal';
+import FilterMenu from './FilterMenu';
 import Button from '../Button';
 import Box from '@material-ui/core/Box';
 import SearchIcon from '@material-ui/icons/Search';
@@ -45,17 +45,17 @@ const styles = theme => ({
 });
 
 function CardFilter(props) {
-  const [open, setOpen] = React.useState(false);
+  const { classes, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter, ...other } = props;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
 
-  const handleOpen = () => {
-    setOpen(true);
+  const handleOpen = event => {
+    setAnchorEl(event.currentTarget)
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setAnchorEl(null);
   };
-
-  const { classes, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter, ...other } = props;
 
   return (
     <Box className={classes.root} {...other}>
@@ -73,7 +73,7 @@ function CardFilter(props) {
         />
       </div>
       <Button onClick={handleOpen}>Tags</Button>
-      <FilterModal {...{ open, handleClose, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter}}/>
+      <FilterMenu {...{ open, anchorEl, handleClose, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter}}/>
     </Box>
   );
 }
