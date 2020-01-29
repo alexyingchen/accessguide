@@ -9,16 +9,20 @@ const styles = theme => ({
   root: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1, 0, 0),
+    justifyContent: 'flex-start',
     fontWeight: theme.typography.fontWeightBold,
     fontSize: '0.8rem',
+    padding: '0',
+    minWidth: '0',
   },
   highlight: {
     display: 'flex',
     alignItems: 'center',
-    marginRight: theme.spacing(1),
     padding: theme.spacing(0, 1, 0, 1),
-    height: theme.spacing(5),
+    height: theme.spacing(4),
+  },
+  content: {
+    margin: theme.spacing(0, 1, 0, 1),
   }
 });
 
@@ -55,15 +59,24 @@ function Filter(props) {
   const highlightColor = highlightColorMap[type];
   const highlightStyle = {
     backgroundColor: highlightColor || 'red',
-    ...(!highlightContent && { 
+    // Update highlight style for Category filters, which have no highligh content
+    ...(!highlightContent && {
       width: '8px',
       padding: 0,
     }),
   }
+
+  // Wcag filters will either use `children` (if provided) or it will hide the filter content
+  const content = children || (!['A', 'AA', 'AAA'].includes(type) && type);
+
   return (
     <Button className={clsx(classes.root, className)} {...other}>
       <div className={classes.highlight} style={highlightStyle}>{highlightContent}</div>
-      {children}
+      {content && (
+        <div className={classes.content}> 
+          {content}
+        </div>
+      )}
     </Button>
   );
 }
@@ -71,7 +84,7 @@ function Filter(props) {
 export default withStyles(styles)(Filter);
 
 Filter.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   type: PropTypes.oneOf(['Content', 'Design', 'Programming', 'Cognitive', 'Hearing', 'Physical', 'Visual', 'A', 'AA', 'AAA'])
 };

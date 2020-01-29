@@ -60,14 +60,13 @@ function Card(props) {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <Grid container spacing={1} 
-  justif    y="flex-start" className={classes.filterContainer}>
+            <Grid container spacing={1} justify="flex-start" className={classes.filterContainer}>
               <Grid item>
-                <Filter type={card.category.name} className={classes.filter}>{card.category.name}</Filter>
+                <Filter type={card.category.name} className={classes.filter}/>
               </Grid>
               {card.disabilities.map((disability, i) => (
                 <Grid item key={`disability-${i}`} >
-                  <Filter type={disability.name} className={classes.filter}>{disability.name}</Filter>
+                  <Filter type={disability.name} className={classes.filter}/>
                 </Grid>
               ))}
               {card.wcagNumbers.map((wcag, i) => (

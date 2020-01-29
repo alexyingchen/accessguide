@@ -30,7 +30,7 @@ const styles = theme => ({
 function Header(props) {
   const { classes, siteTitle, menuLinks } = props;
   return (
-    <AppBar position="absolute" elevation="0" className={classes.appBar}>
+    <AppBar position="absolute" elevation={0} className={classes.appBar}>
       <Toolbar classes={{ gutters: classes.toolbarGutters }}>
         <Link to={'/'} className={classes.title}>
           <Typography variant="h6" noWrap>
