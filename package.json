@@ -9,7 +9,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@material-ui/core": "^4.0.2",
@@ -17,7 +18,7 @@
     "@material-ui/styles": "^4.0.2",
     "clsx": "^1.0.4",
     "dotenv": "^8.0.0",
-    "gatsby": "^2.7.1",
+    "gatsby": "^2.19.11",
     "gatsby-plugin-google-fonts": "^1.0.0",
     "gatsby-plugin-material-ui": "^2.0.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -25,8 +26,15 @@
     "gatsby-transformer-remark": "^2.3.12",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  },
+  "engines": {
+    "node": ">=13.7.0",
+    "yarn": ">=1.21.1"
   }
 }
