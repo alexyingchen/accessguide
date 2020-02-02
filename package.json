@@ -1,0 +1,32 @@
+{
+  "name": "accessguide",
+  "description": "Access Guide is a simplified, illustrated version of WCAG 2.1 (web content accessibility guidelines).",
+  "license": "MIT",
+  "author": "@thetuttingtutor, @thatnewwen, @bernardwang",
+  "homepage": "https://github.com/thetuttingtutor/accessguide",
+  "bugs": "https://github.com/thetuttingtutor/accessguide/issues",
+  "repository": "github:thetuttingtutor/accessguide",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/styles": "^4.0.2",
+    "clsx": "^1.0.4",
+    "dotenv": "^8.0.0",
+    "gatsby": "^2.7.1",
+    "gatsby-plugin-google-fonts": "^1.0.0",
+    "gatsby-plugin-material-ui": "^2.0.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-source-contentful": "^2.1.73",
+    "gatsby-transformer-remark": "^2.3.12",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  }
+}
