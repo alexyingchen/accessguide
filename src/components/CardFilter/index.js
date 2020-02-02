@@ -19,7 +19,7 @@ const styles = theme => ({
     marginRight: theme.spacing(2),
     position: 'relative',
     borderRadius: '0',
-    outline: '2px solid black',
+    border: '2px solid black',
     backgroundColor: theme.palette.background.paper,
     '&:hover': {
       backgroundColor: fade(theme.palette.background.paper, 0.15),
@@ -36,6 +36,7 @@ const styles = theme => ({
   },  
   inputRoot: {
     color: 'inherit',
+    width: '100%',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 7),
@@ -64,12 +65,12 @@ function CardFilter(props) {
           <SearchIcon />
         </div>
         <InputBase
-          placeholder="Search…"
+          placeholder="Search guidelines…"
           classes={{
             root: classes.inputRoot,
             input: classes.inputInput,
           }}
-          inputProps={{ 'aria-label': 'search' }}
+          inputProps={{ 'aria-label': 'Search guidelines' }}
         />
       </div>
       <Button onClick={handleOpen}>Tags</Button>

@@ -36,7 +36,10 @@ const filterQuery = graphql`
 `;
 
 const styles = theme => ({
-  root: {},
+  root: {
+    // !important to override "translate: none" on style prop
+    transform: `translateY(${theme.spacing(2)}px) !important`,
+  },
   formControl: {
     width: '100%',
     paddingRight: theme.spacing(2),
@@ -68,6 +71,7 @@ function FilterMenu(props) {
       anchorEl={anchorEl}
       open={open}
       onClose={handleClose}
+      className={classes.root}
       {...other}
     >
       <div className={classes.container}>

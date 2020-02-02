@@ -12,7 +12,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const styles = theme => ({
   root: {
-    outline: '2px solid black',
+    border: '2px solid black',
     borderRadius: '0',
   },
   title: { ...theme.typography.h4, ...{

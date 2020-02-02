@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles';
 
-import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '../Button';
@@ -17,9 +16,15 @@ const styles = theme => ({
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
   },
+  nav: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+  },
   title: {
     flexGrow: 1,
     color: theme.palette.text.primary,
+    fontSize: theme.typography.h6.fontSize,
   },
   link: {
     textTransform: 'capitalize',
@@ -32,19 +37,21 @@ function Header(props) {
   return (
     <AppBar position="absolute" elevation={0} className={classes.appBar}>
       <Toolbar classes={{ gutters: classes.toolbarGutters }}>
-        <Link to={'/'} className={classes.title}>
-          <Typography variant="h6" noWrap>
-            { siteTitle }
-          </Typography>
-        </Link>
-        <Button>
-          Display
-        </Button>
-        {menuLinks.map((link, index) =>
-          <Link key={index} to={link.link} className={classes.link}>
-            {link.name}
-          </Link>
-        )}
+        <nav className={classes.nav}>
+          <span className={classes.title}>
+            <Link to={'/'}>
+              { siteTitle }
+            </Link>
+          </span>
+          <Button>
+            Display
+          </Button>
+          {menuLinks.map((link, index) =>
+            <Link key={index} to={link.link} className={classes.link}>
+              {link.name}
+            </Link>
+          )}
+        </nav>
       </Toolbar>
     </AppBar>
   );

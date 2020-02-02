@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Page from '../components/Page';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
-import Footer from '../components/Footer'
 
 const aboutPageQuery = graphql`
   query {
@@ -27,7 +26,6 @@ function AboutPage() {
       <Header menuLinks={site.siteMetadata.menuLinks} siteTitle={"About"}/>
       <main>
       </main>
-      <Footer/>
     </Page>
   );
 };

@@ -6,8 +6,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-const drawerWidth = '20vw';
-
 const navQuery = graphql`
   query {
     allContentfulCategory(sort: {fields: createdAt, order: ASC}) {
@@ -24,10 +22,12 @@ const navQuery = graphql`
 `;
 
 const styles = theme => ({
-  drawer: {
-    width: drawerWidth,
-    height: '80vh',
-    outline: '2px solid black',
+  nav: {
+    width: '25%',
+    minWidth: '12rem',
+    maxWidth: '22rem',
+    maxHeight: '80vh',
+    border: '2px solid black',
     backgroundColor: theme.palette.background.paper,
     overflowY: 'scroll',
   },
@@ -39,13 +39,13 @@ const styles = theme => ({
   },
 });
 
-function Drawer(props) {
+function CardNav(props) {
   const { classes } = props;
   const { allContentfulCategory } = useStaticQuery(navQuery);
 
   return (
     <nav
-      className={classes.drawer}
+      className={classes.nav}
     >
       <List dense className={classes.list}>
         {allContentfulCategory.nodes.map((category, i) => (
@@ -67,6 +67,6 @@ function Drawer(props) {
   );
 };
 
-Drawer.propTypes = {}
+CardNav.propTypes = {}
 
-export default withStyles(styles)(Drawer);
+export default withStyles(styles)(CardNav);

@@ -5,8 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Page from '../components/Page';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Drawer from '../components/Drawer';
+import CardNav from '../components/CardNav';
 import CardContainer from '../components/CardContainer';
 
 const homePageQuery = graphql`
@@ -24,13 +23,14 @@ const homePageQuery = graphql`
 
 const styles = theme => ({
   main: {
+    minWidth: '100%',
     display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
   },
   toolbarSpacer: { ...theme.mixins.toolbar, ...{
-    width: '100vw',
-    marginBottom: '2px',
+    width: '100%',
   }} ,
 });
 
@@ -44,12 +44,11 @@ function HomePage(props) {
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={"Access Guide"}
       />
+      <div className={classes.toolbarSpacer} />
       <main className={classes.main}>
-        <div className={classes.toolbarSpacer} />
-        <Drawer />
+        <CardNav />
         <CardContainer />
       </main>
-      <Footer />
     </Page>
   );
 }

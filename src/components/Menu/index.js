@@ -8,7 +8,7 @@ import Menu from '@material-ui/core/Menu';
 const styles = theme => ({
   paper: {
     borderRadius: '0',
-    outline: '2px solid black',
+    border: '2px solid black',
     maxHeight: 'calc(100vh - 140px)', // TODO: remove hacky fix for long menus being pushed up
   },
   list: {
