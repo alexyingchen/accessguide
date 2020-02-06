@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { get } from 'lodash';
 
-import Filter from '../Filter';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import MuiCard from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Tag from '../Tag';
 
 const styles = theme => ({
   root: {
@@ -23,11 +23,10 @@ const styles = theme => ({
     paddingLeft: '40px',
     fontStyle: 'italic',
   },
-  filter: {
+  tag: {
     marginRight: theme.spacing(1),
-    marginBottom: theme.spacing(1),
   },
-  filterContainer: {
+  tagContainer: {
     marginTop: theme.spacing(1),
   },
   image: {
@@ -60,18 +59,18 @@ function Card(props) {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <Grid container spacing={1} justify="flex-start" className={classes.filterContainer}>
+            <Grid container spacing={1} justify="flex-start" className={classes.tagContainer}>
               <Grid item>
-                <Filter type={card.category.name} className={classes.filter}/>
+                <Tag type={card.category.name} className={classes.tag}/>
               </Grid>
               {card.disabilities.map((disability, i) => (
                 <Grid item key={`disability-${i}`} >
-                  <Filter type={disability.name} className={classes.filter}/>
+                  <Tag type={disability.name} className={classes.tag}/>
                 </Grid>
               ))}
               {card.wcagNumbers.map((wcag, i) => (
                 <Grid item key={`wcag-${i}`}>
-                  <Filter type={wcag.level.name} className={classes.filter}>{wcag.name}</Filter>
+                  <Tag type={wcag.level.name} className={classes.tag}>{wcag.name}</Tag>
                 </Grid>
               ))}
             </Grid>

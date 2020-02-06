@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 
 import Button from '../Button';
+import Link from '../Link';
 
 const styles = theme => ({
   root: {
@@ -14,6 +15,7 @@ const styles = theme => ({
     fontSize: '0.8rem',
     padding: '0',
     minWidth: '0',
+    border: '2px solid black',
   },
   highlight: {
     display: 'flex',
@@ -52,8 +54,15 @@ const highlightContentMap = {
   'AAA': 'AAA',
 }
 
-function Filter(props) {
-  const { classes, children, className, type, ...other } = props;
+function Tag(props) {
+  const { classes, children, className, type, onClick, href, ...other } = props;
+
+  let ComponentType = 'div';
+  if (onClick) {
+    ComponentType = Button;
+  } else if (href) {
+    ComponentType = Link;
+  }
 
   const highlightContent = highlightContentMap[type];
   const highlightColor = highlightColorMap[type];
@@ -70,21 +79,23 @@ function Filter(props) {
   const content = children || (!['A', 'AA', 'AAA'].includes(type) && type);
 
   return (
-    <Button className={clsx(classes.root, className)} {...other}>
+    <ComponentType className={clsx(classes.root, className)} {...other}>
       <div className={classes.highlight} style={highlightStyle}>{highlightContent}</div>
       {content && (
         <div className={classes.content}> 
           {content}
         </div>
       )}
-    </Button>
+    </ComponentType>
   );
 }
 
-export default withStyles(styles)(Filter);
+export default withStyles(styles)(Tag);
 
-Filter.propTypes = {
+Tag.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  onClick: PropTypes.func,
+  href: PropTypes.string,
   type: PropTypes.oneOf(['Content', 'Design', 'Programming', 'Cognitive', 'Hearing', 'Physical', 'Visual', 'A', 'AA', 'AAA'])
 };

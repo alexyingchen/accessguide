@@ -10,7 +10,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import Menu from '../Menu';
-import Filter from '../Filter';
+import Tag from '../Tag';
 
 const filterQuery = graphql`
   query {
@@ -82,7 +82,7 @@ function FilterMenu(props) {
               <FormControlLabel 
                 key={`filter-category-${i}`} 
                 value={category.name} 
-                label={<Filter type={category.name}/>} 
+                label={<Tag type={category.name}/>} 
                 control={<Checkbox checked={false} 
                 onChange={() => {}}/>}
               />
@@ -97,7 +97,7 @@ function FilterMenu(props) {
               <FormControlLabel 
                 key={`filter-disability-${i}`} 
                 value={disability.name} 
-                label={<Filter type={disability.name}/>} 
+                label={<Tag type={disability.name}/>} 
                 control={<Checkbox checked={false} onChange={() => {}}/>}
               />
             ))}
@@ -111,7 +111,7 @@ function FilterMenu(props) {
               <FormControlLabel 
                 key={`filter-level-${i}`} 
                 value={level.name}
-                label={<Filter type={level.name}/>} 
+                label={<Tag type={level.name}/>} 
                 control={<Checkbox checked={false} onChange={() => {}}/>}
               />
             ))}
