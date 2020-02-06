@@ -35,7 +35,7 @@ const styles = theme => ({
 function Header(props) {
   const { classes, siteTitle, menuLinks } = props;
   return (
-    <AppBar position="absolute" elevation={0} className={classes.appBar}>
+    <AppBar position="static" elevation={0} className={classes.appBar}>
       <Toolbar classes={{ gutters: classes.toolbarGutters }}>
         <nav className={classes.nav}>
           <span className={classes.title}>

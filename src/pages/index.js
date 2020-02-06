@@ -29,9 +29,6 @@ const styles = theme => ({
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
   },
-  toolbarSpacer: { ...theme.mixins.toolbar, ...{
-    width: '100%',
-  }} ,
 });
 
 function HomePage(props) {
@@ -44,7 +41,6 @@ function HomePage(props) {
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={"Access Guide"}
       />
-      <div className={classes.toolbarSpacer} />
       <main className={classes.main}>
         <CardNav />
         <CardContainer />
