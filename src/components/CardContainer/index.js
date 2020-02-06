@@ -1,6 +1,7 @@
 import React from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
+import { intersection } from 'lodash';
 
 import CardFilter from '../CardFilter';
 import Container from '@material-ui/core/Container';
@@ -68,32 +69,31 @@ const cardQuery = graphql`
 class CardContainer extends React.Component {
   state = {
     categoryFilter: [],
-    subcategoryFilter: ["ace71a5b-3178-53b5-be90-84b73ee62f50"],
+    subcategoryFilter: [],
     disabilityFilter: [],
-    wcagNumberFilter: ['4d16dcab-ca6a-57f0-8827-77a93abf87e8'],
+    wcagNumberFilter: [],
   }
 
-  getFilterQuery = (filterName) => {
-    const filters = this.state[`${filterName}Filter`];
-    if (filters.length === 0) {
-      return '';
+  filterCard = (card, tagType, filters) => {
+    if (filters.length > 0) {
+      // Cards can only have 1 category
+      if (tagType === 'category') {
+        return filters.some(f => card[tagType].id === f);
+      }
+      // Card passes filter if intersection of card tags and filters
+      const typeIds = card[tagType].map(types => types.id);
+      return intersection(typeIds, filters).length > 0;
     }
-    if (Array.isArray(filters)) {
-      return `${filterName}: {
-        elemMatch: {
-          id: {
-            in: ${filters}
-          }
-        }
-      }`
-    } else {
-      return `${filterName}: {
-        id: {
-          eq: ${filters}
-        }
-      }` 
-    }
+    return true;
   }
+
+  getFilteredCards = (cards) => (
+    cards
+      .filter(c => this.filterCard(c, 'category', this.state.categoryFilter))
+      .filter(c => this.filterCard(c, 'subcategories', this.state.subcategoryFilter))
+      .filter(c => this.filterCard(c, 'disabilities', this.state.disabilityFilter))
+      .filter(c => this.filterCard(c, 'wcagNumbers', this.state.wcagNumberFilter))
+  );
 
   render() {
     const { classes } = this.props;
@@ -102,14 +102,14 @@ class CardContainer extends React.Component {
         <Container className={classes.root}>
           <CardFilter {...this.state}/>
           <Grid container justify="center" spacing={5}>
-            {allContentfulCard.nodes.map((card, i) => (
+            {this.getFilteredCards(allContentfulCard.nodes).map((card, i) => (
               <Grid item xs={12} md={9} lg={7} key={`card-${i}`}>
                 <Card card={card}/>
               </Grid>
             ))}
           </Grid>
         </Container>
-      )}/>
+      )} />
     );
   }
 }
