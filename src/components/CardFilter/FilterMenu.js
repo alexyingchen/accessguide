@@ -38,7 +38,7 @@ const filterQuery = graphql`
 const styles = theme => ({
   root: {
     // !important to override "translate: none" on style prop
-    transform: `translateY(${theme.spacing(2)}px) !important`,
+    transform: `translateY(${theme.spacing(1)}px) !important`,
   },
   formControl: {
     width: '100%',
@@ -64,7 +64,7 @@ const styles = theme => ({
 });
 
 function FilterMenu(props) {
-  const { classes, open, anchorEl, handleClose, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter, ...other } = props;
+  const { classes, open, anchorEl, handleClose, ...other } = props;
   const { allContentfulCategory, allContentfulDisability, allContentfulWcagLevel } = useStaticQuery(filterQuery);
   return (
     <Menu
@@ -127,8 +127,4 @@ FilterMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   anchorEl: PropTypes.node,
   handleClose: PropTypes.func.isRequired,
-  categoryFilter: PropTypes.arrayOf(PropTypes.string),
-  subcategoryFilter: PropTypes.arrayOf(PropTypes.string),
-  disabilityFilter: PropTypes.arrayOf(PropTypes.string),
-  wcagNumberFilter: PropTypes.arrayOf(PropTypes.string),
 };

@@ -14,7 +14,7 @@ import Menu from '../Menu';
 const styles = theme => ({
   root: {
     // !important to override "translate: none" on style prop
-    transform: `translateY(${theme.spacing(2)}px) !important`,
+    transform: `translateY(${theme.spacing(1)}px) !important`,
   },
   formControl: {
     width: '100%',

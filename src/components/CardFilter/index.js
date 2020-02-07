@@ -46,7 +46,7 @@ const styles = theme => ({
 });
 
 function CardFilter(props) {
-  const { classes, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter, ...other } = props;
+  const { classes, ...other } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -74,16 +74,11 @@ function CardFilter(props) {
         />
       </div>
       <Button onClick={handleOpen}>Tags</Button>
-      <FilterMenu {...{ open, anchorEl, handleClose, categoryFilter, subcategoryFilter, disabilityFilter, wcagNumberFilter}}/>
+      <FilterMenu {...{ open, anchorEl, handleClose}}/>
     </Box>
   );
 }
 
 export default withStyles(styles)(CardFilter);
 
-CardFilter.propTypes = {
-  categoryFilter: PropTypes.arrayOf(PropTypes.string),
-  subcategoryFilter: PropTypes.arrayOf(PropTypes.string),
-  disabilityFilter: PropTypes.arrayOf(PropTypes.string),
-  wcagNumberFilter: PropTypes.arrayOf(PropTypes.string),
-};
+CardFilter.propTypes = {};
