@@ -83,8 +83,7 @@ function FilterMenu(props) {
                 key={`filter-category-${i}`} 
                 value={category.name} 
                 label={<Tag type={category.name}/>} 
-                control={<Checkbox checked={false} 
-                onChange={() => {}}/>}
+                control={<Checkbox checked={false} onChange={() => {}}/>}
               />
             ))}
           </FormGroup>

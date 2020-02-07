@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '../Button';
 import Link from '../Link'
+import DisplayMenu from './DisplayMenu'
 
 const styles = theme => ({
   appBar: {
@@ -34,7 +34,18 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, siteTitle, menuLinks, isDarkMode, setDarkMode } = props;
+  const { classes, siteTitle, menuLinks } = props;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleOpen = event => {
+    setAnchorEl(event.currentTarget)
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <AppBar position="static" elevation={0} className={classes.appBar}>
       <Toolbar classes={{ gutters: classes.toolbarGutters }}>
@@ -44,9 +55,10 @@ function Header(props) {
               { siteTitle }
             </Link>
           </span>
-          <Button onClick={() => setDarkMode(!isDarkMode)}>
+          <Button onClick={handleOpen}>
             Display
           </Button>
+          <DisplayMenu {...{ open, anchorEl, handleClose }}/>
           {menuLinks.map((link, index) =>
             <Link key={index} to={link.link} className={classes.link}>
               {link.name}
@@ -63,12 +75,4 @@ Header.propTypes = {
   menuLinks: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-const mapStateToProps = state => ({
-  isDarkMode: state.display.isDarkMode,
-});
-
-const mapDispatchToProps = dispatch => ({
-  setDarkMode: isDarkMode => dispatch({ type: 'SET_DARKMODE', isDarkMode }),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header));
+export default withStyles(styles)(Header);
