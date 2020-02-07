@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -33,7 +34,7 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, siteTitle, menuLinks } = props;
+  const { classes, siteTitle, menuLinks, isDarkMode, setDarkMode } = props;
   return (
     <AppBar position="static" elevation={0} className={classes.appBar}>
       <Toolbar classes={{ gutters: classes.toolbarGutters }}>
@@ -43,7 +44,7 @@ function Header(props) {
               { siteTitle }
             </Link>
           </span>
-          <Button>
+          <Button onClick={() => setDarkMode(!isDarkMode)}>
             Display
           </Button>
           {menuLinks.map((link, index) =>
@@ -62,4 +63,12 @@ Header.propTypes = {
   menuLinks: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default withStyles(styles)(Header);
+const mapStateToProps = state => ({
+  isDarkMode: state.display.isDarkMode,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setDarkMode: isDarkMode => dispatch({ type: 'SET_DARKMODE', isDarkMode }),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header));

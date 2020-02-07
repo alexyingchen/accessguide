@@ -1,7 +1,6 @@
 import { createMuiTheme, colors } from "@material-ui/core";
 
-// A custom theme for this app
-const theme = createMuiTheme({
+const theme = {
   props: {
     MuiButtonBase: {
       disableRipple: true,
@@ -21,6 +20,12 @@ const theme = createMuiTheme({
       default: `#E5E5E5`,
     },
   },
-});
+};
 
-export default theme;
+const createTheme = (prefersDarkMode) => createMuiTheme({...theme, ...{
+  palette: { 
+    type: prefersDarkMode ? 'dark' : 'light' 
+  },
+}});
+
+export default createTheme;
