@@ -1,5 +1,6 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { connect } from 'react-redux';
+import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import { intersection } from 'lodash';
 
@@ -42,18 +43,7 @@ const cardQuery = graphql`
           body {
             body
           }
-          wcagNumbers {
-            id
-            name
-            level {
-              name
-            }
-          }
           category {
-            id
-            name
-          }
-          subcategories {
             id
             name
           }
@@ -61,57 +51,61 @@ const cardQuery = graphql`
             id
             name
           }
+          wcagNumbers {
+            id
+            name
+            level {
+              id
+              name
+            }
+          }
         }
       }
     }  
   `;
 
-class CardContainer extends React.Component {
-  state = {
-    categoryFilter: [],
-    subcategoryFilter: [],
-    disabilityFilter: [],
-    wcagNumberFilter: [],
-  }
+function CardContainer(props) {
+  const { classes, filters } = props;
+  const { allContentfulCard } = useStaticQuery(cardQuery);
 
-  filterCard = (card, tagType, filters) => {
-    if (filters.length > 0) {
-      // Cards can only have 1 category
-      if (tagType === 'category') {
-        return filters.some(f => card[tagType].id === f);
-      }
-      // Card passes filter if intersection of card tags and filters
-      const typeIds = card[tagType].map(types => types.id);
-      return intersection(typeIds, filters).length > 0;
+  const filterCard = (card, tagType, tagFilters) => {
+    if (tagFilters.length === 0) {
+      return true;
     }
-    return true;
+    if (tagType === 'category') {
+      return tagFilters.some(f => card[tagType].id === f);
+    } else if (tagType === 'disabilities') {
+      const disabilityIds = card.disabilities.map(disability => disability.id);
+      return tagFilters.every(f => disabilityIds.indexOf(f) > -1);
+    } else if (tagType === 'wcagNumbers') {
+      const wcagLevelIds = card.wcagNumbers.map(number => number.level.id);
+      return tagFilters.every(f => wcagLevelIds.indexOf(f) > -1);
+    }
   }
 
-  getFilteredCards = (cards) => (
+  const getFilteredCards = (cards) => (
     cards
-      .filter(c => this.filterCard(c, 'category', this.state.categoryFilter))
-      .filter(c => this.filterCard(c, 'subcategories', this.state.subcategoryFilter))
-      .filter(c => this.filterCard(c, 'disabilities', this.state.disabilityFilter))
-      .filter(c => this.filterCard(c, 'wcagNumbers', this.state.wcagNumberFilter))
+      .filter(c => filterCard(c, 'category', filters.category))
+      .filter(c => filterCard(c, 'disabilities', filters.disability))
+      .filter(c => filterCard(c, 'wcagNumbers', filters.wcagLevel))
   );
 
-  render() {
-    const { classes } = this.props;
-    return (
-      <StaticQuery query={cardQuery} render={({ allContentfulCard }) => (
-        <Container className={classes.root}>
-          <CardFilter {...this.state}/>
-          <Grid container justify="center" spacing={5}>
-            {this.getFilteredCards(allContentfulCard.nodes).map((card, i) => (
-              <Grid item xs={12} md={9} lg={7} key={`card-${i}`}>
-                <Card card={card}/>
-              </Grid>
-            ))}
+  return (
+    <Container className={classes.root}>
+      <CardFilter />
+      <Grid container justify="center" spacing={5}>
+        {getFilteredCards(allContentfulCard.nodes).map((card, i) => (
+          <Grid item xs={12} md={9} lg={7} key={`card-${i}`}>
+            <Card card={card}/>
           </Grid>
-        </Container>
-      )} />
-    );
-  }
+        ))}
+      </Grid>
+    </Container>
+  );
 }
 
-export default withStyles(styles)(CardContainer);
+const mapStateToProps = state => ({
+  filters: state.filters,
+});
+
+export default connect(mapStateToProps, null)(withStyles(styles)(CardContainer));

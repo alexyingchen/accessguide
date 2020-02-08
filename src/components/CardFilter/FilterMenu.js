@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -64,8 +65,13 @@ const styles = theme => ({
 });
 
 function FilterMenu(props) {
-  const { classes, open, anchorEl, handleClose, ...other } = props;
+  const { classes, open, anchorEl, handleClose, filters, toggleFilter, ...other } = props;
   const { allContentfulCategory, allContentfulDisability, allContentfulWcagLevel } = useStaticQuery(filterQuery);
+
+  const getFilterCheckbox = (filterType, typeId) => (
+    <Checkbox checked={filters[filterType].includes(typeId)} onChange={() => toggleFilter(filterType, typeId)} />
+  );
+  
   return (
     <Menu
       anchorEl={anchorEl}
@@ -81,9 +87,9 @@ function FilterMenu(props) {
             {allContentfulCategory.nodes.map((category, i) => (
               <FormControlLabel 
                 key={`filter-category-${i}`} 
-                value={category.name} 
+                value={category.id} 
                 label={<Tag type={category.name}/>} 
-                control={<Checkbox checked={false} onChange={() => {}}/>}
+                control={getFilterCheckbox('category', category.id)}
               />
             ))}
           </FormGroup>
@@ -95,9 +101,9 @@ function FilterMenu(props) {
             {allContentfulDisability.nodes.map((disability, i) => (
               <FormControlLabel 
                 key={`filter-disability-${i}`} 
-                value={disability.name} 
+                value={disability.id} 
                 label={<Tag type={disability.name}/>} 
-                control={<Checkbox checked={false} onChange={() => {}}/>}
+                control={getFilterCheckbox('disability', disability.id)}
               />
             ))}
           </FormGroup>
@@ -106,12 +112,12 @@ function FilterMenu(props) {
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend" className={classes.formLabel}>WCAG tag</FormLabel>
           <FormGroup>
-            {allContentfulWcagLevel.nodes.map((level, i) => (
+            {allContentfulWcagLevel.nodes.map((wcagLevel, i) => (
               <FormControlLabel 
-                key={`filter-level-${i}`} 
-                value={level.name}
-                label={<Tag type={level.name}/>} 
-                control={<Checkbox checked={false} onChange={() => {}}/>}
+                key={`filter-wcagLevel-${i}`} 
+                value={wcagLevel.id}
+                label={<Tag type={wcagLevel.name}/>} 
+                control={getFilterCheckbox('wcagLevel', wcagLevel.id)}
               />
             ))}
           </FormGroup>
@@ -121,10 +127,18 @@ function FilterMenu(props) {
   );
 }
 
-export default withStyles(styles)(FilterMenu);
-
 FilterMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   anchorEl: PropTypes.node,
   handleClose: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({
+  filters: state.filters,
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleFilter: (filterType, typeId) => dispatch({ type: 'TOGGLE_FILTER', filterType, typeId }),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(FilterMenu));

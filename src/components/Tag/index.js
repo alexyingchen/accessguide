@@ -50,7 +50,7 @@ const highlightContentMap = {
   'Physical': 'ABC',
   'Visual': 'ABC',
   'A': 'A',
-  'AA': 'AAA',
+  'AA': 'AA',
   'AAA': 'AAA',
 }
 
