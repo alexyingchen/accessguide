@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
 import Checkbox from '@material-ui/core/Checkbox';
@@ -40,7 +40,10 @@ const styles = theme => ({
 });
 
 function DisplayMenu(props) {
-  const { classes, open, anchorEl, handleClose, isDarkMode, setDarkMode, ...other } = props;
+  const { classes, open, anchorEl, handleClose, ...other } = props;
+  const isDarkMode = useSelector(state => state.display.isDarkMode);
+  const dispatch = useDispatch();
+
   return (
     <Menu
       anchorEl={anchorEl}
@@ -75,13 +78,17 @@ function DisplayMenu(props) {
               key={`display-mode-light`} 
               value={'light'} 
               label={'Light mode'} 
-              control={<Checkbox checked={!isDarkMode} onChange={() => setDarkMode(false)}/>}
+              control={
+                <Checkbox checked={!isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: false })}/>
+              }
             />
             <FormControlLabel 
               key={`display-mode-dark`} 
               value={'dark'} 
               label={'Dark mode'} 
-              control={<Checkbox checked={isDarkMode} onChange={() => setDarkMode(true)}/>}
+              control={
+                <Checkbox checked={isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: true })}/>
+              }
             />
           </FormGroup>
         </FormControl>
@@ -96,12 +103,4 @@ DisplayMenu.propTypes = {
   handleClose: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  isDarkMode: state.display.isDarkMode,
-});
-
-const mapDispatchToProps = dispatch => ({
-  setDarkMode: isDarkMode => dispatch({ type: 'SET_DARKMODE', isDarkMode }),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(DisplayMenu));
+export default withStyles(styles)(DisplayMenu);

@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
-import { intersection } from 'lodash';
 
 import CardFilter from '../CardFilter';
 import Container from '@material-ui/core/Container';
@@ -65,8 +64,8 @@ const cardQuery = graphql`
   `;
 
 function CardContainer(props) {
-  const { classes, filters } = props;
   const { allContentfulCard } = useStaticQuery(cardQuery);
+  const filters = useSelector(state => state.filters);
 
   const filterCard = (card, tagType, tagFilters) => {
     if (tagFilters.length === 0) {
@@ -91,7 +90,7 @@ function CardContainer(props) {
   );
 
   return (
-    <Container className={classes.root}>
+    <Container className={props.classes.root}>
       <CardFilter />
       <Grid container justify="center" spacing={5}>
         {getFilteredCards(allContentfulCard.nodes).map((card, i) => (
@@ -104,8 +103,4 @@ function CardContainer(props) {
   );
 }
 
-const mapStateToProps = state => ({
-  filters: state.filters,
-});
-
-export default connect(mapStateToProps, null)(withStyles(styles)(CardContainer));
+export default withStyles(styles)(CardContainer);

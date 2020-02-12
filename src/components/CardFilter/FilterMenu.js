@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -65,11 +65,16 @@ const styles = theme => ({
 });
 
 function FilterMenu(props) {
-  const { classes, open, anchorEl, handleClose, filters, toggleFilter, ...other } = props;
+  const { classes, open, anchorEl, handleClose, ...other } = props;
   const { allContentfulCategory, allContentfulDisability, allContentfulWcagLevel } = useStaticQuery(filterQuery);
+  const filters = useSelector(state => state.filters);
+  const dispatch = useDispatch();
 
   const getFilterCheckbox = (filterType, typeId) => (
-    <Checkbox checked={filters[filterType].includes(typeId)} onChange={() => toggleFilter(filterType, typeId)} />
+    <Checkbox 
+      checked={filters[filterType].includes(typeId)}
+      onChange={() => dispatch({ type: 'TOGGLE_FILTER', filterType, typeId })} 
+    />
   );
   
   return (
@@ -133,12 +138,4 @@ FilterMenu.propTypes = {
   handleClose: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  filters: state.filters,
-});
-
-const mapDispatchToProps = dispatch => ({
-  toggleFilter: (filterType, typeId) => dispatch({ type: 'TOGGLE_FILTER', filterType, typeId }),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(FilterMenu));
+export default withStyles(styles)(FilterMenu);
