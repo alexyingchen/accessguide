@@ -34,6 +34,9 @@ const styles = theme => ({
   list: {
     padding: theme.spacing(1),
   },
+  item: {
+    fontWeight: theme.typography.fontWeightMedium,
+  },
   nested: {
     paddingLeft: theme.spacing(4),
   },
@@ -51,12 +54,12 @@ function CardNav(props) {
         {allContentfulCategory.nodes.map((category, i) => (
           <Fragment key={`category-${i}`}>
             <ListItem button>
-              <ListItemText primary={category.name} />
+              <ListItemText primary={category.name} classes={{ primary: classes.item }} />
             </ListItem>
             <List dense disablePadding>
               {category.subcategories.map((subcategory, j) => (
                 <ListItem button key={`subcategory-${i}-${j}`} className={classes.nested}>
-                  <ListItemText primary={subcategory.name} />
+                  <ListItemText primary={subcategory.name} classes={{ primary: classes.item }} />
                 </ListItem>
               ))}
             </List>

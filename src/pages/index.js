@@ -24,6 +24,7 @@ const homePageQuery = graphql`
 const styles = theme => ({
   main: {
     minWidth: '100%',
+    minHeight: '100vh',
     display: 'flex',
     justifyContent: 'space-between',
     paddingLeft: theme.spacing(4),

@@ -48,6 +48,8 @@ const styles = theme => ({
   formLabel: {
     color: theme.palette.common.black,
     marginBottom: theme.spacing(1),
+    fontSize: theme.typography.button.fontSize,
+    fontWeight: theme.typography.button.fontWeight
   },
   container: {
     display: 'flex',
@@ -79,6 +81,7 @@ function FilterMenu(props) {
   
   return (
     <Menu
+      id="filter-menu"
       anchorEl={anchorEl}
       open={open}
       onClose={handleClose}

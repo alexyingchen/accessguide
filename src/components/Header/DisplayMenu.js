@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
-import Checkbox from '@material-ui/core/Checkbox';
+import Radio from '@material-ui/core/Radio';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
+import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import Menu from '../Menu';
@@ -46,6 +46,7 @@ function DisplayMenu(props) {
 
   return (
     <Menu
+      id="display-menu"
       anchorEl={anchorEl}
       open={open}
       onClose={handleClose}
@@ -55,31 +56,31 @@ function DisplayMenu(props) {
       <div className={classes.container}>
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend" className={classes.formLabel}>Typeface</FormLabel>
-          <FormGroup>
+          <RadioGroup>
             <FormControlLabel 
               key={`display-typeface-comicsans`} 
               value={'comicsans'} 
               label={'Comic Sans'} 
-              control={<Checkbox checked={false} onChange={() => {}}/>}
+              control={<Radio checked={false} onChange={() => {}}/>}
             />
             <FormControlLabel 
               key={`display-typeface-verdana`} 
               value={'verdana'} 
               label={'Verdana'} 
-              control={<Checkbox checked={false} onChange={() => {}}/>}
+              control={<Radio checked={true} onChange={() => {}}/>}
             />
-          </FormGroup>
+          </RadioGroup>
         </FormControl>
         <hr className={classes.divider} />
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend" className={classes.formLabel}>Mode</FormLabel>
-          <FormGroup>
+          <RadioGroup>
             <FormControlLabel 
               key={`display-mode-light`} 
               value={'light'} 
               label={'Light mode'} 
               control={
-                <Checkbox checked={!isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: false })}/>
+                <Radio checked={!isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: false })}/>
               }
             />
             <FormControlLabel 
@@ -87,10 +88,10 @@ function DisplayMenu(props) {
               value={'dark'} 
               label={'Dark mode'} 
               control={
-                <Checkbox checked={isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: true })}/>
+                <Radio checked={isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: true })}/>
               }
             />
-          </FormGroup>
+          </RadioGroup>
         </FormControl>
       </div>
     </Menu>

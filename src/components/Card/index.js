@@ -14,6 +14,7 @@ const styles = theme => ({
   root: {
     border: '2px solid black',
     borderRadius: '0',
+    padding: theme.spacing(2),
   },
   title: { ...theme.typography.h4, ...{
   }},

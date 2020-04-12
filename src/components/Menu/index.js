@@ -9,6 +9,7 @@ const styles = theme => ({
   paper: {
     borderRadius: '0',
     border: '2px solid black',
+    boxShadow: '9px 9px 0px 0px rgba(0, 0, 0, 0.5)',
     maxHeight: 'calc(100vh - 140px)', // TODO: remove hacky fix for long menus being pushed up
   },
   list: {

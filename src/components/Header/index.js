@@ -14,6 +14,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
   },
   toolbarGutters: {
+    padding: theme.spacing(2),
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
   },
@@ -26,10 +27,11 @@ const styles = theme => ({
     flexGrow: 1,
     color: theme.palette.text.primary,
     fontSize: theme.typography.h6.fontSize,
+    fontWeight: theme.typography.fontWeightBold,
   },
   link: {
     textTransform: 'capitalize',
-    paddingLeft: theme.spacing(2),
+    marginLeft: theme.spacing(3),
   }
 });
 
@@ -48,14 +50,14 @@ function Header(props) {
 
   return (
     <AppBar position="static" elevation={0} className={classes.appBar}>
-      <Toolbar classes={{ gutters: classes.toolbarGutters }}>
+      <Toolbar className={classes.toolbar} classes={{ gutters: classes.toolbarGutters }}>
         <nav className={classes.nav}>
           <span className={classes.title}>
             <Link to={'/'}>
               { siteTitle }
             </Link>
           </span>
-          <Button onClick={handleOpen}>
+          <Button aria-controls="display-menu" aria-haspopup="true" onClick={handleOpen}>
             Display
           </Button>
           <DisplayMenu {...{ open, anchorEl, handleClose }}/>

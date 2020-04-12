@@ -73,7 +73,7 @@ function CardFilter(props) {
           inputProps={{ 'aria-label': 'Search guidelines' }}
         />
       </div>
-      <Button onClick={handleOpen}>Tags</Button>
+      <Button aria-controls="filter-menu" aria-haspopup="true" onClick={handleOpen}>Tags</Button>
       <FilterMenu {...{ open, anchorEl, handleClose}}/>
     </Box>
   );
