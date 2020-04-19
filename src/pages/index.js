@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Page from '../components/Page';
 import Seo from '../components/Seo';
+import SkipNav from '../components/SkipNav';
 import Header from '../components/Header';
 import CardNav from '../components/CardNav';
 import CardContainer from '../components/CardContainer';
@@ -38,6 +39,7 @@ function HomePage(props) {
   return (
     <Page>
       <Seo title="Home" />
+      <SkipNav />
       <Header
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={"Access Guide"}

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Page from '../components/Page';
 import Seo from '../components/Seo';
+import SkipNav from '../components/SkipNav';
 import Header from '../components/Header';
 
 const aboutPageQuery = graphql`
@@ -23,6 +24,7 @@ function AboutPage() {
   return (
     <Page>
       <Seo title='About'/>
+      <SkipNav />
       <Header menuLinks={site.siteMetadata.menuLinks} siteTitle={"About"}/>
       <main>
       </main>
