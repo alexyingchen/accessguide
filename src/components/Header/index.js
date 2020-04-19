@@ -49,7 +49,7 @@ function Header(props) {
   };
 
   return (
-    <AppBar position="static" elevation={0} className={classes.appBar}>
+    <AppBar position="static" elevation={0} className={classes.appBar} role="banner">
       <Toolbar className={classes.toolbar} classes={{ gutters: classes.toolbarGutters }}>
         <nav className={classes.nav}>
           <span className={classes.title}>

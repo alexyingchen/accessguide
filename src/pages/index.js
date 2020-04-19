@@ -6,6 +6,7 @@ import Page from '../components/Page';
 import Seo from '../components/Seo';
 import SkipNav from '../components/SkipNav';
 import Header from '../components/Header';
+import Main from '../components/Main';
 import CardNav from '../components/CardNav';
 import CardContainer from '../components/CardContainer';
 
@@ -22,19 +23,7 @@ const homePageQuery = graphql`
   }
 `;
 
-const styles = theme => ({
-  main: {
-    minWidth: '100%',
-    minHeight: '100vh',
-    display: 'flex',
-    justifyContent: 'space-between',
-    paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4),
-  },
-});
-
 function HomePage(props) {
-  const { classes } = props;
   const { site } = useStaticQuery(homePageQuery);
   return (
     <Page>
@@ -44,12 +33,12 @@ function HomePage(props) {
         menuLinks={site.siteMetadata.menuLinks}
         siteTitle={"Access Guide"}
       />
-      <main className={classes.main}>
+      <Main>
         <CardNav />
         <CardContainer />
-      </main>
+      </Main>
     </Page>
   );
 }
 
-export default withStyles(styles)(HomePage);
+export default HomePage;

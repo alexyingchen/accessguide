@@ -5,6 +5,7 @@ import Page from '../components/Page';
 import Seo from '../components/Seo';
 import SkipNav from '../components/SkipNav';
 import Header from '../components/Header';
+import Main from '../components/Main';
 
 const aboutPageQuery = graphql`
   query {
@@ -26,8 +27,9 @@ function AboutPage() {
       <Seo title='About'/>
       <SkipNav />
       <Header menuLinks={site.siteMetadata.menuLinks} siteTitle={"About"}/>
-      <main>
-      </main>
+      <Main>
+        {"About"}
+      </Main>
     </Page>
   );
 };
