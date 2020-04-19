@@ -18,16 +18,24 @@ const styles = theme => ({
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
   },
-  nav: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
+  toolbar: {
+    justifyContent: 'space-between',
   },
   title: {
-    flexGrow: 1,
     color: theme.palette.text.primary,
     fontSize: theme.typography.h6.fontSize,
     fontWeight: theme.typography.fontWeightBold,
+  },
+  flex: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  linkContainer: {
+    listStyleType: 'none',
+    padding: 0,
+    margin: 0,
+    display: 'flex',
+    alignItems: 'center',
   },
   link: {
     textTransform: 'capitalize',
@@ -51,22 +59,27 @@ function Header(props) {
   return (
     <AppBar position="static" elevation={0} className={classes.appBar} role="banner">
       <Toolbar className={classes.toolbar} classes={{ gutters: classes.toolbarGutters }}>
-        <nav className={classes.nav}>
-          <span className={classes.title}>
-            <Link to={'/'}>
-              { siteTitle }
-            </Link>
-          </span>
+        <Link className={classes.title} to={'/'}>
+          { siteTitle }
+        </Link>
+        <span className={classes.flex}>
           <Button aria-controls="display-menu" aria-haspopup="true" onClick={handleOpen}>
             Display
           </Button>
           <DisplayMenu {...{ open, anchorEl, handleClose }}/>
-          {menuLinks.map((link, index) =>
-            <Link key={index} to={link.link} className={classes.link}>
-              {link.name}
-            </Link>
-          )}
-        </nav>
+          <nav aria-label="Primary navigation">
+		        <ul className={classes.linkContainer}>
+              { // TODO: Use aria-current
+                menuLinks.map((link, index) =>
+                <li>
+                  <Link key={index} to={link.link} className={classes.link}>
+                    {link.name}
+                  </Link>
+                </li>
+              )}
+		        </ul>
+          </nav>
+        </span>
       </Toolbar>
     </AppBar>
   );

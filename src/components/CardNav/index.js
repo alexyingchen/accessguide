@@ -49,6 +49,7 @@ function CardNav(props) {
   return (
     <nav
       className={classes.nav}
+      aria-label="Secondary navigation"
     >
       <List dense className={classes.list}>
         {allContentfulCategory.nodes.map((category, i) => (
