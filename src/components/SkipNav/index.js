@@ -13,8 +13,8 @@ const styles = theme => ({
 
     '&:focus': {
       outlineOffset: '0 !important',
-      left: '5px',
-      top: '5px',
+      left: '3px',
+      top: '3px',
     }
   },
 });

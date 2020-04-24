@@ -13,6 +13,11 @@ const styles = theme => ({
     color: theme.palette.common.black,
     textTransform: 'none',
     boxShadow: 'none',
+
+    '&:focus': {
+      transition: '0s',
+      boxShadow: `5px 5px 0px ${theme.palette.warning.light}`,
+    }
   },
 });
 
