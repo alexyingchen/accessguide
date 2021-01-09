@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
+import { toggleFilter } from '../../state/actions/filterActions';
 import { useStaticQuery, graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -76,7 +77,7 @@ function FilterMenu(props) {
     <Checkbox 
       color="default"
       checked={filters[filterType].includes(typeId)}
-      onChange={() => dispatch({ type: 'TOGGLE_FILTER', filterType, typeId })} 
+      onChange={() => dispatch(toggleFilter(filterType, typeId))} 
     />
   );
   

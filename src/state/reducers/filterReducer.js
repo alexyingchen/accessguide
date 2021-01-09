@@ -1,13 +1,10 @@
+import { TOGGLE_FILTER } from '../actions/filterActions';
+
 const initialState = {
   category: [],
   disability: [],
   wcagLevel: [],
 };
-
-const TOGGLE_FILTER = 'TOGGLE_FILTER';
-export const toggleFilter = (filterType, typeId) => ({
-  type: TOGGLE_FILTER, filterType, typeId
-});
 
 export default (state = initialState, action) => {
   switch (action.type) {

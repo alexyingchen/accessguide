@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
+import { setDarkMode, setTypefaceDefault } from '../../state/actions/displayActions';
 import { withStyles } from '@material-ui/core/styles';
 
 import Radio from '@material-ui/core/Radio';
@@ -61,13 +62,13 @@ function DisplayMenu(props) {
               key={`display-typeface-verdana`} 
               value={'verdana'} 
               label={'Verdana'} 
-              control={<Radio color="default" checked={isDefaultTypeface} onChange={() => dispatch({ type: 'SET_TYPEFACE', isDefaultTypeface: true })}/>}
+              control={<Radio color="default" checked={isDefaultTypeface} onChange={() => dispatch(setTypefaceDefault(true))}/>}
             />
             <FormControlLabel 
               key={`display-typeface-comicsans`} 
               value={'comicsans'} 
               label={'Comic Sans'} 
-              control={<Radio color="default" checked={!isDefaultTypeface} onChange={() => dispatch({ type: 'SET_TYPEFACE', isDefaultTypeface: false })}/>}
+              control={<Radio color="default" checked={!isDefaultTypeface} onChange={() => dispatch(setTypefaceDefault(false))}/>}
             />
           </RadioGroup>
         </FormControl>
@@ -80,7 +81,7 @@ function DisplayMenu(props) {
               value={'light'} 
               label={'Light mode'} 
               control={
-                <Radio color="default" checked={!isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: false })}/>
+                <Radio color="default" checked={!isDarkMode} onChange={() => dispatch(setDarkMode(false))}/>
               }
             />
             <FormControlLabel 
@@ -88,7 +89,7 @@ function DisplayMenu(props) {
               value={'dark'} 
               label={'Dark mode'} 
               control={
-                <Radio color="default" checked={isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: true })}/>
+                <Radio color="default" checked={isDarkMode} onChange={() => dispatch(setDarkMode(true))}/>
               }
             />
           </RadioGroup>
