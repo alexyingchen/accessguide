@@ -74,6 +74,7 @@ function FilterMenu(props) {
 
   const getFilterCheckbox = (filterType, typeId) => (
     <Checkbox 
+      color="default"
       checked={filters[filterType].includes(typeId)}
       onChange={() => dispatch({ type: 'TOGGLE_FILTER', filterType, typeId })} 
     />

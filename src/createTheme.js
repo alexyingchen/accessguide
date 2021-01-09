@@ -26,6 +26,19 @@ const createTheme = (prefersDarkMode) => createMuiTheme({...theme, ...{
   palette: { 
     type: prefersDarkMode ? 'dark' : 'light' 
   },
+  overrides: {
+    MuiRadio: {
+      root: {
+        color: prefersDarkMode ? 'white' : 'black',
+      },
+    },
+    MuiCheckbox: {
+      root: {
+        color: prefersDarkMode ? 'white' : 'black',
+        fill: prefersDarkMode ? 'white' : 'black',
+      },
+    },
+  },
 }});
 
 export default createTheme;

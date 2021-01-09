@@ -61,13 +61,13 @@ function DisplayMenu(props) {
               key={`display-typeface-comicsans`} 
               value={'comicsans'} 
               label={'Comic Sans'} 
-              control={<Radio checked={false} onChange={() => {}}/>}
+              control={<Radio color="default" checked={false} onChange={() => {}}/>}
             />
             <FormControlLabel 
               key={`display-typeface-verdana`} 
               value={'verdana'} 
               label={'Verdana'} 
-              control={<Radio checked={true} onChange={() => {}}/>}
+              control={<Radio color="default" checked={true} onChange={() => {}}/>}
             />
           </RadioGroup>
         </FormControl>
@@ -80,7 +80,7 @@ function DisplayMenu(props) {
               value={'light'} 
               label={'Light mode'} 
               control={
-                <Radio checked={!isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: false })}/>
+                <Radio color="default" checked={!isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: false })}/>
               }
             />
             <FormControlLabel 
@@ -88,7 +88,7 @@ function DisplayMenu(props) {
               value={'dark'} 
               label={'Dark mode'} 
               control={
-                <Radio checked={isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: true })}/>
+                <Radio color="default" checked={isDarkMode} onChange={() => dispatch({ type: 'SET_DARKMODE', isDarkMode: true })}/>
               }
             />
           </RadioGroup>
