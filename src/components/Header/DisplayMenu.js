@@ -41,7 +41,7 @@ const styles = theme => ({
 
 function DisplayMenu(props) {
   const { classes, open, anchorEl, handleClose, ...other } = props;
-  const isDarkMode = useSelector(state => state.display.isDarkMode);
+  const { isDarkMode, isDefaultTypeface } = useSelector(state => state.display);
   const dispatch = useDispatch();
 
   return (
@@ -58,16 +58,16 @@ function DisplayMenu(props) {
           <FormLabel component="legend" className={classes.formLabel}>Typeface</FormLabel>
           <RadioGroup>
             <FormControlLabel 
-              key={`display-typeface-comicsans`} 
-              value={'comicsans'} 
-              label={'Comic Sans'} 
-              control={<Radio color="default" checked={false} onChange={() => {}}/>}
-            />
-            <FormControlLabel 
               key={`display-typeface-verdana`} 
               value={'verdana'} 
               label={'Verdana'} 
-              control={<Radio color="default" checked={true} onChange={() => {}}/>}
+              control={<Radio color="default" checked={isDefaultTypeface} onChange={() => dispatch({ type: 'SET_TYPEFACE', isDefaultTypeface: true })}/>}
+            />
+            <FormControlLabel 
+              key={`display-typeface-comicsans`} 
+              value={'comicsans'} 
+              label={'Comic Sans'} 
+              control={<Radio color="default" checked={!isDefaultTypeface} onChange={() => dispatch({ type: 'SET_TYPEFACE', isDefaultTypeface: false })}/>}
             />
           </RadioGroup>
         </FormControl>

@@ -18,13 +18,10 @@ const styles = theme => ({
 });
 
 function CustomMenu(props) {
-  const { classes, children, className, anchorEl, open, onClose } = props;
+  const { classes, children, className, ...other } = props;
   return (
     <Menu
-      open={open}
-      anchorEl={anchorEl}
       getContentAnchorEl={null}
-      onClose={onClose}
       elevation={0}
       keepMounted
       classes={{ 
@@ -39,6 +36,7 @@ function CustomMenu(props) {
         vertical: 'bottom',
         horizontal: 'right',
       }}
+      {...other}
     >
       {children}
     </Menu>

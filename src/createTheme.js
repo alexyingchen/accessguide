@@ -22,20 +22,23 @@ const theme = {
   },
 };
 
-const createTheme = (prefersDarkMode) => createMuiTheme({...theme, ...{
+const createTheme = ({ isDarkMode, isDefaultTypeface }) => createMuiTheme({...theme, ...{
   palette: { 
-    type: prefersDarkMode ? 'dark' : 'light' 
+    type: isDarkMode ? 'dark' : 'light' 
+  },
+  typography: {
+    fontFamily: isDefaultTypeface ? ['Roboto', 'Arial', 'sans-serif'] : ['Helvetica', 'Arial', 'sans-serif'],
   },
   overrides: {
     MuiRadio: {
       root: {
-        color: prefersDarkMode ? 'white' : 'black',
+        color: isDarkMode ? 'white' : 'black',
       },
     },
     MuiCheckbox: {
       root: {
-        color: prefersDarkMode ? 'white' : 'black',
-        fill: prefersDarkMode ? 'white' : 'black',
+        color: isDarkMode ? 'white' : 'black',
+        fill: isDarkMode ? 'white' : 'black',
       },
     },
   },
